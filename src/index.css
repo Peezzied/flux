@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .type::after {
+        content: '';
+        border-right: 2px solid #fff;
+        display: inline;
+        animation: cursor 0.7s step-end infinite alternate;
+    }
+    @keyframes cursor {
+        50% {border-color: transparent;}
+    }
+    .menuContainer {
+        width: calc(100% - 1280px);
+    }
+    .fluid-title {
+        font-size: clamp(2.25rem, 0.9167rem + 3.3333vi, 3.5rem) !important;
+    }
+    .fluid-pr {
+        font-size: clamp(1rem, 0.7333rem + 0.6667vi, 1.25rem) !important;
+    }
+    /* .backDropBlurMenu::after {
+        content: '';
+        position: absolute;
+        width: 100vw;
+        backdrop-filter: blur(20px);
+        z-index: 30;
+        height: 100vh;
+        mask: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+        -webkit-mask: linear-gradient(180deg, rgba(0,0,0,1), rgba(0,0,0,1) 5%, rgba(0,0,0,0) 20%);;
+    } */
+    .chemphase {
+        filter: drop-shadow(0px 0px 3px #008cff5b);
+    }
+}
