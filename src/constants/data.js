@@ -54,7 +54,7 @@ export const headerData = [
     {
         label: {
             main: 'flux presents:',
-            typed: ['^1500 explore', 'discover', 'a deep dive.']
+            typed: ['^1500 explained', 'explore', 'discover', 'a deep dive.']
         },
         heading: 'Phase Changes, Structure and Properties of Water',
         subheading: 'A Flux 5 Special sailing through the scientific odyssey of Phase Changes from the interaction between energy and matter while unraveling the Structure and Properties of water along the voyage.',

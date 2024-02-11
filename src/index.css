@@ -37,4 +37,8 @@
     .chemphase {
         filter: drop-shadow(0px 0px 3px #008cff5b);
     }
+    .bgTransition {
+        transition-property: background-color;
+    }
+    
 }

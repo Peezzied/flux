@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import References from './pages/References';
 import Explore from './pages/Explore';
+import { useEffect } from 'react';
 
 const Routing = ()=>{
   return(
@@ -20,12 +21,15 @@ const Routing = ()=>{
 
 function App() {
   console.log(Routing)
+
   return (
+
     <div className="flex flex-col">
       <Nav/>
       <Body content={<Routing/>}/>
       <Footer/>
     </div>
+
   );
 }
 

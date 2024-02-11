@@ -1,18 +1,14 @@
 import { motion, useAnimation, useInView } from "framer-motion"
-import { useEffect, useRef } from "react"
-import { useRevealContext } from "./RevealFactor"
+import React, { useEffect, useRef } from "react"
 
-
-export default function Reveal({children, style}){
+const viewVars = {
+    start:{ opacity: 0, },
+    visible:{ opacity: 1,}
+ }
+export default function Reveal({children, style, delay, variants=viewVars, ...props}){
      const view = useRef(null)
      const isView = useInView(view, {once: true})
      const mainControls = useAnimation()
-     const {delayFactor, setIncrement} = useRevealContext();
-
-     const viewVars = {
-        start:{ opacity: 0, },
-        visible:{ opacity: 1,}
-     }
 
      useEffect(()=>{
         if(isView){
@@ -20,18 +16,31 @@ export default function Reveal({children, style}){
             
 
         }
-     }, [isView])
+     }, [isView, mainControls])
 
     return(
-        <div ref={view} className={`${style} overflow-hidden`}>
+        <motion.div {...props} ref={view} className={`${style} overflow-hidden`}>
             <motion.div
-                variants={viewVars}
+                variants={variants}
                 initial="start"
                 animate={mainControls}
-                transition={{ duration: 0.5, delay: delayFactor}}
+                transition={{ duration: 0.5, delay: delay}}
             >
                 {children}
             </motion.div>
-        </div>
+        </motion.div>
     )
 }
+export function Reveals({ children, increment, variants }) {
+    const childrenArray = React.Children.toArray(children);
+    return (
+        <>
+        {React.Children.map(childrenArray, (child, index) => {
+          // Calculate delay for each child based on increment
+          const delay = index * increment;
+          // Clone child element with updated delay prop
+          return React.cloneElement(child, { delay, variants });
+        })}
+      </>
+    );
+  }
