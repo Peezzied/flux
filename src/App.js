@@ -24,7 +24,7 @@ function App() {
 
   return (
 
-    <div className="flex flex-col">
+    <div className="flex flex-col ">
       <Nav/>
       <Body content={<Routing/>}/>
       <Footer/>

@@ -37,6 +37,10 @@
     .chemphase {
         filter: drop-shadow(0px 0px 3px #008cff5b);
     }
+    .chemphase[data-toChange='true'] {
+        @apply w-8 scale-[2.7] 
+    }
+
     .bgTransition {
         transition-property: background-color;
     }
