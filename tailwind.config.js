@@ -17,7 +17,8 @@ module.exports = {
       },
       fontFamily: {
         title: 'Poppins',
-        label: 'IBM Plex Mono'
+        label: 'IBM Plex Mono',
+        primary: 'Montserrat'
       }
     },
   },
