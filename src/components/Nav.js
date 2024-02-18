@@ -5,6 +5,7 @@ import { menuItems } from "../constants/data"
 import ContentNav from "./ContentNav"
 import logo from '../assets/chemphase.png'
 import { BtnMenu, BtnX } from "./Hamburger"
+import { useSharedVals } from "../App"
 
 export const hamburger = {
     initial: {
@@ -31,8 +32,8 @@ export const hamburger = {
 }
 
 export function NavFixed({getRef}) {
-    const [isMenuOpen, setIsMenuOpen] = useState(null)
-    const toggleMenu = ()=>{setIsMenuOpen(!isMenuOpen)}
+    const {isMenuOpen, setIsMenuOpen} = useSharedVals()
+    const {toggleMenu} = useSharedVals()
     // useEffect(()=>{
     //     const variants = scopeAfter : scopeBefore
     //     animate(scope.current, variants.scope, { delay: 0.3, duration: 0.2, type: "tween"})
@@ -92,30 +93,12 @@ export function NavFixed({getRef}) {
         </>
     )
 }
-export function NavAnimated({isAnimate=true}) {
-    const [isMenuOpen, setIsMenuOpen] = useState(null)
-    const toggleMenu = ()=>{setIsMenuOpen(!isMenuOpen)}
-    const [ scope, animate ] = useAnimate()
-    const [ hidden, setHidden ] = useState(false)
-    const [ changeStyle, setChangeStyle ] = useState(false)
-    const { scrollY } = useScroll()
+export function NavAnimated({isAnimate=true, styleProp}) {
+    const {isMenuOpen, setIsMenuOpen} = useSharedVals()
+    const {toggleMenu} = useSharedVals()
+    const { hidden } = useSharedVals()
 
-    useMotionValueEvent(scrollY, "change", (latest) => {
-        const previous = scrollY.getPrevious();
-        if (latest > previous && latest > 1000) {
-            setHidden(true)
-            // console.log('scroll', true)
-        } else {
-            setHidden(false)
-            // console.log('scroll', false)
-        }
 
-        if(latest >= 100) {
-            setChangeStyle(true)
-        } else {
-            setChangeStyle(false)
-        }
-    })
 
     const transition = {
         duration: 0.2,
@@ -139,17 +122,6 @@ export function NavAnimated({isAnimate=true}) {
         navContainer: { padding: '1rem' },
         navMenuDesktop: { fontSize: '1rem' }
     }
-    // useEffect(()=>{
-    //     const variants = scopeAfter : scopeBefore
-    //     animate(scope.current, variants.scope, { delay: 0.3, duration: 0.2, type: "tween"})
-    //     animate("#navContainer", variants.navContainer, transition)
-    //     animate("#navMenuDesktop", variants.navMenuDesktop, {duration: 0.01, type: "tween"})
-    //     animate("#logoImg", variants.logoImg, transition)
-    //     animate("svg", variants.svg, transition)
-    //     animate("#btnMenu", variants.btnMenu, {duration: 0.01, type: "tween"})
-    // }, [changeStyle, animate])
-    
-
     
     return (
         <>
@@ -161,6 +133,7 @@ export function NavAnimated({isAnimate=true}) {
             transition={{duration: 0.35, ease: 'easeInOut'}}
             animate={hidden ? "hidden" : isAnimate ? 'hidden' : 'visible'}
             className={'w-full fixed top-0 left-0 z-[50]'}
+            style={styleProp}
         >
             <div className={'bg-slate-950/[0.6] backdrop-blur-[20px] transition-all'}>
                 <div id="navContainer" layout className={"mx-auto flex items-center mr-auto p-5 lg:py-[1rem] py-4 px-8 lg:px-10"}>
@@ -194,28 +167,62 @@ export function NavAnimated({isAnimate=true}) {
                 
                         </AnimatePresence>
                     </div>
-                
                 </div>
             </div>
             {/* <div className="fixed w-full h-full bg-black top-0 z-[100]"></div> */}
 
         </motion.div>
-        <AnimatePresence mode="wait">
-            {isMenuOpen && <ContentNav toggleMenu={toggleMenu} changeStyle={changeStyle}/>}
-        </AnimatePresence>
+
         </>
     )
 }
+// function NavMenu({isMenuOpen, toggleMenu, changeStyle}){
+
+//     return(
+//         <AnimatePresence mode="wait">
+//             {isMenuOpen && <ContentNav toggleMenu={toggleMenu} changeStyle={changeStyle}/>}
+//         </AnimatePresence>
+//     )
+// }
 export function Nav(){
     const nav = useRef(null)
     const isInView = useInView(nav)
+    const {scrollY } = useScroll({target: nav, offset: ["start end", "end end"]})
+    const {scrollY : pageScroll} = useScroll()
+    const { setHidden } = useSharedVals()
+    const { setChangeStyle, changeStyle } = useSharedVals()
+    const {isMenuOpen} = useSharedVals()
+    const {toggleMenu} = useSharedVals()
+
+    useMotionValueEvent(pageScroll, "change", (latest) => {
+        const previous = scrollY.getPrevious();
+        if (latest > previous && latest > 1000) {
+            setHidden(true)
+            // console.log('scroll', true)
+        } else {
+            setHidden(false)
+            // console.log('scroll', false)
+        }
+
+        if(latest >= 100) {
+            setChangeStyle(true)
+        } else {
+            setChangeStyle(false)
+        }
+    })
+
+    useEffect(()=>{console.log('scroll',scrollY)}, [scrollY])
     useEffect(()=>{
         console.log('view', isInView, nav)
     }, [isInView])
     return(
         <>
             <NavFixed getRef={nav}/>
-            <NavAnimated isAnimate={isInView} />
+            <NavAnimated isAnimate={isInView} styleProp={{opacity: scrollY}}/>
+            <AnimatePresence mode="wait">
+                {isMenuOpen && <ContentNav toggleMenu={toggleMenu} changeStyle={changeStyle}/>}
+            </AnimatePresence>
+
         </>
         
     )

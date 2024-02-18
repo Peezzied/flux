@@ -24,10 +24,14 @@ const MyContext = createContext();
 // Step 2: Create a provider component
 const AppProvider = ({ children }) => {
   const [sharedState, setSharedState] = useState(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(null)
+  const [ changeStyle, setChangeStyle ] = useState(false)
+  const [ hidden, setHidden ] = useState(false)
+  const toggleMenu = ()=>{setIsMenuOpen(!isMenuOpen)}
   const containerRef = useRef(null)
 
   return (
-    <MyContext.Provider value={{ sharedState, setSharedState, containerRef }}>
+    <MyContext.Provider value={{ sharedState, setSharedState, containerRef, changeStyle, setChangeStyle, setHidden, hidden, setIsMenuOpen, isMenuOpen, toggleMenu }}>
       {children}
     </MyContext.Provider>
   );
