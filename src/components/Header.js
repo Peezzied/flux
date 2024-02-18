@@ -3,10 +3,12 @@ import { ReactTyped } from 'react-typed'
 import { motion } from "framer-motion"
 import { headerData } from '../constants/data'
 import Reveal, { Reveals } from '../components/RevealAnimate'
+import { useSharedVals } from '../App'
 
 export default function Header() {
+    const {containerRef} = useSharedVals()
     return(
-        <div className="relative">
+        <div ref={containerRef} className="relative">
             <div className="after:content-[''] after:absolute after:top-0 after:bg-gradient-to-b after:from-slate-950 after:from-5% after:via-50% after:h-[100%] after:w-[100%] after:z-10">
                 <video className='h-[100dvh] w-full object-cover' src={vbg} autoPlay loop muted/>
             </div>

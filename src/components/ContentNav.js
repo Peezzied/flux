@@ -106,7 +106,7 @@ export default function ContentNav({toggleMenu, changeStyle}){
                     <motion.div variants={hamburger} initial='initial' animate='visible' exit='end' className={changeStyle ? "fixed top-0 right-0 z-[300] p-5 lg:py-[1rem] py-4 px-8 lg:px-10" : "fixed top-0 right-0 z-[300] p-5 py-8 lg:py-11 lg:px-10"}><div onClick={toggleMenu}>
                         <BtnX id="btnX" key={1} className="h-auto w-8 cursor-pointer text-gray-50 hover:text-ascent transition-all duration-400"></BtnX>
                     </div></motion.div>
-                    <motion.div key={2} variants={motionDiv} initial="initial" animate="visible" exit="end" className={changeStyle ? "h-full bg-slate-950 max-w-[20rem] w-full relative z-20 pt-16 flex p-5 lg:px-10 flex-col items-end text-white text-end text-xl font-title px-10" : "h-full bg-slate-950 max-w-[20rem] w-full relative z-20 pt-24 flex p-5 lg:px-10 flex-col items-end text-white text-end text-xl font-title px-10"}>
+                    <motion.div key={2} variants={motionDiv} initial="initial" animate="visible" exit="end" className={changeStyle ? "h-full bg-slate-950 max-w-[20rem] w-full relative z-20 pt-16 flex p-5 lg:px-10 flex-col items-end text-neutral-300 text-end text-xl font-title px-10" : "h-full bg-slate-950 max-w-[20rem] w-full relative z-20 pt-24 flex p-5 lg:px-10 flex-col items-end text-neutral-300 text-end text-xl font-title px-10"}>
                         <motion.div variants={staggerAnimate} initial="initial" animate='visible' exit="end" className="w-full h-full space-y-2">
                             {menuItems.map((i)=>{
                                 return(
