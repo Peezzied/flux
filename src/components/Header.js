@@ -17,7 +17,7 @@ export default function Header() {
     return(
         <div ref={containerRef} className="relative">
             <div className="after:content-[''] after:absolute after:top-0 after:bg-gradient-to-b after:from-slate-950 after:from-5% after:via-50% after:h-[100%] after:w-[100%] after:z-10">
-                <video className='h-[100dvh] w-full object-cover' src={vbg} autoPlay loop muted/>
+                <video className='h-[100dvh] w-full object-cover' src={vbg} autoPlay loop muted playsInline/>
             </div>
             <div className='absolute top-0 w-full h-full z-20'>
                 <div className="container mx-auto text-white h-full w-full grid items-center">

@@ -29,6 +29,12 @@
     .fluid-secondary {
         font-size: clamp(0.875rem, 0.788rem + 0.4348vi, 1.125rem) !important;
     }
+    .fluid-sub {
+        font-size: clamp(2rem, 1.9457rem + 0.2717vi, 2.1563rem) !important;
+    }
+    .quotes {
+        @apply relative z-20
+    }
     /* .backDropBlurMenu::after {
         content: '';
         position: absolute;
