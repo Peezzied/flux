@@ -1,7 +1,11 @@
 export const menuItems = [
     {
         name: 'explore',
-        route: '/explore'
+        route: '/#explore'
+    },
+    {
+        name: 'home',
+        route: '/'
     },
     {
         name: 'about',
@@ -11,29 +15,28 @@ export const menuItems = [
         name: 'references',
         route: '/references'
     },
+
 ]
 export const contentNavigator = [
     {
-        title: 'Main topic',
-        to: '#',
+        title: 'Phase Changes',
         child: [
             {
                 title: 'Sub topic 1',
-                to: '#'
+                to: '/water'
             },
             {
                 title: 'Sub topic 2',
-                to: '#'
+                to: '/sad'
             },
             {
                 title: 'Sub topic 3',
-                to: '#'
+                to: '/sad'
             },
         ]
     },
     {
-        title: 'Main topic 2',
-        to: '#',
+        title: 'Water',
         child: [
             {
                 title: 'Sub topic 1',
@@ -52,15 +55,28 @@ export const contentNavigator = [
 ]
 export const headerData = [
     {
-        label: {
-            main: 'flux presents:',
-            typed: ['^1500 explained', 'explore', 'discover', 'a deep dive.']
-        },
-        heading: 'Phase Changes, Structure and Properties of Water',
-        subheading: 'A Flux 5 Special sailing through the scientific odyssey of Phase Changes from the interaction between energy and matter while unraveling the Structure and Properties of water along the voyage.',
-        start: {
-            label: 'Start Journey',
-            to: '#'
-        }
+            name: 'home',
+            label: {
+                main: 'flux presents:',
+                typed: ['^1500 explained', 'explore', 'discover', 'a deep dive.']
+            },
+            heading: 'Phase Changes, Structure and Properties of Water',
+            subheading: 'A Flux 5 Special sailing through the scientific odyssey of Phase Changes from the interaction between energy and matter while unraveling the Structure and Properties of water along the voyage.',
+            start: {
+                label: 'Start Journey',
+                to: '#'
+            }
+    },
+    {       
+            name: 'water',
+            label: "let's talk about",
+            heading: 'Structure and Properties of Water',
+            subheading: ''
+    },
+    {
+            name: 'phase',
+            label: "let's talk about",
+            heading: 'Phase Changes',
+            subheading: ''
     }
 ]

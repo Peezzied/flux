@@ -13,7 +13,8 @@ module.exports = {
         primary: '#0174BE',
         secondary: '#dcdbe1',
         ascent: '#FFC436',
-        text: '#FFFFFF'
+        text: '#FFFFFF',
+        dark: '#17171b'
       },
       fontFamily: {
         title: 'Poppins',

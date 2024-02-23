@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { contentNavigator, menuItems } from "../constants/data"
 import { BtnX } from "./Hamburger"
 import Accordian, { AccordianItem } from "./MenuAccordion"
@@ -143,7 +144,7 @@ export default function ContentNav({toggleMenu, changeStyle}){
                                                             <ul className="space-y-2 font-light">
                                                                 {i.child.map((ci)=>{
                                                                     return(
-                                                                        <li className="rounded-xl px-5 p-3 bg-gradient-to-bl from-slate-950/[0.5] to-slate-900 hover:text-ascent transition-all duration-400">{ci.title}</li>
+                                                                        <li className="rounded-xl px-5 p-3 bg-gradient-to-bl from-slate-950/[0.5] to-slate-900 hover:text-ascent transition-all duration-400"><Link to={ci.to}>{ci.title}</Link></li>
                                                                     )
                                                                 })}
                                                             </ul>

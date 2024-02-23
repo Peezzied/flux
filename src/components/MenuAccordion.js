@@ -1,4 +1,5 @@
 import { createContext, useContext, useRef, useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 //import { ChevronDown } from "react-feather"
 
 const AccordianContext = createContext()
@@ -32,6 +33,7 @@ export function AccordianItem({ children, value, trigger, styles }) {
         onClick={() => setSelected(open ? null : value)}
         className={`${open ? 'text-ascent' : null} transition-colors ${styles.title}`}
       >
+        {/* <Link to={to}>{trigger}</Link> */}
         {trigger}
         {/* <ChevronDown
           size={16}

@@ -5,8 +5,9 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import References from './pages/References';
-import Explore from './pages/Explore';
 import { createContext, useContext, useEffect, useRef, useState } from 'react';
+import PhaseChanges from './pages/PhaseChanges';
+import Water from './pages/Water';
 
 const Routing = ()=>{
   return(
@@ -14,7 +15,8 @@ const Routing = ()=>{
       <Route path='/' element={<Home/>}/>
       <Route path='/about' element={<About/>}/>
       <Route path='/references' element={<References/>}/>
-      <Route path='/explore' element={<Explore/>}/>
+      <Route path='/phase-changes' element={<PhaseChanges/>}/>
+      <Route path='/water' element={<Water/>}/>
     </Routes>
   )
 }

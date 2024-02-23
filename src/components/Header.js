@@ -12,17 +12,26 @@ const RocketFireSvg = ({...props})=>(
     <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8.49816 20.0048H15.5018C14.8432 21.5842 13.5794 22.848 12 23.5066C10.4206 22.848 9.15679 21.5842 8.49816 20.0048ZM18 14.8095L20 17.0778V19.0048H4V17.0778L6 14.8095V9.00481C6 5.52156 8.50442 2.55825 12 1.46002C15.4956 2.55825 18 5.52156 18 9.00481V14.8095ZM12 11.0048C13.1046 11.0048 14 10.1094 14 9.00481C14 7.90024 13.1046 7.00481 12 7.00481C10.8954 7.00481 10 7.90024 10 9.00481C10 10.1094 10.8954 11.0048 12 11.0048Z"></path></svg>
 )
 
+export const Heading =({children, src, container=null})=>(
+        <div className="relative">
+            <div className="after:content-[''] after:absolute after:top-0 after:bg-gradient-to-b after:from-slate-950 after:from-5% after:via-50% after:h-[100%] after:w-[100%] after:z-10">
+                <video className='h-[100dvh] w-full object-cover' src={src} autoPlay loop muted playsInline/>
+            </div>
+            <div className='absolute top-0 w-full h-full z-20'>
+                <div className={`container mx-auto text-white h-full w-full grid items-center ` + container}>
+                    {children}
+                </div>
+            </div>
+        </div>
+)
+
 export default function Header() {
     const {containerRef} = useSharedVals()
     return(
-        <div ref={containerRef} className="relative">
-            <div className="after:content-[''] after:absolute after:top-0 after:bg-gradient-to-b after:from-slate-950 after:from-5% after:via-50% after:h-[100%] after:w-[100%] after:z-10">
-                <video className='h-[100dvh] w-full object-cover' src={vbg} autoPlay loop muted playsInline/>
-            </div>
-            <div className='absolute top-0 w-full h-full z-20'>
-                <div className="container mx-auto text-white h-full w-full grid items-center">
+        <Heading src={vbg}>
                 {headerData.map((i)=>{
                     return(
+                    i.name === 'home' &&
                     <div className="max-w-[40em] flex flex-col justify-start gap-5 px-10">
                         <Reveals increment={0.15} variants={{
                             start: {y: 75, opacity: 0},
@@ -38,8 +47,6 @@ export default function Header() {
                     </div>
                     )
                 })}
-                </div>
-            </div>
-        </div>
+        </Heading>
     )
 }
