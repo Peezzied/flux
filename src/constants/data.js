@@ -1,3 +1,5 @@
+import { Drop, Frozen, Gauge } from "../components/SvgComponents"
+
 export const menuItems = [
     {
         name: 'explore',
@@ -22,16 +24,16 @@ export const contentNavigator = [
         title: 'Phase Changes',
         child: [
             {
-                title: 'Sub topic 1',
-                to: '/water'
+                title: 'Overview',
+                to: '/phase-changes'
             },
             {
                 title: 'Sub topic 2',
-                to: '/sad'
+                to: '/phase-changes#'
             },
             {
                 title: 'Sub topic 3',
-                to: '/sad'
+                to: '/phase-changes#'
             },
         ]
     },
@@ -39,16 +41,16 @@ export const contentNavigator = [
         title: 'Water',
         child: [
             {
-                title: 'Sub topic 1',
-                to: '#'
+                title: 'Overview',
+                to: '/water'
             },
             {
                 title: 'Sub topic 2',
-                to: '#'
+                to: '/water#'
             },
             {
                 title: 'Sub topic 3',
-                to: '#'
+                to: '/water#'
             },
         ]
     }
@@ -79,4 +81,23 @@ export const headerData = [
             heading: 'Phase Changes',
             subheading: ''
     }
+]
+
+
+export const headingWaterData = [
+    {
+        icon: <Frozen/>,
+        title: 'Water freezes at 0 degrees Celsius',
+        label: 'Solid'
+    },
+    {
+        icon: <Drop/>,
+        title: 'Water remained liquid at room temperature',
+        label: 'Liquid'
+    },
+    {
+        icon: <Gauge/>,
+        title: 'Water boils at 100 Degrees At Standard Pressure',
+        label: 'Gas'
+    },
 ]

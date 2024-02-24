@@ -13,7 +13,7 @@ export const TopicHeader = ({src, data, name})=>(
                         visible: {y:0, opacity: 1}
                     }}>
                 <Reveal>
-                    <div className="fluid-pr uppercase font-label font-semibold">{i.heading}</div>
+                    <div className="fluid-pr uppercase font-label font-semibold">{i.label}</div>
                 </Reveal>
                 <Reveal>
                     <div className='  leading-[1.1] font-bold font-title text-center fluid-title'>{i.heading}</div>

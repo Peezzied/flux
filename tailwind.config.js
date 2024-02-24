@@ -14,7 +14,9 @@ module.exports = {
         secondary: '#dcdbe1',
         ascent: '#FFC436',
         text: '#FFFFFF',
-        dark: '#17171b'
+        dark: '#17171b',
+        darkText: '#9C9C9C',
+        labelBlue: '#0283C6'
       },
       fontFamily: {
         title: 'Poppins',
