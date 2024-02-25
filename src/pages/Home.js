@@ -2,6 +2,10 @@ import Lenis from '@studio-freight/lenis'
 import Header from '../components/Header'
 import quoteFrom from '../assets/mj-logo.png'
 import { useEffect } from 'react'
+import Trivia from '../components/TriviaBox'
+import DivBox from '../components/DivBox'
+import { explore, overview, phase, water } from '../constants/home'
+import { Link } from 'react-router-dom'
 
 
 const Hexa = ({...props})=>(
@@ -39,8 +43,62 @@ export default function Home() {
         <div>
             <Header />
             <Quote />
-            <div className="h-[100vh] bg-secondary"></div>
-            <div className="h-[100vh]"></div>
+            <DivBox container='container' div='h-max bg-no-repeat bg-center bg-cover relative after:blueHero after:bgOverlay' style={{backgroundImage: `url(${overview.img})`}}>
+                <div className=' text-white py-14 grid grid-cols-2 relative z-10'>
+                    <div className='max-w-[20em] fluid-title font-title font-bold'>
+                        <div>{overview.lead[0]}</div>
+                        <div >{overview.lead[1]}</div>
+                    </div>
+                    <div className='fluid-pr font-primary font-semibold'><Link to={overview.to}>{overview.label}</Link></div>
+                </div>
+            </DivBox>
+            <DivBox container='container' div='bg-[#F1F1F1]'>
+                <div>
+                    <div className='text-[#0A7D86] font-bold font-title fluid-title'>{water.title}</div>
+                    <div>
+                        <div className='font-semibold font-primary fluid-title text-white rounded-3xl after:rounded-2xl bg-no-repeat bg-center bg-cover relative after:waterCard after:bgOverlay p-14 pl-20 pb-28' style={{backgroundImage: `url(${water.card[0].img})`}}>
+                            <div className='relative z-10'>{water.card[0].lead[0]}</div>
+                            <div className='relative z-10 max-w-[17em]'>{water.card[0].lead[1]}</div>
+                        </div>
+                        <div className=' font-semibold font-primary fluid-sub text-black rounded-3xl pl-20 p-14 pb-28 pt-20 bg-gradient-to-br from-white to-[#79ABAF] from-[50%] to-[145%]'>
+                            <div className='text-[#0A7D86]'>{water.card[1].label}</div>
+                            <div className='max-w-[17em]'>{water.card[1].body}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div className='text-[#E36305] font-bold font-title fluid-title'>{phase.title}</div>
+                    <div className='font-semibold font-primary fluid-title bg-gradient-to-br rounded-3xl from-white to-[#B49781] from-[50%] to-[145%] p-14 w-max flex'><div className="max-w-[419px] mt-auto leading-tight">{phase.card[0].lead}</div></div>
+                    <div className='font-semibold font-primary fluid-sub bg-gradient-to-br rounded-3xl from-white to-[#B49781] from-[50%] to-[145%]'>
+                        <div className='text-[#E36305] max-w-[17em]'>{phase.card[1].label}</div>
+                        <div className='max-w-[17em]'>{phase.card[1].body}</div>
+                        <img src={phase.card[1].img} alt="" />
+                        {/* AN IMAGE HERE */}
+                    </div>
+                </div>
+            </DivBox>
+            <Trivia isHome={true}/>
+            <DivBox container='container' div='bg-[#f1f1f1]'>
+                <div>
+                    <div>
+                        <div className='font-bold fluid-pr font-label uppercase text-[#00548B]'>{explore.label}</div>
+                        <div className='font-bold font-title fluid-title'>{explore.title}</div>
+                        <div className='font-semibold font-primary fluid-sub'>{explore.body}</div>
+                    </div>
+                    <div>
+                        {explore.card.map((i, index)=>(
+                            <div className='font-semibold font-primary fluid-title text-white rounded-3xl after:rounded-2xl bg-no-repeat bg-center bg-cover relative after:waterCard after:bgOverlay p-14 pl-20 pb-28 z-10 after:z-[-10] space-y-5' style={{backgroundImage: `url(${i.img})`}}>
+                                <div className='font-primary uppercase fluid-pr text-[#f1f1f1]'>{i.label}</div>
+                                <div className='font-title fluid-sub font-bold'>{i.title}</div>
+                                <div className='font-primary fluid-pr'>{i.body}</div>
+                                {/* BUTTON HERE */}
+                                <div className='text-[18px] uppercase font-primary mt-6 bg-primary rounded-xl p-2 px-4 w-max'>SHOW ME</div> 
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </DivBox>
         </div>
     )
 }

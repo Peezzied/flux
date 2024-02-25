@@ -84,20 +84,3 @@ export const headerData = [
 ]
 
 
-export const headingWaterData = [
-    {
-        icon: <Frozen/>,
-        title: 'Water freezes at 0 degrees Celsius',
-        label: 'Solid'
-    },
-    {
-        icon: <Drop/>,
-        title: 'Water remained liquid at room temperature',
-        label: 'Liquid'
-    },
-    {
-        icon: <Gauge/>,
-        title: 'Water boils at 100 Degrees At Standard Pressure',
-        label: 'Gas'
-    },
-]

@@ -8,6 +8,7 @@ import References from './pages/References';
 import { createContext, useContext, useEffect, useRef, useState } from 'react';
 import PhaseChanges from './pages/PhaseChanges';
 import Water from './pages/Water';
+import QuizCTA from './components/QuizCTA';
 
 const Routing = ()=>{
   return(
@@ -57,6 +58,7 @@ function App() {
       <div className="flex flex-col ">
         <Nav/>
         <Body content={<Routing/>}/>
+        <QuizCTA/>
         <Footer/>
       </div>
     </AppProvider>

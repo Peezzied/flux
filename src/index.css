@@ -55,5 +55,27 @@
     .bgTransition {
         transition-property: background-color;
     }
-    
+    .bgOverlay {
+        @apply absolute top-0 left-0 w-full h-full content-[''] 
+    }
+    .earthGradient {
+        @apply bg-gradient-to-r from-[#17171B]/0 to-[#17171B]/[83%] from-[17%] to-[67%]
+    }
+    .bigBoxGradient {
+        @apply bg-gradient-to-b from-[#17171B] to-[#17171B]/[0] to-[1000%] from-[30%]
+    }
+    .triviaBg::after {
+        background-image: url('./assets/volcano.png');
+        content: '';
+        position: absolute;
+        left: 0;
+        height: 10%;
+        width: 100%;
+    }
+    .blueHero {
+        @apply bg-black/50
+    }
+    .waterCard {
+        @apply bg-gradient-to-b from-[#096C73] to-[#096C73]/5
+    }
 }
