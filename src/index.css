@@ -75,7 +75,20 @@
     .blueHero {
         @apply bg-black/50
     }
-    .waterCard {
-        @apply bg-gradient-to-b from-[#096C73] to-[#096C73]/5
+    .waterCardBlue {
+        @apply after:bg-gradient-to-b after:from-[#096C73] after:to-[#096C73]/5
+    }
+    .waterCardOrange {
+        @apply after:bg-gradient-to-b after:from-[#833902] after:to-[#096C73]/5
+    }
+    .video {
+        /* @apply absolute top-0 left-0 w-full h-full */
+        @apply aspect-video w-full
+    }
+    .waterGradient {
+        @apply bg-gradient-to-r from-[#17171B]/0 to-[#17171B] to-[70%]
+    }
+    .fluid-modal {
+        font-size: clamp(1.125rem, 0.9076rem + 1.087vi, 1.75rem) !important;
     }
 }

@@ -1,3 +1,5 @@
+import { Atom, AtomGradient } from '../components/SvgComponents'
+
 export const overview = {
     lead: ['An Exceptional Lookout.', "Let’s look at the bigger picture of Phase Changes and Water first"],
     label: 'Start Exploring',
@@ -15,7 +17,7 @@ export const water = {
         {
             label: 'Water Molecule',
             body: 'Water is two hydrogen atoms with partial positive charges bonded to a bent oxygen atom with negative charges.',
-            icon: ''
+            icon: [(<Atom/>), (<AtomGradient/>)]
         }
     ]
 }

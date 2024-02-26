@@ -10,7 +10,7 @@ export const footer = [
         ]
     },
     {
-        logoDescription: '',
+        logoDescription: 'Lorem ipsum dolor sit amet consectetur. Et gravida lectus non vitae. Sit lobortis quis placerat venenatis fames.',
         section: [
             {
                 title: 'Phase Changes',

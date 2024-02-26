@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { footer } from "../constants/footer"
 import DivBox from "./DivBox"
+import logo from '../assets/chemphase.png'
 
 function Footer() {
     return (
@@ -14,10 +15,10 @@ function Footer() {
                         ))}
                     </div>
                 </div>
-                <div className="p-12 flex flex-row justify-between">
+                <div className="p-12 flex flex-row justify-between flex-wrap">
                     <div className="space-y-1">
-                        <img src="" alt="" srcset="" />
-                        <div>{footer[1].logoDescription}</div>
+                        <img className="w-auto h-[10em]" src={logo} alt="" srcset="" />
+                        <div className="font-primary fluid-pr max-w-[15em]">{footer[1].logoDescription}</div>
                     </div>
                     {footer[1].section.map((i)=>(
                         <div className="space-y-5 fluid-pr font-primary w-max">

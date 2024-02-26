@@ -1,11 +1,12 @@
 import Lenis from '@studio-freight/lenis'
 import Header from '../components/Header'
 import quoteFrom from '../assets/mj-logo.png'
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import Trivia from '../components/TriviaBox'
 import DivBox from '../components/DivBox'
 import { explore, overview, phase, water } from '../constants/home'
 import { Link } from 'react-router-dom'
+import { BlueBlob, OrangeBlob } from '../components/SvgComponents'
 
 
 const Hexa = ({...props})=>(
@@ -52,51 +53,71 @@ export default function Home() {
                     <div className='fluid-pr font-primary font-semibold'><Link to={overview.to}>{overview.label}</Link></div>
                 </div>
             </DivBox>
-            <DivBox container='container' div='bg-[#F1F1F1]'>
-                <div>
-                    <div className='text-[#0A7D86] font-bold font-title fluid-title'>{water.title}</div>
-                    <div>
-                        <div className='font-semibold font-primary fluid-title text-white rounded-3xl after:rounded-2xl bg-no-repeat bg-center bg-cover relative after:waterCard after:bgOverlay p-14 pl-20 pb-28' style={{backgroundImage: `url(${water.card[0].img})`}}>
+            <DivBox container='xl:container px-3 sm:px-7 xl:px-20 space-y-28 py-[10em] relative' div='bg-[#F1F1F1] overflow-hidden'>
+                <div className='space-y-7 relative z-10'>
+                    <div className='text-[#0A7D86] font-bold font-title text-center fluid-title'>{water.title}</div>
+                    <div className='grid grid-rows-[min-content_1fr] gap-y-10'>
+                        <div className='font-semibold font-primary fluid-title text-white rounded-3xl after:rounded-2xl bg-no-repeat bg-center bg-cover relative after:waterCard after:bgOverlay p-10 pb-16 sm:p-14 sm:pl-20 sm:pb-28' style={{backgroundImage: `url(${water.card[0].img})`}}>
                             <div className='relative z-10'>{water.card[0].lead[0]}</div>
-                            <div className='relative z-10 max-w-[17em]'>{water.card[0].lead[1]}</div>
+                            <div className='relative z-10 max-w-[17em] opacity-75'>{water.card[0].lead[1]}</div>
                         </div>
-                        <div className=' font-semibold font-primary fluid-sub text-black rounded-3xl pl-20 p-14 pb-28 pt-20 bg-gradient-to-br from-white to-[#79ABAF] from-[50%] to-[145%]'>
-                            <div className='text-[#0A7D86]'>{water.card[1].label}</div>
-                            <div className='max-w-[17em]'>{water.card[1].body}</div>
+                        <div className=' font-semibold font-primary fluid-sub text-black rounded-3xl sm:pl-20 sm:p-14 sm:pb-28 sm:pt-20 p-10 py-20 pl-16 sm:py-16 bg-gradient-to-br from-white to-[#79ABAF] from-[50%] to-[145%] relative overflow-hidden'>
+                            <div className='text-[#0A7D86] relative z-10'>{water.card[1].label}</div>
+                            <div className='max-w-[17em] relative z-10 mt-4 sm:mt-0'>{water.card[1].body}</div>
+                            <div className="absolute right-[-5em] 2xl:right-14 h-max w-max top-5">
+                                {React.cloneElement(water.card[1].icon[0], {className: 'hidden md:block h-[10em] fill-[#0A7D86]'})}
+                            </div>
+                            <div className="absolute right-[-1em] lg:right-[-1em] xl:right-[1em] 2xl:right-[7.5em] h-max w-max bottom-[-3em]">
+                                {React.cloneElement(water.card[1].icon[1], {className: 'h-[8em] md:h-[10em] fill-[#0A7D86]'})}
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div>
-                    <div className='text-[#E36305] font-bold font-title fluid-title'>{phase.title}</div>
-                    <div className='font-semibold font-primary fluid-title bg-gradient-to-br rounded-3xl from-white to-[#B49781] from-[50%] to-[145%] p-14 w-max flex'><div className="max-w-[419px] mt-auto leading-tight">{phase.card[0].lead}</div></div>
-                    <div className='font-semibold font-primary fluid-sub bg-gradient-to-br rounded-3xl from-white to-[#B49781] from-[50%] to-[145%]'>
-                        <div className='text-[#E36305] max-w-[17em]'>{phase.card[1].label}</div>
-                        <div className='max-w-[17em]'>{phase.card[1].body}</div>
-                        <img src={phase.card[1].img} alt="" />
-                        {/* AN IMAGE HERE */}
+                <div className='space-y-7 relative z-10'>
+                    <div className='text-[#E36305] font-bold font-title fluid-title text-center'>{phase.title}</div>
+                    <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] grid-rows-2 sm:grid-rows-1 gap-10">
+                        <div className='font-semibold font-primary fluid-title bg-gradient-to-br rounded-3xl from-white to-[#B49781] from-[50%] to-[145%] sm:p-14 flex'><div className="xl:max-w-[419px] max-w-[350px] mt-auto leading-tight">{phase.card[0].lead}</div></div>
+                        <div className='font-semibold font-primary fluid-sub bg-gradient-to-br rounded-3xl from-white to-[#B49781] from-[50%] to-[145%] sm:p-14 sm:pl-20'>
+                            <div className='text-[#E36305] max-w-[17em]'>{phase.card[1].label}</div>
+                            <div className='max-w-[17em]'>{phase.card[1].body}</div>
+                            <img className='mx-auto w-[10em] mt-7' src={phase.card[1].img} alt="" />
+                            {/* AN IMAGE HERE */}
+                        </div>
                     </div>
+                </div>
+                <div className='absolute w-max h-max left-[-26em] top-[-50px]'>
+                    <BlueBlob className=" h-[73em]"/>
+                </div>
+                <div className='absolute w-max h-max bottom-[6em] right-[-20em]'>
+                    <OrangeBlob className=" h-[57em]"/>
                 </div>
             </DivBox>
             <Trivia isHome={true}/>
-            <DivBox container='container' div='bg-[#f1f1f1]'>
-                <div>
-                    <div>
+            <DivBox container='container sm:px-7 xl:px-20 relative' div='bg-[#f1f1f1] overflow-hidden'>
+                <div className='space-y-24 py-[10em]'>
+                    <div className='text-center'>
                         <div className='font-bold fluid-pr font-label uppercase text-[#00548B]'>{explore.label}</div>
                         <div className='font-bold font-title fluid-title'>{explore.title}</div>
                         <div className='font-semibold font-primary fluid-sub'>{explore.body}</div>
                     </div>
-                    <div>
+                    <div className='grid grid-cols-[repeat(auto-fit,minmax(max(40em),1fr))] gap-y-10 gap-x-7'>
                         {explore.card.map((i, index)=>(
-                            <div className='font-semibold font-primary fluid-title text-white rounded-3xl after:rounded-2xl bg-no-repeat bg-center bg-cover relative after:waterCard after:bgOverlay p-14 pl-20 pb-28 z-10 after:z-[-10] space-y-5' style={{backgroundImage: `url(${i.img})`}}>
-                                <div className='font-primary uppercase fluid-pr text-[#f1f1f1]'>{i.label}</div>
-                                <div className='font-title fluid-sub font-bold'>{i.title}</div>
-                                <div className='font-primary fluid-pr'>{i.body}</div>
+                            <div className={`font-primary fluid-title text-white rounded-3xl after:rounded-2xl bg-no-repeat bg-center bg-cover relative ${i.label.toUpperCase() == 'WATER' ? 'waterCardBlue' : 'waterCardOrange'} after:bgOverlay p-14 pl-16 pb-28 z-10 after:z-[-10] space-y-5 h-[13em]`} style={{backgroundImage: `url(${i.img})`}}>
+                                <div className='font-primary uppercase fluid-pr text-[#f1f1f1] font-semibold'>{i.label}</div>
+                                <div className='font-title fluid-sub font-bold max-w-[12em]'>{i.title}</div>
+                                <div className='font-primary fluid-pr font'>{i.body}</div>
                                 {/* BUTTON HERE */}
-                                <div className='text-[18px] uppercase font-primary mt-6 bg-primary rounded-xl p-2 px-4 w-max'>SHOW ME</div> 
+                                <div className='text-[18px] uppercase font-primary mt-6 bg-primary rounded-xl p-2 px-4 w-max font-bold'>SHOW ME</div> 
                             </div>
                         ))}
                     </div>
+                </div>
+                <div className='absolute w-max h-max right-[-47em] top-[-10em] rotate-[127.5deg]'>
+                    <BlueBlob className=" h-[70em]"/>
+                </div>
+                <div className='absolute w-max h-max bottom-[6em] left-[-20em] rotate[-61.91deg]'>
+                    <OrangeBlob className=" h-[57em]"/>
                 </div>
             </DivBox>
         </div>
