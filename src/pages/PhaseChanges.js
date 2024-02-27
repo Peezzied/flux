@@ -58,7 +58,7 @@ export default function PhaseChanges() {
         return controls.stop
         }, [xTranslation, width])
 
-    const isXl = useMediaQuery(`(min-width: ${sizes.xl})`)
+    const isXl = useMediaQuery(`(max-width: ${sizes.xl})`)
     return(
         <>
         <TopicHeader src={phase} data={headerData} name='phase' />
