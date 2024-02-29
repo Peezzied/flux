@@ -61,8 +61,6 @@ export default function PhaseChanges() {
         return controls.stop
     }, [xTranslation, width])
 
-    const isXl = useMediaQuery(`(min-width: ${sizes.xl})`)
-
     const [modalHead, setModalHead] = useState([])
     const [modalData, setModalData] = useState([])
     const [isOpen, setIsOpen] = useState(false)
@@ -83,7 +81,10 @@ export default function PhaseChanges() {
     //     })
     // }, [])
 
-    return (
+
+
+    const isXl = useMediaQuery(`(max-width: ${sizes.xl})`)
+    return(
         <>
             <TopicHeader src={phase} data={headerData} name='phase' />
             <DivBox div="bg-dark overflow-hidden" container='xl:container'>
