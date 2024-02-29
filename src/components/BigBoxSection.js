@@ -1,5 +1,6 @@
 import React from "react"
 import DivBox from "./DivBox"
+import GetInfo from "./Info"
 
 export default function BigBoxSection({background, data}){
     return(

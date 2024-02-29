@@ -83,12 +83,21 @@
     }
     .video {
         /* @apply absolute top-0 left-0 w-full h-full */
-        @apply aspect-video w-full
+        @apply aspect-video w-full overflow-hidden
     }
-    .waterGradient {
-        @apply bg-gradient-to-r from-[#17171B]/0 to-[#17171B] to-[70%]
+    .sectionOverlayRight {
+        @apply bg-gradient-to-r to-[#17171B]/0 from-[#17171B]/[97%] to-[190%] from-[30%]
+    }
+    .sectionOverlayLeft {
+        @apply bg-gradient-to-l to-[#17171B]/0 from-[#17171B]/[97%] to-[190%] from-[30%]
     }
     .fluid-modal {
         font-size: clamp(1.125rem, 0.9076rem + 1.087vi, 1.75rem) !important;
+    }
+    .phaseCard {
+        @apply bg-gradient-to-br from-[#00548B] to-[#E36305]/[50%]
+    }
+    .border-subtle {
+        @apply shadow-[0px_4px_18px_rgb(0_0_0_/_4%),0px_2.025px_7.84688px_rgba(0,0,0,.027),0px_0.8px_2.925px_rgb(0_0_0_/_2%),0px_0.175px_1.04062px_rgba(0,0,0,.013)]
     }
 }

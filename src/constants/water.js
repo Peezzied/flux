@@ -22,14 +22,14 @@ export const water = {
     label: 'DISCOVER',
     title: 'Water.',
     body: 'Water is also known as the "universal solvent". Why is it known as a universal solvent? Because water is capable of dissolving other substances than any liquid forms.',
-    video: (<iframe className='video' src="https://www.youtube-nocookie.com/embed/PXdbwMc4d0M?si=5XvCDbb2GRwAagsR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>)
+    video: (<iframe src="https://www.youtube-nocookie.com/embed/PXdbwMc4d0M?si=5XvCDbb2GRwAagsR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>)
 }
 
 export const properties = {
     label: 'Zoom in',
     title: 'Properties of Water',
     img: '',
-    video: (<iframe className="video" src="https://www.youtube.com/embed/0eNSnj4ZfZ8?si=jwuW4L7fR75c52Ux&autoplay=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>),
+    video: (<iframe src="https://www.youtube.com/embed/0eNSnj4ZfZ8?si=jwuW4L7fR75c52Ux&autoplay=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>),
     source: 'ChemTalk. https://chemistrytalk.org/properties-water-physical-chemical/',
     content: [
         'Water at molecular level.',
@@ -41,7 +41,7 @@ export const ice = {
     label: 'discover',
     title: 'Why Ice Floats?',
     body: 'Water is also known as the "universal solvent" Why is it known as a universal solvent? because water is capable of dissolving other substances than any liquid forms.',
-    video: (<iframe className='video' src="https://www.youtube-nocookie.com/embed/pSh8X-R9mxQ?si=O7CvVEJq_LVrhA8M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>),
+    video: (<iframe src="https://www.youtube-nocookie.com/embed/pSh8X-R9mxQ?si=O7CvVEJq_LVrhA8M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>),
     img: require('../assets/water/water.png')
 }
 

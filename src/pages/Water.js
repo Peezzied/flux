@@ -52,9 +52,9 @@ export default function Water() {
             <div className="text-white fluid-pr font-primary font-semibold max-w-[28em] float-right mt-56">Water is all around us. This makes up 71% of our earth's surface while 60% of water is in our bodies. Water is tasteless and colorless type of liquid.</div>
         </DivBox>
 
-        <VideoSection isBoxed={false} data={water} />
+        <VideoSection isBoxed={true} data={water} />
 
-        <VideoSection isBoxed={false} data={ice} isReversed={true} gradient='waterGradient' background={true}/>
+        <VideoSection isBoxed={true} data={ice} isReversed={true} background={true}/>
 
         <BigBoxSection data={conclusion} background={require('../assets/water/bigbox.png')}/>
         </>

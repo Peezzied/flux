@@ -5,7 +5,7 @@ import { Hygine } from "./SvgComponents";
 
 export default function Trivia({isHome=false}){
     return(
-    <DivBox container={`${isHome ? 'py-[3em] container' : 'grid grid-cols-1 lg:grid-cols-2 justify-items-center relative items-start'}`} div={`bg-dark ${isHome ? '' : ''}`}>
+    <DivBox container={`${isHome ? 'py-[3em] container' : 'grid grid-cols-1 lg:grid-cols-2 justify-items-center relative items-start'}`} div={`bg-dark ${isHome ? '' : ''} my-3`}>
         <div className={isHome ? `mx-auto max-w-[75em] relative ` : "w-full flex lg:justify-center justify-center"} >
             <div className={`sm:p-5 lg:px-24 sm:pb-10 ${isHome ? 'sm:pl-24' : 'my-[3em]'} p-16 space-y-3  inline-block w-full max-w-[38em]`}>
                 <Hygine className='h-9 fill-primary' />

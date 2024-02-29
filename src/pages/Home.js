@@ -1,4 +1,4 @@
-import Lenis from '@studio-freight/lenis'
+
 import Header from '../components/Header'
 import quoteFrom from '../assets/mj-logo.png'
 import React, { useEffect } from 'react'
@@ -32,14 +32,7 @@ function Quote(){
 }
 
 export default function Home() {
-    useEffect(()=>{
-        const lenis = new Lenis()
-        function raf(time) {
-            lenis.raf(time)
-            requestAnimationFrame(raf)
-        }
-        requestAnimationFrame(raf)
-    }, [])
+
     return(
         <div>
             <Header />
@@ -57,7 +50,7 @@ export default function Home() {
                 <div className='space-y-7 relative z-10'>
                     <div className='text-[#0A7D86] font-bold font-title text-center fluid-title'>{water.title}</div>
                     <div className='grid grid-rows-[min-content_1fr] gap-y-10'>
-                        <div className='font-semibold font-primary fluid-title text-white rounded-3xl after:rounded-2xl bg-no-repeat bg-center bg-cover relative after:waterCard after:bgOverlay p-10 pb-16 sm:p-14 sm:pl-20 sm:pb-28' style={{backgroundImage: `url(${water.card[0].img})`}}>
+                        <div className='font-semibold font-primary fluid-sub text-white rounded-3xl after:rounded-2xl bg-no-repeat bg-center bg-cover relative after:waterCard after:bgOverlay p-10 pb-16 sm:p-14 sm:pl-20 sm:pb-28' style={{backgroundImage: `url(${water.card[0].img})`}}>
                             <div className='relative z-10'>{water.card[0].lead[0]}</div>
                             <div className='relative z-10 max-w-[17em] opacity-75'>{water.card[0].lead[1]}</div>
                         </div>

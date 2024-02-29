@@ -170,3 +170,21 @@ export const Sparkles = ({...props})=>(
     </svg>
 
 )
+
+
+export const Info = ({...props})=>(
+    <svg {...props} viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g filter="url(#filter0_b_267_6)">
+        <path d="M255.917 511.542C114.854 511.542 0.5 397.186 0.5 256.125C0.5 115.063 114.854 0.708252 255.917 0.708252C396.978 0.708252 511.333 115.063 511.333 256.125C511.333 397.186 396.978 511.542 255.917 511.542ZM230.375 230.583V383.833H281.458V230.583H230.375ZM230.375 128.417V179.5H281.458V128.417H230.375Z" fill="#64748B" fill-opacity="0.50"/>
+        </g>
+        <defs>
+        <filter id="filter0_b_267_6" x="-49.5" y="-49.2917" width="610.833" height="610.833" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feGaussianBlur in="BackgroundImageFix" stdDeviation="25"/>
+        <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_267_6"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_267_6" result="shape"/>
+        </filter>
+        </defs>
+    </svg>
+
+)

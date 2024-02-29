@@ -5,7 +5,7 @@ import logo from '../assets/chemphase.png'
 
 function Footer() {
     return (
-        <DivBox container='container' div='bg-dark mt-3'>
+        <DivBox container='container' div='bg-dark mt-1'>
             <div className="divide-y-[1px] divide-[#34343A] text-white">
                 <div className="space-y-6 p-16">
                     <div className="fluid-sub font-title font-bold">{footer[0].title}</div>
