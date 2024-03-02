@@ -17,7 +17,7 @@ export const headingWaterData = [
         label: 'Gas'
     },
 ]
-
+export const waterHero = []
 export const water = {
     label: 'DISCOVER',
     title: 'Water.',

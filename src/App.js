@@ -30,12 +30,13 @@ const AppProvider = ({ children }) => {
   const [sharedState, setSharedState] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(null)
   const [changeStyle, setChangeStyle] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
   const [hidden, setHidden] = useState(false)
   const toggleMenu = () => { setIsMenuOpen(!isMenuOpen) }
   const containerRef = useRef(null)
 
   return (
-    <MyContext.Provider value={{ sharedState, setSharedState, containerRef, changeStyle, setChangeStyle, setHidden, hidden, setIsMenuOpen, isMenuOpen, toggleMenu }}>
+    <MyContext.Provider value={{ sharedState, setSharedState, containerRef, changeStyle, setChangeStyle, setHidden, hidden, setIsMenuOpen, isMenuOpen, toggleMenu, isOpen, setIsOpen }}>
       {children}
     </MyContext.Provider>
   );

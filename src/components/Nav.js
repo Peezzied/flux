@@ -3,7 +3,7 @@ import { Link, useMatch, useResolvedPath } from "react-router-dom"
 import { AnimatePresence, easeIn, easeInOut, motion, useAnimate, useInView, useMotionValueEvent, useScroll } from "framer-motion"
 import { menuItems } from "../constants/data"
 import ContentNav from "./ContentNav"
-import logo from '../assets/chemphase.png'
+import logo from '../assets/flux.png'
 import { BtnMenu, BtnX } from "./Hamburger"
 import { useSharedVals } from "../App"
 
@@ -50,9 +50,9 @@ export function NavFixed({getRef}) {
         <>
         <div
             ref={getRef}
-            className={'w-full absolute top-0 left-0 z-[50]'}
+            className={'  w-full absolute top-0 left-0 z-[50]'}
         >
-            <div className={'bg-slate-950/0 backdrop-blur-0 transition-all ease-in-out'}>
+            <div className={'bg-slate-950/0 backdrop-blur-0 transition-all ease-in-out max-w-[120em] mx-auto'}>
                 <div id="navContainer" layout className={"flex items-center mr-auto p-5 py-8 lg:py-11 lg:px-10"}>
                     <div className="w-1/2 justify-start flex lg:hidden">
                         <Link to='/#explore'>
@@ -136,8 +136,8 @@ export function NavAnimated({isAnimate=true, styleProp}) {
             className={'w-full fixed top-0 left-0 z-[50]'}
             style={styleProp}
         >
-            <div className={'bg-slate-950/[0.6] backdrop-blur-[20px] transition-all'}>
-                <div id="navContainer" layout className={"mx-auto flex items-center mr-auto p-5 lg:py-[1rem] py-4 px-8 lg:px-10"}>
+            <div className={'bg-slate-950/[0.6] backdrop-blur-[20px] transition-all '}>
+                <div id="navContainer" layout className={"mx-auto flex items-center mr-auto p-5 lg:py-[1rem] py-4 px-8 lg:px-10 max-w-[120em] px-auto"}>
                     <div className="w-1/2 justify-start flex lg:hidden">
                         <Link to='/#explore'>
                             <svg id="btnExplore" className={"h-auto w-[1.7rem] text-gray-50 transition-all"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM16.5 7.5L14 14L7.5 16.5L10 10L16.5 7.5ZM12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"></path></svg>
@@ -195,6 +195,7 @@ export function Nav(){
     const { setChangeStyle, changeStyle } = useSharedVals()
     const {isMenuOpen} = useSharedVals()
     const {toggleMenu} = useSharedVals()
+    const {isOpen} = useSharedVals
 
     useMotionValueEvent(pageScroll, "change", (latest) => {
         const previous = scrollY.getPrevious();
@@ -213,10 +214,10 @@ export function Nav(){
         }
     })
 
-    useEffect(()=>{console.log('scroll',scrollY)}, [scrollY])
-    useEffect(()=>{
-        console.log('view', isInView, nav)
-    }, [isInView])
+    // useEffect(()=>{console.log('scroll',scrollY)}, [scrollY])
+    // useEffect(()=>{
+    //     console.log('view', isInView, nav)
+    // }, [isInView])
     return(
         <>
             <NavFixed getRef={nav}/>

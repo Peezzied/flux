@@ -92,7 +92,7 @@ export default function ContentNav({toggleMenu, changeStyle}){
         }
     }
     return(
-        <div className="w-full h-full fixed top-0 left-0 z-[100] flex text-upper lowercase justify-end">
+        <div className="w-full h-full fixed top-0 left-0 z-[100] flex text-upper normal-case justify-end">
             <motion.div key={3} variants={backDrop} initial="initial" animate="visible" exit="end"             transition={{
                 duration: 0.5,
                 type: 'tween'
@@ -113,7 +113,7 @@ export default function ContentNav({toggleMenu, changeStyle}){
                                 return(
                                     i.name !== 'explore' &&
                                     <div className="overflow-hidden w-full">
-                                        <motion.div variants={containerVars} className="p-3 w-full bg-gradient-to-bl from-slate-900 to-slate-900/[0.2] from-10% via-30% to-90% rounded-xl pr-5">
+                                        <motion.div variants={containerVars} className="p-3 w-full bg-gradient-to-bl from-slate-900 to-slate-900/[0.2] from-10% via-30% to-90% rounded-xl pr-5 normal-case">
                                             <CustomLink to={i.route}>{i.name}</CustomLink>
                                         </motion.div>
                                     </div>

@@ -61,6 +61,9 @@
     .earthGradient {
         @apply bg-gradient-to-r from-[#17171B]/0 to-[#17171B]/[83%] from-[17%] to-[67%]
     }
+    .earthGradientTop {
+        @apply bg-gradient-to-t from-[#17171B]/0 to-[#17171B]/[83%] from-[17%] to-[67%]
+    }
     .bigBoxGradient {
         @apply bg-gradient-to-b from-[#17171B] to-[#17171B]/[0] to-[1000%] from-[30%]
     }
@@ -94,10 +97,19 @@
     .fluid-modal {
         font-size: clamp(1.125rem, 0.9076rem + 1.087vi, 1.75rem) !important;
     }
+    .fluid-pr2 {
+        font-size:  clamp(1.25rem, 1.163rem + 0.4348vi, 1.5rem) !important;
+    }
+    .fluid-title-xl {
+        font-size: clamp(3.5rem, 2.6304rem + 4.3478vi, 6rem) !important;
+    }
     .phaseCard {
         @apply bg-gradient-to-br from-[#00548B] to-[#E36305]/[50%]
     }
     .border-subtle {
         @apply shadow-[0px_4px_18px_rgb(0_0_0_/_4%),0px_2.025px_7.84688px_rgba(0,0,0,.027),0px_0.8px_2.925px_rgb(0_0_0_/_2%),0px_0.175px_1.04062px_rgba(0,0,0,.013)]
+    }
+    body {
+        min-width: 412px;
     }
 }
