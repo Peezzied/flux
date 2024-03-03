@@ -12,7 +12,7 @@ import QuizCTA from './components/QuizCTA';
 import Lenis from '@studio-freight/lenis';
 
 const Routing = () => {
-  return (
+  return (assssssssssssssssssssssssssssssssssda
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/about' element={<About />} />
