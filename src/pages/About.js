@@ -7,19 +7,24 @@ import { Arrow, Atom, ExternalLink, ToLink } from "../components/SvgComponents";
 import logo from "../assets/flux.png"
 import dost from "../assets/dost.svg"
 import Reveal, { Reveals } from "../components/RevealAnimate";
+import { HashLink } from "react-router-hash-link";
 
 function Section({ isReversed, data }) {
     return (
         <div className={`flex ${isReversed ? 'lg:flex-row-reverse ' : 'lg:flex-row'} flex-col items-center sm:items-start sm:justify-around gap-y-6`}>
             <div className="w-[17em]"><img className="w-full" src={data.img} alt="" /></div>
             <div className="max-w-[30em] flex flex-col justify-center">
-                <div className={`fluid-title font-title font-bold text-primary`}>{data.title}</div>
-                <Reveal variants={{
+                <Reveals variants={{
                     start: { y: 100, opacity: 0 },
                     visible: { y: 0, opacity: 1 }
                 }}>
-                    <div className={`fluid-pr font-primary  `}>{data.body}</div>
-                </Reveal>
+                    <Reveal>
+                        <div className={`fluid-title font-title font-bold text-primary`}>{data.title}</div>
+                    </Reveal>
+                    <Reveal>
+                        <div className={`fluid-pr font-primary  `}>{data.body}</div>
+                    </Reveal>
+                </Reveals>
             </div>
         </div>
     )
@@ -64,7 +69,7 @@ export default function About() {
                             <Reveal>
                                 <div className="max-w-[20em] divide-y-2 divide-solid divide-[#C0C0C0] justify-self-center h-max">
                                     {front[1].link.map((i) => (
-                                        <div className="grid grid-cols-[1fr_auto]">
+                                        <HashLink scroll to={i.to} className="grid grid-cols-[1fr_auto]">
                                             <div className="space-y-2 py-7">
                                                 <div className="text-white text-[24px] font-semibold leading-tight ">{i.title}</div>
                                                 <div className="text-[#C0C0C0] fluid-pr font-semibold">{i.body}</div>
@@ -72,7 +77,7 @@ export default function About() {
                                             <div className="my-auto">
                                                 <Arrow className="fill-white rotate-180 w-14" />
                                             </div>
-                                        </div>
+                                        </HashLink>
                                     ))}
                                 </div>
                             </Reveal>

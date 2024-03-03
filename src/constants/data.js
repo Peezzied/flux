@@ -66,7 +66,7 @@ export const headerData = [
         subheading: 'A Flux 5 Special sailing through the scientific odyssey of Phase Changes from the interaction between energy and matter while unraveling the Structure and Properties of water along the voyage.',
         start: {
             label: 'Start Journey',
-            to: '#'
+            to: '#overview'
         }
     },
     {

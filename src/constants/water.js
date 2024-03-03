@@ -1,4 +1,7 @@
 import { Frozen, Hygine, Temp, Drop, Gauge, WaterMolecule } from '../components/SvgComponents'
+import LiteYouTubeEmbed from 'react-lite-youtube-embed'
+import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css'
+
 
 export const headingWaterData = [
     {
@@ -33,14 +36,14 @@ export const water = {
     label: 'DISCOVER',
     title: 'Water.',
     body: 'Water is also known as the "universal solvent". Why is it known as a universal solvent? Because water is capable of dissolving other substances than any liquid forms.',
-    video: (<iframe src="https://www.youtube-nocookie.com/embed/PXdbwMc4d0M?si=5XvCDbb2GRwAagsR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>)
+    video: (<LiteYouTubeEmbed id='PXdbwMc4d0M'/>)
 }
 
 export const properties = {
     label: 'Zoom in',
     title: 'Properties of Water',
     img: (<WaterMolecule/>),
-    video: (<iframe src="https://www.youtube.com/embed/0eNSnj4ZfZ8?si=jwuW4L7fR75c52Ux&autoplay=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>),
+    video: (<LiteYouTubeEmbed id='0eNSnj4ZfZ8'/>),
     source: 'ChemTalk. https://chemistrytalk.org/properties-water-physical-chemical/',
     content: [
         'Water at molecular level.',
@@ -58,7 +61,7 @@ export const ice = {
     label: 'discover',
     title: 'Why Ice Floats?',
     body: 'Water is also known as the "universal solvent" Why is it known as a universal solvent? because water is capable of dissolving other substances than any liquid forms.',
-    video: (<iframe src="https://www.youtube-nocookie.com/embed/pSh8X-R9mxQ?si=O7CvVEJq_LVrhA8M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>),
+    video: (<LiteYouTubeEmbed id='pSh8X-R9mxQ'/>),
     img: require('../assets/water/water.png')
 }
 

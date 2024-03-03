@@ -1,4 +1,6 @@
 import { Gas, Hygine, Ice, IceCream, Snow, Temp } from "../components/SvgComponents";
+import LiteYouTubeEmbed from 'react-lite-youtube-embed'
+import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css'
 
 export const phaseDarkSection = [
     {
@@ -42,7 +44,14 @@ export const properties = [
     {
         title: 'Zoom In.',
         description: 'Watch the video to further expand your understanding.',
-        video: (<iframe className="video rounded-l-[35px]" src="https://www.youtube-nocookie.com/embed/CMUmQRgJAo0?si=10PSN9SeoLd2us47" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>)
+        video: {
+            title: 'Phases of Matter & Phase Changes',
+            modal: [
+                {
+                    video: (<LiteYouTubeEmbed id="CMUmQRgJAo0"/>)
+                }
+            ]
+        }
     },
     [
         {
@@ -55,7 +64,7 @@ export const properties = [
             modal: [
                 {
                     lead: 'Freezing is the process that causes a substance to change from a liquid to a solid. Freezing occurs when the molecules of a liquid slow down enough that their attractions cause them to arrange themselves into fixed positions as a solid.',
-                    video: (<iframe src="https://www.youtube-nocookie.com/embed/zSAcQpIrOSA?si=7-EygKoT3-VTByD1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>)
+                    video: (<LiteYouTubeEmbed id="zSAcQpIrOSA" />)
                 },
                 {
                     lead: 'Freezing is the process that causes a substance to change from a liquid to a solid. Freezing occurs when the molecules of a liquid slow down enough that their attractions cause them to arrange themselves into fixed positions as a solid.'
@@ -104,7 +113,7 @@ export const phaseChange = {
     label: 'Discover',
     title: 'Visualizing Phase Change',
     body: 'A stage layout is an illustration made use of in physical chemistry, design, mineralogy together with products scientific research. It shows the problems under which distinctive stages of a material coexist in stability offering useful understandings right into stage shifts together with stage security throughout various temperature level plus stress arrays.',
-    video: (<iframe  src="https://www.youtube.com/embed/zn8MzCiVCCc?si=pLdwADuKVPYoYHqh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>),
+    video: (<LiteYouTubeEmbed id="zn8MzCiVCCc"/>),
     img: require('../assets/trail.png')
 }
 
@@ -129,7 +138,7 @@ export const curve = {
     label: 'Discover',
     title: 'Heating Curve',
     body: 'The home heating contour is a visual depiction of the connection in between warmth input together with the temperature level of a compound. It can be utilized to establish the melting factor and also the boiling factor of a compound.',
-    video: (<iframe  src="https://www.youtube.com/embed/hklSXPv2vrQ?si=lMUClcxqcu4pn_jJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>),
+    video: (<LiteYouTubeEmbed id="hklSXPv2vrQ"/>),
     img: require('../assets/volcano.png')
 }
 

@@ -5,14 +5,14 @@ import { references } from "../constants/references";
 import DivBox from "../components/DivBox";
 import { ExternalLink } from "../components/SvgComponents";
 
-function Medias({ data, name }) {
+function Medias({ data }) {
     return (
         <div className="space-y-3 ">
-            <div className="fluid-sub max-w-4xl px-6 mx-auto text-[#4B4B4B] font-semibold font-title">{name}</div>
-            <div className="overflow-x-scroll">
+            <div className="fluid-sub max-w-4xl px-6 mx-auto text-[#4B4B4B] font-semibold font-title">Medias</div>
+            <div className="ml-[calc(((100vw-896px)/2)+24px)] overflow-x-auto" >
                 <div className="grid grid-cols-[max-content] grid-flow-col gap-3 ">
                     {data.map((i) => (
-                        <div className="w-[35em] relative group overflow-hidden cursor-pointer">
+                        <div className="w-[30em] relative group overflow-hidden cursor-pointer">
                             <img className="w-full object-center object-cover" src={i.img} alt="" />
                             <a href={i.to} className="absolute bottom-6 right-6 z-20 w-10 group-hover:translate-y-0 translate-y-16 transition-transform duration-500 ease-out" role="button">
                                 <ExternalLink className="fill-white" />
@@ -33,7 +33,6 @@ function Section({ data }) {
             <div className="space-y-12 my-24 lg:my-32">
 
                 <Medias name="Images" data={data.images} />
-                <Medias name="Videos" data={data.videos} />
                 <div className="space-y-3 max-w-4xl px-6 mx-auto">
                     <div className="fluid-sub text-[#4B4B4B] font-semibold font-title">Sources</div>
                     <div className=" border-2 border-[#E5E5E5] divide-y-2 divide-[#E5E5E5] rounded-[20px]">
@@ -59,8 +58,10 @@ export default function References() {
     return (
         <>
             <TopicHeader src={reference} data={headerData} name='references' img={true} size="fluid-title-xl" />
-            <Section data={references[0]} />
-            <Section data={references[1]} />
+            <div className="space-y-16">
+                <Section data={references[0]} />
+                <Section data={references[1]} />
+            </div>
         </>
     )
 }//3w

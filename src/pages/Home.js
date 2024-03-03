@@ -21,24 +21,20 @@ function Quote() {
     return (
         <div className="min-h-[27em] grid items-center bg-[#17171b] relative overflow-hidden">
             <div className="text-center container grid justify-center justify-items-center px-10">
-                <Reveals increment={0.25} variants={{
+                <Reveal variants={{
                     start: { y: 75, opacity: 0 },
                     visible: { y: 0, opacity: 1 }
                 }}>
-                    <Reveal>
-                        <div className='quotes font-label fluid-pr font-bold text-sky-600 uppercase'>Chemistry Says...</div>
-                    </Reveal>
-                    <Reveal>
-                        <div className='quotes font-title font-bold fluid-sub text-gray-200 mt-7'>"Old bond break when new ones are formed."</div>
-                    </Reveal>
-                </Reveals>
-                <div className='quotes mt-5 w-1/2 border-t-[1px] border-gray-500'><img src={quoteFrom} alt="" className='m-8 w-40 h-auto mx-auto' /></div>
+                    <div className='quotes font-label fluid-pr font-bold text-sky-600 uppercase'>Chemistry Says...</div>
+                    <div className='quotes font-title font-bold fluid-sub text-gray-200 mt-7 overflow-hidden'>"Old bond break when new ones are formed."</div>
+                    <div className='quotes mt-5  border-t-[1px] border-gray-500'><img src={quoteFrom} alt="" className='m-8 w-40 h-auto mx-auto' /></div>
+                </Reveal>
                 <div className="absolute h-full w-[850px] md:w-[1024px] lg:w-[1280px] xl:w-[1536px] top-0 z-10">
                     <Hexa className="h-auto w-96 text-[#202026] absolute bottom-[-157px] left-[-80px] rotate-180" />
                     <Hexa className="h-auto w-96 text-[#202026] absolute top-[-171px] right-[-80px] rotate-6" />
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
@@ -69,7 +65,7 @@ export default function Home() {
                     </HashLink>
                 </div>
             </DivBox>
-            <DivBox container='max-w-6xl mx-auto space-y-28 lg:py-[10em] py-[7em] relative' div='sm:bg-[#F1F1F1] overflow-hidden sm:bg-none bg-gradient-to-t from-white to-[#5A97BF] from-[27%] to-[200%]'>
+            <DivBox container='max-w-6xl mx-auto space-y-28 lg:py-[10em] py-[7em] relative' div='sm:bg-[#F1F1F1] overflow-hidden sm:bg-none bg-gradient-to-t from-white to-[#5A97BF] from-[27%] to-[200%]' id="overview">
                 <div className='space-y-10 sm:space-y-6  relative z-10 '>
                     <div className='mx-5 bg-gradient-to-br text-transparent w-1em from-[#3a6164] to-[#00c3ff] to-[170%] bg-clip-text font-bold font-title sm:text-center fluid-title leading-tight'>{water.title}</div>
                     <div className='mx-5 grid grid-rows-[min-content_1fr] gap-y-3 sm:gap-y-6'>
@@ -78,9 +74,9 @@ export default function Home() {
                             visible: { y: 0, opacity: 1 }
                         }}>
                             <Reveal>
-                                <div className='border-subtle font-semibold font-primary fluid-sub text-white rounded-xl sm:rounded-3xl after:rounded-2xl bg-no-repeat bg-center bg-cover relative after:waterCardBlue  after:bgOverlay p-10 pb-16 sm:p-14 sm:pl-20 sm:pb-28' style={{ backgroundImage: `url(${water.card[0].img})` }}>
-                                    <div className='relative z-10'>{water.card[0].lead[0]}</div>
-                                    <div className='relative z-10 max-w-[17em] opacity-75'>{water.card[0].lead[1]}</div>
+                                <div className='border-subtle font-semibold font-primary fluid-sub text-white rounded-xl sm:rounded-3xl after:rounded-2xl bg-no-repeat bg-center bg-cover relative waterCardBlue after:bgOverlay after:z-[-10] z-10 p-10 pb-16 sm:p-14 sm:pl-20 sm:pb-28' style={{ backgroundImage: `url(${water.card[0].img})` }}>
+                                    <div >{water.card[0].lead[0]}</div>
+                                    <div className=' max-w-[17em] opacity-75 font-medium'>{water.card[0].lead[1]}</div>
                                 </div>
                             </Reveal>
                             <Reveal>
@@ -101,16 +97,16 @@ export default function Home() {
 
                 <div className='space-y-10 sm:space-y-6  relative z-10'>
                     <div className='mx-5 bg-gradient-to-br text-transparent from-[#E36305] to-[#BC0202] to-[300%] bg-clip-text font-bold font-title fluid-title sm:text-center leading-tight'>{phase.title}</div>
-                    <div className="mx-5 grid grid-cols-1 lg:grid-cols-[auto_1fr] grid-rows-1 sm:grid-rows-2 sm:gap-6 gap-3">
+                    <div className="mx-5 grid grid-cols-1 lg:grid-cols-[auto_1fr] grid-rows-1 sm:gap-6 gap-3">
                         <Reveals increment={0.15} variants={{
                             start: { y: 100, opacity: 0 },
                             visible: { y: 0, opacity: 1 }
                         }}>
-                            <Reveal>
+                            <Reveal >
                                 <div className='border-subtle font-semibold font-primary fluid-title bg-gradient-to-br rounded-xl sm:rounded-3xl from-white to-[#B49781] from-[50%] to-[145%] p-10 sm:p-14 flex'><div className="xl:max-w-[419px] max-w-[350px] mt-auto leading-tight">{phase.card[0].lead}</div></div>
                             </Reveal>
-                            <Reveal>
-                                <div className='border-subtle font-semibold font-primary fluid-modal bg-gradient-to-br rounded-xl sm:rounded-3xl from-white to-[#B49781] from-[50%] to-[145%] p-10 sm:py-10 sm:px-16'>
+                            <Reveal style='h-full'>
+                                <div className='border-subtle font-semibold font-primary fluid-modal bg-gradient-to-br rounded-xl sm:rounded-3xl from-white to-[#B49781] from-[50%] to-[145%] p-10 sm:py-10 sm:px-16 h-full'>
                                     <div className='text-[#E36305] max-w-[17em]'>{phase.card[1].label}</div>
                                     <div className='max-w-[17em]'>{phase.card[1].body}</div>
                                     <img className='mx-auto w-[10em] mt-7' src={phase.card[1].img} alt="" />
@@ -136,7 +132,7 @@ export default function Home() {
                         <div className='font-semibold font-primary fluid-modal mt-6 leading-tight'>{explore.body}</div>
                     </div>
                     <div className='grid sm:grid-cols-2 grid-rows-subgrid lg:gap-y-10 gap-2 lg:gap-x-7'>
-                        <Reveals increment={0.15} variants={{
+                        <Reveals variants={{
                             start: { y: 75, opacity: 0 },
                             visible: { y: 0, opacity: 1 }
                         }}>

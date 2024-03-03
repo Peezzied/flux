@@ -45,28 +45,28 @@ export const explore = {
             label: 'Water',
             title: 'Wondering Why Ice Floats?',
             body: 'let’s delve into the reason of why ice floats on water. ',
-            to: '/water/#ice',
+            to: '/water#ice',
             img: require('../assets/home/ice.png')
         },
         {
             label: 'Phase changes',
             title: 'Why Phase Change Happens?',
-            body: '',
-            to: '',
+            body: '/phase-changes#why',
+            to: '/phase-changes#why',
             img: require('../assets/home/atom.png')
         },
         {
             label: 'phase changes',
             title: 'The Processes of Phase Changes',
-            body: '',
-            to: '',
+            body: '/phase-changes#processes',
+            to: '/phase-changes#processes',
             img: require('../assets/home/phase.png')
         },
         {
             label: 'water',
             title: 'The Science behind Water',
             body: 'taking a closer look on what makes water a water.',
-            to: '',
+            to: '/water#structure',
             img: require('../assets/home/fall.png')
         }
     ]

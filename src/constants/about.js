@@ -9,11 +9,12 @@ export const front = [
         link: [
             {
                 title: 'Phase Changes',
-                body: 'lorem ipsum dolor amet'
+                body: 'lorem ipsum dolor amet',
+                to: '/phase-changes'
             },
             {
                 title: 'Structure and Properties of Water',
-                body: 'lorem ipsum dolor amet'
+                body: '/water',
             },
         ]
     },

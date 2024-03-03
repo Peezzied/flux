@@ -7,16 +7,17 @@ import DivBox from "../components/DivBox"
 import { HeadingBottom } from "./Water"
 import VideoSection from "../components/VideoSection"
 import { headerData } from "../constants/data"
-import { animate, motion, useMotionValue } from "framer-motion"
+import { AnimatePresence, animate, motion, useMotionValue } from "framer-motion"
 import useMeasure from "react-use-measure"
 import { useEffect } from "react"
 
 import { sizes, useMediaQuery } from "../constants/utility"
 import Modals, { Modal } from "../components/Modal"
 import { Sparkles } from "../components/SvgComponents"
-import videoPhoto from "../assets/phase/video.svg"
+import videoPhoto from "../assets/phase/play.png"
 import Trivia from "../components/TriviaBox"
 import { useSharedVals } from "../App"
+import BigBoxSection from "../components/BigBoxSection"
 
 
 
@@ -88,7 +89,7 @@ export default function PhaseChanges() {
     return (
         <>
             <TopicHeader src={phase} data={headerData} name='phase' size="fluid-title-xl" />
-            <DivBox container='max-w-full 2xl:container' div='bg-gradient-to-b from-white to-[#5A97BF] from-[27%] to-[200%] py-24 pb-52 sm:pb-24'>
+            <DivBox container='max-w-full 2xl:container' div='bg-gradient-to-b from-white to-[#5A97BF] from-[27%] to-[200%] py-24 pb-52 sm:pb-24' id='why'>
                 <div className="grid sm:px-7 xl:px-20  grid-rows-[auto_1fr] lg:grid-cols-2 gap-x-10 lg:gap-y-28">
                     <div className=" mx-5 col-span-3 lg:col-span-1 h-max">
                         <div className="text-primary font-label font-bold fluid-pr uppercase">{properties[0].label}</div>
@@ -106,7 +107,7 @@ export default function PhaseChanges() {
                             visible: { y: 0, opacity: 1 }
                         }}>
                             <div className="grid grid-cols-[1fr_auto] bg-[#f4f7f8] drop-shadow-sm sm:rounded-[35px] rounded-br-none rounded-3xl overflow-hidden sm:rounded-br-none h-max">
-                                <div className=" max-w-full h-full"><img className="h-full w-full object-cover" src={videoPhoto} alt="" /></div>
+                                <div className=" max-w-full h-full cursor-pointer" onClick={()=>{openModal(properties[1].video.modal, properties[1].video.title)}}><img loading="lazy" className="h-full w-full object-cover" src={videoPhoto} alt="" /></div>
                                 <div className="p-5 sm:p-10 max-w-max grid items-center">
                                     <div className="max-w-max h-max">
                                         <div className="fluid-pr font-primary font-bold max-w-max">{properties[1].title}</div>
@@ -127,16 +128,18 @@ export default function PhaseChanges() {
                         ))}
                     </div>
                 </div>
+                <AnimatePresence mode="wait">
 
-                {isOpen && <Modals head={modalHead} close={closeModal}>
-                    {modalData.map((i) =>
-                        (<Modal img={i.img} video={i.video} label={i.label} icon={i.icon}>{i.lead}</Modal>)
-                    )}
-                </Modals>}
+                    {isOpen && <Modals head={modalHead} close={closeModal}>
+                        {modalData.map((i) =>
+                            (<Modal img={i.img} video={i.video} label={i.label} icon={i.icon}>{i.lead}</Modal>)
+                        )}
+                    </Modals>}
+                </AnimatePresence>
             </DivBox>
             <VideoSection isBoxed={true} data={phaseChange} background={true} />
             <Trivia />
-            <DivBox container='max-w-6xl mx-auto' div='bg-gradient-to-b from-white to-[#5A97BF] from-[27%] to-[200%]'>
+            <DivBox container='max-w-6xl mx-auto' div='bg-gradient-to-b from-white to-[#5A97BF] from-[27%] to-[200%]' id='processes'>
                 <div className="space-y-14 sm:space-y-24 py-[6em] lg:py-[10em]   ">
                     <div className="sm:text-center relative max-w-max sm:mx-auto mx-5">
                         <div className=" h-max w-max absolute top-14 md:top-7 md:rotate-0 -rotate-45 -left-14 md:-left-16 lg:top-5 lg:-left-28 xl:-left-36 xl:top-0 sm:block hidden">
@@ -152,9 +155,9 @@ export default function PhaseChanges() {
                     <div className=" grid gap-10 sm:gap-5 ">
                         <div className="mx-5 grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-5 gap-y-1">
                             <Reveals increment={0.15} variants={{
-                            start: {y: 100, opacity: 0},
-                            visible: {y:0, opacity: 1}
-                        }}>
+                                start: { y: 100, opacity: 0 },
+                                visible: { y: 0, opacity: 1 }
+                            }}>
                                 {diagram.cards.map((i, index) => (
                                     <Reveal>
                                         <div className="rounded-2xl bg-[#f2f6f8] lg:p-10 lg:px-14 p-5 sm:p-7 px-7 sm:px-10 space-y-2 border-2 border-[#eaeff1]">
@@ -166,8 +169,8 @@ export default function PhaseChanges() {
                             </Reveals>
                         </div>
                         <Reveal variants={{
-                            start: {y: 100, opacity: 0},
-                            visible: {y:0, opacity: 1}
+                            start: { y: 100, opacity: 0 },
+                            visible: { y: 0, opacity: 1 }
                         }}>
                             <div className="sm:mx-5 order-first sm:order-last sm:rounded-[18px] sm:border-2 border-y-2 border-[rgba(0,0,0,0.1)] border-subtle overflow-hidden"><img src={diagram.img} alt="" /></div>
                         </Reveal>
@@ -176,6 +179,7 @@ export default function PhaseChanges() {
                 </div>
             </DivBox>
             <VideoSection isBoxed={true} data={curve} isReversed={true} background={true} />
+            {/* <BigBoxSection /> */}
         </>
     )
 }

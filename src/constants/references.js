@@ -23,28 +23,7 @@ export const references = [
                 to: ''
             },
         ],
-        videos: [
-            {
-                img: require('../assets/about.jpg'),
-                to: ''
-            },
-            {
-                img: require('../assets/about.jpg'),
-                to: ''
-            },
-            {
-                img: require('../assets/about.jpg'),
-                to: ''
-            },
-            {
-                img: require('../assets/about.jpg'),
-                to: ''
-            },
-            {
-                img: require('../assets/about.jpg'),
-                to: ''
-            },
-        ],
+
         sources: [
             {
                 title: 'Lorem Ipsum',
@@ -82,28 +61,7 @@ export const references = [
                 to: ''
             },
         ],
-        videos: [
-            {
-                img: require('../assets/about.jpg'),
-                to: ''
-            },
-            {
-                img: require('../assets/about.jpg'),
-                to: ''
-            },
-            {
-                img: require('../assets/about.jpg'),
-                to: ''
-            },
-            {
-                img: require('../assets/about.jpg'),
-                to: ''
-            },
-            {
-                img: require('../assets/about.jpg'),
-                to: ''
-            },
-        ],
+
         sources: [
             {
                 title: 'Lorem Ipsum',

@@ -19,15 +19,13 @@ export default function Reveal({ children, style, delay, variants = viewVars, ..
     }, [isView, mainControls])
 
     return (
-        <motion.div {...props} ref={view} className={`${style} `}>
-            <motion.div
-                variants={variants}
-                initial="start"
-                animate={mainControls}
-                transition={{ duration: 0.5, delay: delay }}
-            >
-                {children}
-            </motion.div>
+        <motion.div {...props} ref={view} className={`${style} `} variants={variants}
+            initial="start"
+            animate={mainControls}
+            transition={{ duration: 0.5, delay: delay }}>
+
+            {children}
+
         </motion.div>
     )
 }
@@ -45,7 +43,7 @@ export function Reveals({ children, increment, variants }) {
     );
 }
 
-export function RevealImage({src, delay, variants, ...props}){
+export function RevealImage({ src, delay, variants, ...props }) {
     const view = useRef(null)
     const isView = useInView(view, { once: true })
     const mainControls = useAnimation()
@@ -58,7 +56,7 @@ export function RevealImage({src, delay, variants, ...props}){
 
         }
     }, [isView, mainControls])
-    return(
+    return (
         <motion.img variants={variants}
             ref={view}
             initial="start"

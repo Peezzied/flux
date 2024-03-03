@@ -9,7 +9,7 @@ export default function BigBoxSection({ background, data }) {
             <div className="grid text-white grid-cols-1 md:grid-cols-2 fluid-pr py-[7em] gap-y-16 gap-x-10 mx-auto max-w-[63em] px-[2em] h-max">
                 <div className="grid content-start grid-rows-[auto_33em] gap-y-10 md:gap-y-0 ">
                     <div className="max-w-[35rem] space-y-3 md:min-h-[24rem]">
-                        <Reveals increment={0.15} variants={{
+                        <Reveals variants={{
                             start: { y: 100, opacity: 0 },
                             visible: { y: 0, opacity: 1 }
                         }}>
@@ -33,7 +33,7 @@ export default function BigBoxSection({ background, data }) {
 
                 <div className="grid content-start grid-rows-[auto_33em] gap-y-10 md:gap-y-0 h-max">
                     <div className="max-w-[35rem] space-y-3 md:min-h-[24rem]">
-                        <Reveals increment={0.15} variants={{
+                        <Reveals variants={{
                             start: { y: 100, opacity: 0 },
                             visible: { y: 0, opacity: 1 }
                         }}>
