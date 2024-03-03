@@ -42,7 +42,7 @@ const AppProvider = ({ children }) => {
   );
 };
 
-// Step 3: Create a custom hook to consume the context
+
 export const useSharedVals = () => {
   const context = useContext(MyContext);
   if (!context) {

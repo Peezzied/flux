@@ -1,9 +1,9 @@
 import { Atom, AtomGradient } from '../components/SvgComponents'
 
 export const overview = {
-    lead: ['An Exceptional Lookout.', "Let’s look at the bigger picture of Phase Changes and Water first"],
+    lead: ['An Exceptional Lookout.', "Let’s have the bigger picture of Phase Changes and Water first."],
     label: 'Start Exploring',
-    to: '',
+    to: '/#explore',
     img: require('../assets/blue-hero.jpg')
 }
 
@@ -45,7 +45,7 @@ export const explore = {
             label: 'Water',
             title: 'Wondering Why Ice Floats?',
             body: 'let’s delve into the reason of why ice floats on water. ',
-            to: '',
+            to: '/water/#ice',
             img: require('../assets/home/ice.png')
         },
         {

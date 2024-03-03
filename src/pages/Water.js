@@ -6,10 +6,11 @@ import { headerData } from "../constants/data";
 import React from "react";
 import { Drop, Frozen, Gauge } from "../components/SvgComponents";
 import DivBox from "../components/DivBox";
-import { conclusion, ice, water } from "../constants/water";
+import { conclusion, ice, properties, water, waterHero } from "../constants/water";
 import VideoSection from "../components/VideoSection";
 import QuizCTA from "../components/QuizCTA";
 import BigBoxSection from "../components/BigBoxSection";
+import { TextFocus } from "../components/TextFocus";
 
 export function HeadingBottom({ children, label, svg, ...props }) {
     return (
@@ -48,18 +49,20 @@ export default function Water() {
                     </Reveals>
                 </div>
             </DivBox>
-            <DivBox>
-                <div>
-                    <div>
-                        <div></div>
-                        <div></div>
+            <DivBox container='container'>
+                <div className="py-28 px-6">
+                    <div className="text-start lg:text-center">
+                        <div className="fluid-pr font-label font-bold text-primary uppercase">{properties.label}</div>
+                        <div className="fluid-title font-title font-bold">{properties.title}</div>
                     </div>
-                    <div></div>
-                    <div>
-                        <div></div>
-                        <div></div>
+                    <div className="h-[50dvh] lg:h-[100dvh] flex items-center my-12">{React.cloneElement(properties.img, { className: ' -translate-x-7 max-w-4xl mx-auto' })}</div>
+
+                    <div className="flex flex-col lg:flex-row max-w-6xl mx-auto justify-evenly py-6 mb-12 gap-y-3 mt-auto">
+                        <div className="font-semibold font-primary fluid-pr2 max-w-[9em] lg:self-center leading-tight">{properties.content[0]}</div>
+                        <TextFocus data={properties.content[1]} styles={{even: 'font-normal', odd: 'font-medium'}} className="font-primary fluid-pr max-w-md"/>
                     </div>
-                    <div></div>
+                    <div className="relative max-w-6xl mx-auto">{React.cloneElement(properties.video, { className: 'video' })}</div>
+
                 </div>
             </DivBox>
             <DivBox div='h-[100dvh] bg-no-repeat bg-center bg-cover relative after:earthGradientTop sm:after:earthGradient after:bgOverlay' container='container relative z-10' style={{ backgroundImage: `url(${imgBg[0]})` }}>
@@ -67,13 +70,13 @@ export default function Water() {
                     start: { y: 100, opacity: 0 },
                     visible: { y: 0, opacity: 1 }
                 }}>
-                    <div className="text-white fluid-pr font-primary font-semibold max-w-[28em] px-10 sm:px-0 absolute top-0 right-0 sm:right-0 sm:float-right mt-56">Water is all around us. This makes up 71% of our earth's surface while 60% of water is in our bodies. Water is tasteless and colorless type of liquid.</div>
+                    <TextFocus data={waterHero} styles={{even: 'text-white', odd: 'text-[#B1B1B1]'}} className=" fluid-pr font-primary font-semibold max-w-[28em] px-10 sm:px-0 absolute top-0 right-0 sm:right-0 sm:float-right mt-56"/>
                 </Reveal>
             </DivBox>
 
             <VideoSection isBoxed={true} data={water} />
 
-            <VideoSection isBoxed={true} data={ice} isReversed={true} background={true} />
+            <VideoSection isBoxed={true} data={ice} isReversed={true} background={true} id="ice"/>
 
             <BigBoxSection data={conclusion} background={require('../assets/water/bigbox.png')} />
         </>

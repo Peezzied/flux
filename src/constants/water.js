@@ -1,4 +1,4 @@
-import { Frozen, Hygine, Temp, Drop, Gauge } from '../components/SvgComponents'
+import { Frozen, Hygine, Temp, Drop, Gauge, WaterMolecule } from '../components/SvgComponents'
 
 export const headingWaterData = [
     {
@@ -17,7 +17,18 @@ export const headingWaterData = [
         label: 'Gas'
     },
 ]
-export const waterHero = []
+export const waterHero = [
+    "Water is",
+    "all around us.",
+    "This makes up",
+    "71% of our earth's surface",
+    "while",
+    "60% of water",
+    "is in our bodies.",
+    "Water is",
+    "tasteless and colorless",
+    "type of liquid."
+]
 export const water = {
     label: 'DISCOVER',
     title: 'Water.',
@@ -28,12 +39,18 @@ export const water = {
 export const properties = {
     label: 'Zoom in',
     title: 'Properties of Water',
-    img: '',
+    img: (<WaterMolecule/>),
     video: (<iframe src="https://www.youtube.com/embed/0eNSnj4ZfZ8?si=jwuW4L7fR75c52Ux&autoplay=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>),
     source: 'ChemTalk. https://chemistrytalk.org/properties-water-physical-chemical/',
     content: [
         'Water at molecular level.',
-        'Water molecule consists of two hydrogen atoms with partial positive charges bonded to an oxygen atom partial with negative charges and its overall structure is bent.'
+        ['Water molecule',
+        'consists of two hydrogen atoms',
+        'with',
+        'partial positive charges bonded to an',
+        'oxygen atom',
+        'partial with negative charges and its',
+        'overall structure is bent']
     ]
 }
 

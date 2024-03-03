@@ -10,7 +10,7 @@ export default function Trivia({ isHome = false }) {
             <div className={isHome ? `mx-auto max-w-[75em] relative ` : "w-full flex lg:justify-center justify-center"} >
                 <div className={`sm:p-5 lg:px-24 sm:pb-10 ${isHome ? 'sm:pl-24' : 'my-[3em]'} p-16 space-y-3  inline-block w-full max-w-[38em]`}>
 
-                    <Reveals increment={0.15} variants={{
+                    <Reveals variants={{
                         start: { y: 100, opacity: 0 },
                         visible: { y: 0, opacity: 1 }
                     }}>
@@ -27,7 +27,7 @@ export default function Trivia({ isHome = false }) {
 
                 </div>
                 {isHome ?
-                    <img className="absolute 2xl:top-[-11em] 2xl:right-[-5em] xl:top-[-11em] xl:right-0 xl:scale-100 lg:top-[-9em] lg:right-[-4.5em] lg:scale-[0.80] hidden lg:block" src={think} />
+                    <Reveal ><img className="absolute 2xl:top-[-11em] 2xl:right-[-5em] xl:top-[-11em] xl:right-0 xl:scale-100 lg:top-[-9em] lg:right-[-4.5em] lg:scale-[0.80] hidden lg:block" src={think} /></Reveal>
                     :
                     null
                 }

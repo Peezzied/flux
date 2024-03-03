@@ -8,6 +8,7 @@ import { explore, overview, phase, water } from '../constants/home'
 import { Link } from 'react-router-dom'
 import { BlueBlob, OrangeBlob, ToLink } from '../components/SvgComponents'
 import Reveal, { Reveals } from '../components/RevealAnimate'
+import { HashLink } from 'react-router-hash-link'
 
 
 const Hexa = ({ ...props }) => (
@@ -20,8 +21,17 @@ function Quote() {
     return (
         <div className="min-h-[27em] grid items-center bg-[#17171b] relative overflow-hidden">
             <div className="text-center container grid justify-center justify-items-center px-10">
-                <div className='quotes font-label fluid-pr font-bold text-sky-600 uppercase'>Chemistry Says...</div>
-                <div className='quotes font-title font-bold fluid-sub text-gray-200 mt-7'>"Old bond break when new ones are formed."</div>
+                <Reveals increment={0.25} variants={{
+                    start: { y: 75, opacity: 0 },
+                    visible: { y: 0, opacity: 1 }
+                }}>
+                    <Reveal>
+                        <div className='quotes font-label fluid-pr font-bold text-sky-600 uppercase'>Chemistry Says...</div>
+                    </Reveal>
+                    <Reveal>
+                        <div className='quotes font-title font-bold fluid-sub text-gray-200 mt-7'>"Old bond break when new ones are formed."</div>
+                    </Reveal>
+                </Reveals>
                 <div className='quotes mt-5 w-1/2 border-t-[1px] border-gray-500'><img src={quoteFrom} alt="" className='m-8 w-40 h-auto mx-auto' /></div>
                 <div className="absolute h-full w-[850px] md:w-[1024px] lg:w-[1280px] xl:w-[1536px] top-0 z-10">
                     <Hexa className="h-auto w-96 text-[#202026] absolute bottom-[-157px] left-[-80px] rotate-180" />
@@ -42,21 +52,21 @@ export default function Home() {
                 <div className=' text-white py-14 grid grid-cols-1 lg:grid-cols-[1fr_auto] relative z-10 mx-6 gap-6'>
                     <div className='max-w-[20em] fluid-title font-title font-bold'>
                         <Reveals increment={0.25} variants={{
-                            start: {y: 75, opacity: 0},
-                            visible: {y:0, opacity: 1}
+                            start: { y: 75, opacity: 0 },
+                            visible: { y: 0, opacity: 1 }
                         }}>
                             <Reveal>
                                 <div>{overview.lead[0]}</div>
                             </Reveal>
                             <Reveal>
-                                <div >{overview.lead[1]}</div>
+                                <div className='bg-gradient-to-br from-[#9aafb0] from-[37%] to-[#9aafb09a] bg-clip-text text-transparent font-semibold'>{overview.lead[1]}</div>
                             </Reveal>
                         </Reveals>
                     </div>
-                    <div className='grid items-end grid-cols-[auto_27px] gap-3 order-first lg:order-last'>
-                        <ToLink className="w-full inline-block order-last" />
-                        <div className='inline-block fluid-pr font-primary font-semibold max-w-max max-h-max '><Link to={overview.to}>{overview.label}</Link></div>
-                    </div>
+                    <HashLink smooth={true} to={overview.to} className='grid items-end grid-cols-[auto_27px] gap-3 order-first lg:order-last'>
+                        <ToLink className="w-full inline-block order-last text-white/65" />
+                        <div className='inline-block fluid-pr font-primary font-semibold max-w-max max-h-max '>{overview.label}</div>
+                    </HashLink>
                 </div>
             </DivBox>
             <DivBox container='max-w-6xl mx-auto space-y-28 lg:py-[10em] py-[7em] relative' div='sm:bg-[#F1F1F1] overflow-hidden sm:bg-none bg-gradient-to-t from-white to-[#5A97BF] from-[27%] to-[200%]'>
@@ -64,8 +74,8 @@ export default function Home() {
                     <div className='mx-5 bg-gradient-to-br text-transparent w-1em from-[#3a6164] to-[#00c3ff] to-[170%] bg-clip-text font-bold font-title sm:text-center fluid-title leading-tight'>{water.title}</div>
                     <div className='mx-5 grid grid-rows-[min-content_1fr] gap-y-3 sm:gap-y-6'>
                         <Reveals increment={0.15} variants={{
-                            start: {y: 100, opacity: 0},
-                            visible: {y:0, opacity: 1}
+                            start: { y: 100, opacity: 0 },
+                            visible: { y: 0, opacity: 1 }
                         }}>
                             <Reveal>
                                 <div className='border-subtle font-semibold font-primary fluid-sub text-white rounded-xl sm:rounded-3xl after:rounded-2xl bg-no-repeat bg-center bg-cover relative after:waterCardBlue  after:bgOverlay p-10 pb-16 sm:p-14 sm:pl-20 sm:pb-28' style={{ backgroundImage: `url(${water.card[0].img})` }}>
@@ -93,8 +103,8 @@ export default function Home() {
                     <div className='mx-5 bg-gradient-to-br text-transparent from-[#E36305] to-[#BC0202] to-[300%] bg-clip-text font-bold font-title fluid-title sm:text-center leading-tight'>{phase.title}</div>
                     <div className="mx-5 grid grid-cols-1 lg:grid-cols-[auto_1fr] grid-rows-1 sm:grid-rows-2 sm:gap-6 gap-3">
                         <Reveals increment={0.15} variants={{
-                            start: {y: 100, opacity: 0},
-                            visible: {y:0, opacity: 1}
+                            start: { y: 100, opacity: 0 },
+                            visible: { y: 0, opacity: 1 }
                         }}>
                             <Reveal>
                                 <div className='border-subtle font-semibold font-primary fluid-title bg-gradient-to-br rounded-xl sm:rounded-3xl from-white to-[#B49781] from-[50%] to-[145%] p-10 sm:p-14 flex'><div className="xl:max-w-[419px] max-w-[350px] mt-auto leading-tight">{phase.card[0].lead}</div></div>
@@ -118,7 +128,7 @@ export default function Home() {
                 </div>
             </DivBox>
             <Trivia isHome={true} />
-            <DivBox container='max-w-[90em] mx-auto px-5 relative' div='bg-[#f1f1f1] overflow-hidden'>
+            <DivBox container='max-w-[90em] mx-auto px-5 relative' div='bg-[#f1f1f1] overflow-hidden' id='explore'>
                 <div className='space-y-24 py-[5em] lg:py-[10em]'>
                     <div className='sm:text-center'>
                         <div className='font-bold fluid-pr font-label uppercase text-[#00548B] mt-3'>{explore.label}</div>
@@ -127,8 +137,8 @@ export default function Home() {
                     </div>
                     <div className='grid sm:grid-cols-2 grid-rows-subgrid lg:gap-y-10 gap-2 lg:gap-x-7'>
                         <Reveals increment={0.15} variants={{
-                            start: {y: 75, opacity: 0},
-                            visible: {y:0, opacity: 1}
+                            start: { y: 75, opacity: 0 },
+                            visible: { y: 0, opacity: 1 }
                         }}>
                             {explore.card.map((i, index) => (
                                 <Reveal>
@@ -137,7 +147,7 @@ export default function Home() {
                                         <div className='font-title fluid-sub font-bold max-w-[12em] leading-tight'>{i.title}</div>
                                         <div className='font-primary fluid-pr font'>{i.body}</div>
                                         {/* BUTTON HERE */}
-                                        <Link className='text-[18px] uppercase font-primary mt-6 bg-primary rounded-xl p-2 px-4 w-max font-semibold' to={i.to} role='button'>SHOW ME</Link>
+                                        <HashLink smooth={true} className='text-[18px] uppercase font-primary mt-6 bg-primary rounded-xl p-2 px-4 w-max font-semibold' to={i.to} role='button'>SHOW ME</HashLink>
                                     </div>
                                 </Reveal>
                             ))}
