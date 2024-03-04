@@ -20,7 +20,7 @@ const Water = lazy(()=>import('./pages/Water'))
 
 const Routing = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div className='h-[100dvh] w-[100dvw] bg-white absolute z-[999] top-0 right-0'></div>}>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />

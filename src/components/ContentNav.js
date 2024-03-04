@@ -4,6 +4,8 @@ import { BtnX } from "./Hamburger"
 import Accordian, { AccordianItem } from "./MenuAccordion"
 import { CustomLink, hamburger } from "./Nav"
 import { LayoutGroup, motion } from "framer-motion"
+import { HashLink } from "react-router-hash-link"
+import { useLayoutEffect } from "react"
 
 
 export default function ContentNav({ toggleMenu, changeStyle }) {
@@ -91,6 +93,7 @@ export default function ContentNav({ toggleMenu, changeStyle }) {
             opacity: 0,
         }
     }
+
     return (
         <div className="w-full h-full fixed top-0 left-0 z-[100] flex text-upper normal-case justify-end">
             <motion.div key={3} variants={backDrop} initial="initial" animate="visible" exit="end" transition={{
@@ -107,13 +110,13 @@ export default function ContentNav({ toggleMenu, changeStyle }) {
             <motion.div variants={hamburger} initial='initial' animate='visible' exit='end' className={changeStyle ? "fixed top-0 right-0 z-[300] p-5 lg:py-[1rem] py-4 px-8 lg:px-10" : "fixed top-0 right-0 z-[300] p-5 py-8 lg:py-11 lg:px-10"}><div onClick={toggleMenu}>
                 <BtnX id="btnX" key={1} className="h-auto w-8 cursor-pointer text-gray-50 hover:text-ascent transition-all duration-400"></BtnX>
             </div></motion.div>
-            <motion.div key={2} variants={motionDiv} initial="initial" animate="visible" exit="end" className={changeStyle ? "h-full bg-slate-950 max-w-[20rem] w-full relative z-20 pt-16 flex p-5 lg:px-10 flex-col items-end text-neutral-300 text-end text-xl font-title px-10" : "h-full bg-slate-950 max-w-[20rem] w-full relative z-20 pt-24 flex p-5 lg:px-10 flex-col items-end text-neutral-300 text-end text-xl font-title px-10"}>
+            <motion.div key={2} variants={motionDiv} initial="initial" animate="visible" exit="end" className={changeStyle ? "h-full bg-slate-950 max-w-[20rem] w-full relative z-20 pt-16 flex p-5 lg:px-10 flex-col items-end text-neutral-300 text-end text-xl font-title px-10 overflow-y-scroll" : "h-full bg-slate-950 max-w-[20rem] w-full relative z-20 pt-24 flex p-5 lg:px-10 flex-col items-end text-neutral-300 text-end text-xl font-title px-10 overflow-y-scroll"}>
                 <motion.div variants={staggerAnimate} initial="initial" animate='visible' exit="end" className="w-full h-full space-y-2">
                     {menuItems.map((i) => {
                         return (
                             i.name !== 'explore' &&
                             <div className="overflow-hidden w-full">
-                                <motion.div variants={containerVars} className="p-3 w-full bg-gradient-to-bl from-slate-900 to-slate-900/[0.2] from-10% via-30% to-90% rounded-xl pr-5 normal-case">
+                                <motion.div variants={containerVars} className="p-3 w-full bg-gradient-to-bl from-slate-900 to-slate-900/[0.2] from-10% via-30% to-90% rounded-xl pr-5 capitalize">
                                     <CustomLink to={i.route}>{i.name}</CustomLink>
                                 </motion.div>
                             </div>
@@ -144,7 +147,7 @@ export default function ContentNav({ toggleMenu, changeStyle }) {
                                             <ul className="space-y-2 font-light">
                                                 {i.child.map((ci) => {
                                                     return (
-                                                        <li className="rounded-xl px-5 p-3 bg-gradient-to-bl from-slate-950/[0.5] to-slate-900 hover:text-ascent transition-all duration-400"><Link to={ci.to}>{ci.title}</Link></li>
+                                                        <li className="rounded-xl px-5 p-3 bg-gradient-to-bl from-slate-950/[0.5] to-slate-900 hover:text-ascent transition-all duration-400"><HashLink scroll={true} to={ci.to}>{ci.title}</HashLink></li>
                                                     )
                                                 })}
                                             </ul>

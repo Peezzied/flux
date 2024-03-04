@@ -4,17 +4,48 @@ import reference from "../assets/library.jpg"
 import { references } from "../constants/references";
 import DivBox from "../components/DivBox";
 import { ExternalLink } from "../components/SvgComponents";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import { useRef, useState } from "react";
 
 function Medias({ data }) {
+    const items = useRef()
+    const [isMouseDown, setIsMouseDown] = useState(true)
+    const [startX, setStartX] = useState(0)
+    const [scrollLeft, setScrollLeft] = useState(0)
+
+    const handleMouseDown = (e)=>{
+        setIsMouseDown(true)
+        setStartX(e.pageX - - items.current.offsetLeft)
+        setScrollLeft(items.current.scrollLeft)
+    }
+    const handleMouseLeave = ()=>{
+        setIsMouseDown(false)
+    }
+    const handleMouseUp = ()=>{
+        setIsMouseDown(false)
+    }
+    const handleMouseMove = (e)=>{
+        if(!isMouseDown) return
+        e.preventDefault()
+        const x = e.pageX - items.current.offsetLeft
+        const walk = (x-startX)*2
+        items.current.scrollLeft = scrollLeft - walk
+    }
     return (
         <div className="space-y-3 ">
             <div className="fluid-sub max-w-4xl px-6 mx-auto text-[#4B4B4B] font-semibold font-title">Medias</div>
-            <div className="ml-[calc(((100vw-896px)/2)+24px)] overflow-x-auto" >
-                <div className="grid grid-cols-[max-content] grid-flow-col gap-3 ">
+            <div
+                ref={items}
+                onMouseDown={handleMouseDown}
+                onMouseLeave={handleMouseLeave}
+                onMouseUp={handleMouseUp}
+                onMouseMove={handleMouseMove}
+                className={` ${isMouseDown ? 'cursor-grabbing' : 'cursor-grab'} overflow-x-auto scrollable`} >
+                <div className="pl-[calc(((100vw-896px)/2)+24px)] grid grid-cols-[max-content] grid-flow-col gap-3 ">
                     {data.map((i) => (
-                        <div className="w-[30em] relative group overflow-hidden cursor-pointer">
-                            <img className="w-full object-center object-cover" src={i.img} alt="" />
-                            <a href={i.to} className="absolute bottom-6 right-6 z-20 w-10 group-hover:translate-y-0 translate-y-16 transition-transform duration-500 ease-out" role="button">
+                        <div className="w-[clamp(18.5rem,14.5rem+20vi,30rem)] h-[20em] relative group overflow-hidden ">
+                            <LazyLoadImage className="w-full h-full object-center object-cover" src={i.img} alt="" />
+                            <a href={i.to} className="cursor-pointer absolute bottom-6 right-6 z-20 w-10 group-hover:translate-y-0 translate-y-16 transition-transform duration-500 ease-out" role="button">
                                 <ExternalLink className="fill-white" />
                             </a>
                             <div className="absolute top-0 right-0 w-full h-full z-10 bg-gradient-to-t from-[#17171b] group-hover:opacity-100 opacity-0 transition-opacity duration-500 ease-in-out"></div>
@@ -42,8 +73,8 @@ function Section({ data }) {
                                     <ExternalLink className="w-7 fill-primary" />
                                 </a>
                                 <div className="font-primary">
-                                    <div className="font-semibold fluid-pr2 text-[#4B4B4B]">{i.title}</div>
-                                    <div className="fluid-pr text-[#4B4B4B]">{i.description}</div>
+                                    <div className="font-semibold fluid-pr2 text-[#4B4B4B] line-clamp-1">{i.title}</div>
+                                    <div className="fluid-pr text-[#4B4B4B] line-clamp-1">{i.description}</div>
                                 </div>
                             </div>
                         ))}

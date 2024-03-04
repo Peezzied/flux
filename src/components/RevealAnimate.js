@@ -1,11 +1,11 @@
-import { motion, useAnimation, useInView } from "framer-motion"
+import { LazyMotion, domAnimation, motion, useAnimation, useInView, m } from "framer-motion"
 import React, { useEffect, useRef } from "react"
 
 const viewVars = {
     start: { opacity: 0, },
     visible: { opacity: 1, }
 }
-export default function Reveal({ children, style, delay, variants = viewVars, ...props }) {
+export default function Reveal({ children, style, delay, variants = viewVars, div = '', styleProperty = '', ...props }) {
     const view = useRef(null)
     const isView = useInView(view, { once: true })
     const mainControls = useAnimation()
@@ -19,14 +19,17 @@ export default function Reveal({ children, style, delay, variants = viewVars, ..
     }, [isView, mainControls])
 
     return (
-        <motion.div {...props} ref={view} className={`${style} `} variants={variants}
-            initial="start"
-            animate={mainControls}
-            transition={{ duration: 0.5, delay: delay }}>
+        <LazyMotion features={domAnimation}>
 
-            {children}
+            <m.div {...props} ref={view} className={`${style} ${div}`} style={styleProperty} variants={variants}
+                initial="start"
+                animate={mainControls}
+                transition={{ duration: 0.5, delay: delay }}>
 
-        </motion.div>
+                {children}
+
+            </m.div>
+        </LazyMotion>
     )
 }
 export function Reveals({ children, increment, variants }) {
@@ -57,11 +60,15 @@ export function RevealImage({ src, delay, variants, ...props }) {
         }
     }, [isView, mainControls])
     return (
-        <motion.img variants={variants}
-            ref={view}
-            initial="start"
-            animate={mainControls}
-            transition={{ duration: 0.5, delay: delay }}
-            src={src} />
+        <LazyMotion features={domAnimation}>
+            <m.img variants={variants}
+                ref={view}
+                initial="start"
+                animate={mainControls}
+                transition={{ duration: 0.5, delay: delay }}
+                src={src}
+                {...props}
+            />
+        </LazyMotion>
     )
 }

@@ -65,7 +65,7 @@
         @apply bg-gradient-to-t from-[#17171B]/0 to-[#17171B]/[83%] from-[17%] to-[67%]
     }
     .bigBoxGradient {
-        @apply bg-gradient-to-b from-[#17171B] to-[#17171B]/[0] to-[1000%] from-[30%]
+        @apply bg-gradient-to-b from-[#17171B] to-[#17171B]/[0] to-[1000%] from-[27%]
     }
     .triviaBg::after {
         background-image: url('./assets/volcano.png');
@@ -111,6 +111,9 @@
     }
     body {
         min-width: 412px;
+    }
+    .scrollable::-webkit-scrollbar {
+        display: none;
     }
 
  

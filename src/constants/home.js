@@ -52,7 +52,7 @@ export const explore = {
             label: 'Phase changes',
             title: 'Why Phase Change Happens?',
             body: '/phase-changes#why',
-            to: '/phase-changes#why',
+            to: '/phase-changes#phases',
             img: require('../assets/home/atom.png')
         },
         {

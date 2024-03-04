@@ -41,10 +41,9 @@ export const water = {
 
 export const properties = {
     label: 'Zoom in',
-    title: 'Properties of Water',
+    title: 'Structure and Properties of Water',
     img: (<WaterMolecule/>),
     video: (<LiteYouTubeEmbed id='0eNSnj4ZfZ8'/>),
-    source: 'ChemTalk. https://chemistrytalk.org/properties-water-physical-chemical/',
     content: [
         'Water at molecular level.',
         ['Water molecule',
@@ -60,7 +59,7 @@ export const properties = {
 export const ice = {
     label: 'discover',
     title: 'Why Ice Floats?',
-    body: 'Water is also known as the "universal solvent" Why is it known as a universal solvent? because water is capable of dissolving other substances than any liquid forms.',
+    body: 'Solid water is less dense and floats in liquid water, How can it be possible? A boulder or anything denser than water will sink to the bottom. An object needs to displace fluid with a weight equal to its own in order to float.',
     video: (<LiteYouTubeEmbed id='pSh8X-R9mxQ'/>),
     img: require('../assets/water/water.png')
 }

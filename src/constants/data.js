@@ -25,15 +25,27 @@ export const contentNavigator = [
         child: [
             {
                 title: 'Overview',
-                to: '/phase-changes'
+                to: '/phase-changes#top'
             },
             {
-                title: 'Sub topic 2',
-                to: '/phase-changes#'
+                title: 'Phases',
+                to: '/phase-changes#phases'
             },
             {
-                title: 'Sub topic 3',
-                to: '/phase-changes#'
+                title: 'Visualizing',
+                to: '/phase-changes#visualizing'
+            },
+            {
+                title: 'Diagram',
+                to: '/phase-changes#processes'
+            },
+            {
+                title: 'Heating Curve',
+                to: '/phase-changes#heating-curve'
+            },
+            {
+                title: 'Conclusion',
+                to: '/phase-changes#conclusion'
             },
         ]
     },
@@ -42,15 +54,27 @@ export const contentNavigator = [
         child: [
             {
                 title: 'Overview',
-                to: '/water'
+                to: '/water#top'
             },
             {
-                title: 'Sub topic 2',
-                to: '/water#'
+                title: 'What it is?',
+                to: '/water#universal-solvent'
             },
             {
-                title: 'Sub topic 3',
-                to: '/water#'
+                title: 'Structure',
+                to: '/water#structure-properties'
+            },
+            {
+                title: 'Properties',
+                to: '/water#structure-properties'
+            },
+            {
+                title: 'Solid Water',
+                to: '/water#ice'
+            },
+            {
+                title: 'Conclusion',
+                to: '/water#conclusion'
             },
         ]
     }

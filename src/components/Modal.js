@@ -3,16 +3,18 @@ import ReactDOM from "react-dom"
 import x from '../assets/x.svg'
 import { useSharedVals } from "../App"
 import { motion } from "framer-motion"
+import { TextFocus } from "./TextFocus"
+import { LazyLoadImage } from "react-lazy-load-image-component"
 
 export const Modal = ({ children, img = null, video = null, label = null, icon = null }) => (
 
-    <div className="bg-[#fafafa] w-full rounded-[28px] fluid-modal leading-tight font-pr font-medium overflow-hidden ">
+    <div className="bg-[#fafafa] w-full rounded-[28px] fluid-modal leading-tight font-primary font-semibold overflow-hidden ">
         {children && <div className={`lg:px-24 lg:py-14 px-7 py-14 space-y-5 leading-tight `}>
             {icon && React.cloneElement({ icon }, { className: 'fill-labelBlue' })}
-            {label && <div className=" text-labelBlue">{label}</div>}
-            {children}
+            {label && <div className=" text-labelBlue mb-3  ">{label}</div>}
+            <TextFocus data={children} styles={{ odd: 'text-[#818185]', even: 'text-black'}}/>
         </div>}
-        {img && <img className="object-cover w-full sm:rounded-[28px] overflow-hidden " src={img} alt="" />}
+        {img && <LazyLoadImage className="object-cover w-full sm:rounded-[28px] overflow-hidden " src={img} alt="" />}
         {video && <div className="relative">
             {React.cloneElement(video, { className: 'video rounded-t-none sm:rounded-t-[28px]' })}
         </div>}
@@ -53,7 +55,7 @@ export default function Modals({ children, head, close }) {
             document.removeEventListener('mousedown', handler)
             document.body.style.overflowY = 'auto'
         }
-    }, [])
+    }, [close, setHidden])
     return ReactDOM.createPortal(
         <>
             <motion.div key={1} variants={backdrop} initial='initial' animate='animate' exit='exit' transition={{
@@ -66,7 +68,7 @@ export default function Modals({ children, head, close }) {
             }} className="inset-0 fixed  z-[50] overflow-y-auto">
                 <div className="max-w-[70em] mx-auto my-12 bg-white rounded-[18px] h-max relative" ref={modalRef}>
                     <div className="sticky float-end top-3 mr-3 mt-3" onClick={close}>
-                        <img src={x} alt="" className=" cursor-pointer" />
+                        <LazyLoadImage src={x} alt="" className=" cursor-pointer" />
                     </div>
                     <div className=" py-[5em] space-y-24">
                         <div className="space-y-4 lg:mx-[4em]  mx-[2.7em] ">

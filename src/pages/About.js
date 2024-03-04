@@ -6,13 +6,19 @@ import { front, importance, members, visionMission } from "../constants/about";
 import { Arrow, Atom, ExternalLink, ToLink } from "../components/SvgComponents";
 import logo from "../assets/flux.png"
 import dost from "../assets/dost.svg"
-import Reveal, { Reveals } from "../components/RevealAnimate";
+import Reveal, { RevealImage, Reveals } from "../components/RevealAnimate";
 import { HashLink } from "react-router-hash-link";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
+const variants = {
+    start: { y: 100, opacity: 0 },
+    visible: { y: 0, opacity: 1 }
+}
 
 function Section({ isReversed, data }) {
     return (
         <div className={`flex ${isReversed ? 'lg:flex-row-reverse ' : 'lg:flex-row'} flex-col items-center sm:items-start sm:justify-around gap-y-6`}>
-            <div className="w-[17em]"><img className="w-full" src={data.img} alt="" /></div>
+            <div className="w-[17em]"><RevealImage variants={variants} className="w-full" src={data.img} alt="" /></div>
             <div className="max-w-[30em] flex flex-col justify-center">
                 <Reveals variants={{
                     start: { y: 100, opacity: 0 },
@@ -38,8 +44,10 @@ export default function About() {
                     <div className=" h-[100dvh] items-center flex flex-col justify-center w-full gap-x-7 max-w-[50em] mx-auto gap-y-14 ">
                         <div className="flex flex-col col-span-2 items-center h-auto">
                             <div className=" space-y-2">
-                                <img src={logo} alt="" className="mx-auto" />
-                                <div className="text-white fluid-pr text-center">{front[0].label}</div>
+                                <RevealImage variants={variants} src={logo} alt="" className="mx-auto" />
+                                <Reveal variants={variants}>
+                                    <div className="text-white fluid-pr text-center">{front[0].label}</div>
+                                </Reveal>
                             </div>
                         </div>
                         <div className="flex flex-row gap-12">
@@ -89,7 +97,7 @@ export default function About() {
                             start: { y: 100, opacity: 0 },
                             visible: { y: 0, opacity: 1 }
                         }}>
-                            <div className="flex justify-center lg:justify-end max-w-[10em] mx-auto"><img src={dost} alt="" srcset="" /></div>
+                            <div className="flex justify-center lg:justify-end max-w-[10em] mx-auto"><RevealImage variants={variants} src={dost} alt="" srcset="" /></div>
                             <Reveal style="text-[#C0C0C0] fluid-pr h-max lg:my-auto text-center lg:text-start">
                                 {front[2].lead}
                             </Reveal>
@@ -161,7 +169,7 @@ export default function About() {
 
                                 {members.list.map((i) => (
                                     <div className="flex flex-row gap-6 py-6 max-w-xl mx-auto">
-                                        <div className="w-[7em] flex"><img className="w-full my-auto" src={i.avatar} alt="" /></div>
+                                        <div className="w-[7em] flex"><LazyLoadImage className="w-full my-auto" src={i.avatar} alt="" /></div>
                                         <div className="font-primary text-[#4B4B4B]">
                                             <Reveal variants={{
                                                 start: { y: 100, opacity: 0 },

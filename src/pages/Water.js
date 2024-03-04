@@ -60,9 +60,9 @@ export default function Water() {
                 </Reveal>
             </DivBox>
 
-            <VideoSection isBoxed={true} data={water} />
+            <VideoSection isBoxed={true} data={water} id='universal-solvent'/>
 
-            <DivBox container='container' id="structure">
+            <DivBox container='container' id="structure-properties">
                 <div className="py-28 px-6">
                     <div className="text-start lg:text-center">
                         <div className="fluid-pr font-label font-bold text-primary uppercase">{properties.label}</div>
@@ -93,7 +93,7 @@ export default function Water() {
 
             <VideoSection isBoxed={true} data={ice} isReversed={true} background={true} id="ice" />
 
-            <BigBoxSection data={conclusion} background={require('../assets/water/bigbox.png')} />
+            <BigBoxSection data={conclusion} background={require('../assets/water/bigbox.png')} id='conclusion'/>
         </>
     )
 }   
