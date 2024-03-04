@@ -136,7 +136,7 @@ function Stages() {
     const isXl = useMediaQuery(`(min-width: ${sizes.xl})`)
     return (
         <DivBox div="bg-dark overflow-hidden" container='xl:container'>
-            <motion.div className="xl:flex  text-white p-10 px-0 md:justify-between space-x-[80px] w-max xl:w-full" ref={ref} style={{ x: isXl ? '0' : xTranslation }}>
+            <motion.div className="xl:flex  text-white p-10 px-0 md:justify-between w-max xl:w-full" ref={ref} style={{ x: isXl ? '0' : xTranslation }}>
                 <Reveals increment={0.15} variants={{
                     start: { y: 75, opacity: 0 },
                     visible: { y: 0, opacity: 1 }
@@ -171,8 +171,15 @@ export default function PhaseChanges() {
 
     return (
         <>
+            <Helmet>
+                <meta
+                    name="description"
+                    content="Learn more about the different phases of matter and how it works."
+                />
+                <title>Flux - Phase Changes</title>
+            </Helmet>
             <TopicHeader src={phase} data={headerData} name='phase' size="fluid-title-xl" />
-            <Stages/>
+            <Stages />
             <Phases />
             <VideoSection isBoxed={true} data={phaseChange} background={true} id="visualizing" />
             <Trivia />

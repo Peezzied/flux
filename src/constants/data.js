@@ -87,7 +87,7 @@ export const headerData = [
             typed: ['^1500 explained', 'explore', 'discover', 'a deep dive.']
         },
         heading: 'Phase Changes, Structure and Properties of Water',
-        subheading: 'A Flux 5 Special sailing through the scientific odyssey of Phase Changes from the interaction between energy and matter while unraveling the Structure and Properties of water along the voyage.',
+        subheading: 'A Flux Chem Special sailing through the scientific odyssey of Phase Changes from the interaction between energy and matter while unraveling the Structure and Properties of water along the voyage.',
         start: {
             label: 'Start Journey',
             to: '#overview'

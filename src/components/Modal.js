@@ -66,7 +66,7 @@ export default function Modals({ children, head, close }) {
                 duration: .3,
                 type: 'tween'
             }} className="inset-0 fixed  z-[50] overflow-y-auto">
-                <div className="max-w-[70em] mx-auto sm:my-12 bg-white rounded-[18px] h-max relative" ref={modalRef}>
+                <div className="max-w-[70em] m-auto sm:my-12 bg-white rounded-[18px] h-max relative" ref={modalRef}>
                     <div className="sticky top-3 pr-3 pt-3" onClick={close}>
                         <img src={x} alt="" className=" cursor-pointer ml-auto" />
                     </div>

@@ -6,6 +6,7 @@ import DivBox from "../components/DivBox";
 import { ExternalLink } from "../components/SvgComponents";
 import { LazyLoadComponent, LazyLoadImage } from "react-lazy-load-image-component";
 import { useRef, useState } from "react";
+import { Helmet } from "react-helmet";
 
 function Medias({ data }) {
     const items = useRef()
@@ -32,6 +33,7 @@ function Medias({ data }) {
         items.current.scrollLeft = scrollLeft - walk
     }
     return (
+
         <div className="space-y-3 ">
             <div className="fluid-sub max-w-4xl px-6 mx-auto text-[#4B4B4B] font-semibold font-title">Medias</div>
             <div
@@ -93,6 +95,13 @@ function Section({ data }) {
 export default function References() {
     return (
         <>
+            <Helmet>
+                <meta
+                    name="description"
+                    content="The topics' information sources and medias."
+                />
+                <title>Flux - References</title>
+            </Helmet>
             <TopicHeader src={reference} data={headerData} name='references' img={true} size="fluid-title-xl" />
             <div className="space-y-16">
                 <Section data={references[0]} />

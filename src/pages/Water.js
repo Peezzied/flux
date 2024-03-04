@@ -15,7 +15,7 @@ import Trivia from "../components/TriviaBox";
 
 export function HeadingBottom({ children, label, svg, ...props }) {
     return (
-        <div className="p-10 container">
+        <div className="p-10  ">
             {svg}
             <div className="fluid-pr font-title font-bold mt-3 max-w-[17em]">{children}</div>
             <div className="text-darkText fluid-pr font-primary font-semibold mt-7 w-max">{label}</div>
@@ -31,6 +31,13 @@ const imgBg = [
 export default function Water() {
     return (
         <>
+            <Helmet>
+                <meta
+                    name="description"
+                    content="Learn about what makes water a water."
+                />
+                <title>Flux - Structure and Properties of Water</title>
+            </Helmet>
             <TopicHeader src={vbg} data={headerData} name='water' size="fluid-title-xl" />
             <DivBox div="bg-dark" container='xl:container' >
                 <div className="flex xl:flex-row divide-y-2 xl:divide-y-0 divide-[#373741] flex-col  text-white justify-between">
@@ -89,11 +96,11 @@ export default function Water() {
                 </div>
             </DivBox>
 
-            <Trivia/>
+            <Trivia />
 
             <VideoSection isBoxed={true} data={ice} isReversed={true} background={true} id="ice" />
 
-            <BigBoxSection data={conclusion} background={require('../assets/water/bigbox.png')} id='conclusion'/>
+            <BigBoxSection data={conclusion} background={require('../assets/water/bigbox.png')} id='conclusion' />
         </>
     )
 }   

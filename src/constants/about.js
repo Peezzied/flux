@@ -40,43 +40,43 @@ export const members = {
     title: 'Our Team.',
     list: [
         {
-            avatar: require('../assets/avatar/1.png'),
+            avatar: require('../assets/avatar/5.png'),
             name: 'Jana Margareth I. Onera',
             description: '17 years old, female, is a Grade 11 STEM student who is a dreamer to be an aspiring inspiration and someone who can be of help to others.'
         },
         {
-            avatar: require('../assets/avatar/1.png'),
-            name: 'Lorem Ipsssssssssssssssssssssssssssssssssum',
+            avatar: require('../assets/avatar/2.png'),
+            name: 'girl',
+            description: 'Lorem ipsum dolor sit amet consectetur. Vitae integer accumsan.'
+        },
+        {
+            avatar: require('../assets/avatar/3.png'),
+            name: 'girl',
+            description: 'Lorem ipsum dolor sit amet consectetur. Vitae integer accumsan.'
+        },
+        {
+            avatar: require('../assets/avatar/4.png'),
+            name: 'boy',
             description: 'Lorem ipsum dolor sit amet consectetur. Vitae integer accumsan.'
         },
         {
             avatar: require('../assets/avatar/1.png'),
-            name: 'Lorem Ipsum',
+            name: 'Karol John Dela Cruz',
+            description: '16 years old, male, who developed the website as stimulated by his passion for coding, and this is his biggest project yet.'
+        },
+        {
+            avatar: require('../assets/avatar/6.png'),
+            name: 'boy',
             description: 'Lorem ipsum dolor sit amet consectetur. Vitae integer accumsan.'
         },
         {
-            avatar: require('../assets/avatar/1.png'),
-            name: 'Lorem Ipsum',
+            avatar: require('../assets/avatar/7.png'),
+            name: 'boy',
             description: 'Lorem ipsum dolor sit amet consectetur. Vitae integer accumsan.'
         },
         {
-            avatar: require('../assets/avatar/1.png'),
-            name: 'Lorem Ipsum',
-            description: 'Lorem ipsum dolor sit amet consectetur. Vitae integer accumsan.'
-        },
-        {
-            avatar: require('../assets/avatar/1.png'),
-            name: 'Lorem Ipsum',
-            description: 'Lorem ipsum dolor sit amet consectetur. Vitae integer accumsan.'
-        },
-        {
-            avatar: require('../assets/avatar/1.png'),
-            name: 'Lorem Ipsum',
-            description: 'Lorem ipsum dolor sit amet consectetur. Vitae integer accumsan.'
-        },
-        {
-            avatar: require('../assets/avatar/1.png'),
-            name: 'Lorem Ipsum',
+            avatar: require('../assets/avatar/8.png'),
+            name: 'girl',
             description: 'Lorem ipsum dolor sit amet consectetur. Vitae integer accumsan.'
         },
     ]

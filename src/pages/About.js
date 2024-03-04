@@ -38,6 +38,13 @@ function Section({ isReversed, data }) {
 export default function About() {
     return (
         <>
+            <Helmet>
+                <meta
+                    name="description"
+                    content="Learn about flux."
+                />
+                <title>Flux - About</title>
+            </Helmet>
             <TopicHeader src={about} data={headerData} name='about' img={true} size="fluid-title-xl" />
             <DivBox container='container max-w-6xl mx-auto' div='bg-[#17171b] px-6 overflow-hidden'>
                 <div className="font-primary grid items-center relative z-10">
@@ -155,7 +162,7 @@ export default function About() {
                 </div>
             </DivBox>
             <DivBox container='container max-w-6xl mx-auto' div='px-6'>
-                <div className="space-y-12 divide-y-2 divide-[#E5E5E5] my-[15em]">
+                <div className="space-y-12 divide-y-2 divide-[#E5E5E5] my-[7em] sm:my-[15em]">
                     <div className="mx-auto max-w-xl lg:max-w-5xl space-y-16 lg:space-y-14 my-[4em] lg:my-[7em]">
                         {visionMission.map((i, index) => (
                             <Section isReversed={index % 2 === 0 ? false : true} data={i} />
@@ -172,8 +179,8 @@ export default function About() {
                                     .sort((a, b) => a.name.localeCompare(b.name))
                                     .map((i, index) => (
                                         <div className="flex flex-row gap-6 py-6 max-w-xl mx-auto" key={index}>
-                                            <div className="w-[7em] flex"><LazyLoadImage className="w-full my-auto" src={i.avatar} alt="" /></div>
-                                            <div className="font-primary text-[#4B4B4B]">
+                                            <div className="min-w-[4.7em] flex"><LazyLoadImage className="w-full my-auto" src={i.avatar} alt="" /></div>
+                                            <div className="font-primary max-w-full text-[#4B4B4B]">
                                                 <Reveal variants={{
                                                     start: { y: 100, opacity: 0 },
                                                     visible: { y: 0, opacity: 1 }
