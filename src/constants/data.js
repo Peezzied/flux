@@ -7,15 +7,15 @@ export const menuItems = [
     },
     {
         name: 'home',
-        route: '/'
+        route: '/#top'
     },
     {
         name: 'about',
-        route: '/about'
+        route: '/about#top'
     },
     {
         name: 'references',
-        route: '/references'
+        route: '/references#top'
     },
 
 ]

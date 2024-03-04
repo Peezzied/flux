@@ -242,7 +242,7 @@ export const properties = [
 export const phaseChange = {
     label: 'Discover',
     title: 'Visualizing Phase Change',
-    body: 'A stage layout is an illustration made use of in physical chemistry, design, mineralogy together with products scientific research. It shows the problems under which distinctive stages of a material coexist in stability offering useful understandings right into stage shifts together with stage security throughout various temperature level plus stress arrays.',
+    body: "Phase Diagram is a graphical representation of a substance's equilibrium phases as a function of pressure and temperature. It often consists of sections representing various phases (such as solid, liquid, and gas) as well as the borders between them, which are known as phase boundaries or equilibrium lines. ",
     video: (<LiteYouTubeEmbed id="zn8MzCiVCCc"/>),
     img: require('../assets/trail.png')
 }

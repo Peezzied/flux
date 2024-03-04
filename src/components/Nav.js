@@ -53,7 +53,7 @@ export function NavFixed({ getRef }) {
                 ref={getRef}
                 className={'  w-full absolute top-0 left-0 z-[50]'}
             >
-                <div className={'bg-slate-950/0 backdrop-blur-0 transition-all ease-in-out max-w-[120em] px-auto mx-auto min-w-[412px]'}>
+                <div className={'bg-slate-950/0 backdrop-blur-0 transition-all ease-in-out max-w-[120em] px-auto mx-auto min-w-[320px]'}>
                     <div id="navContainer" layout className={"flex items-center mr-auto p-5 py-8 lg:py-11 lg:px-10"}>
                         <div className="w-1/2 justify-start flex lg:hidden">
                             <HashLink smooth={true} to='/#explore'>

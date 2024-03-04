@@ -51,7 +51,7 @@ export default function Water() {
                 </div>
             </DivBox>
 
-            <DivBox id='universal-solvent' div='h-[100dvh] bg-no-repeat bg-center bg-cover relative after:earthGradientTop sm:after:earthGradient after:bgOverlay' container='container relative z-10' style={{ backgroundImage: `url(${imgBg[0]})` }}>
+            <DivBox id='about' div='h-[100dvh] bg-no-repeat bg-center bg-cover relative after:earthGradientTop sm:after:earthGradient after:bgOverlay' container='container relative z-10' style={{ backgroundImage: `url(${imgBg[0]})` }}>
                 <Reveal variants={{
                     start: { y: 100, opacity: 0 },
                     visible: { y: 0, opacity: 1 }

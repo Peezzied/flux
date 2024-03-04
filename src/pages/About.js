@@ -44,7 +44,7 @@ export default function About() {
                     <div className=" h-[100dvh] items-center flex flex-col justify-center w-full gap-x-7 max-w-[50em] mx-auto gap-y-14 ">
                         <div className="flex flex-col col-span-2 items-center h-auto">
                             <div className=" space-y-2">
-                                <RevealImage variants={variants} src={logo} alt="" className="mx-auto" />
+                                <RevealImage variants={variants} src={logo} alt="" className="mx-auto px-[3em]" />
                                 <Reveal variants={variants}>
                                     <div className="text-white fluid-pr text-center">{front[0].label}</div>
                                 </Reveal>

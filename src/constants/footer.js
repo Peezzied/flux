@@ -10,7 +10,7 @@ export const footer = [
         ]
     },
     {
-        logoDescription: 'Lorem ipsum dolor sit amet consectetur. Et gravida lectus non vitae. Sit lobortis quis placerat venenatis fames.',
+        logoDescription: 'An educational initiative, driven by eight passionate Grade 11 students from Our Lady of Fatima University (SY 2024).',
         section: [
             {
                 title: 'Phase Changes',

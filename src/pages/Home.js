@@ -59,7 +59,7 @@ export default function Home() {
                             </Reveal>
                         </Reveals>
                     </div>
-                    <HashLink smooth={true} to={overview.to} className='grid items-end grid-cols-[auto_27px] gap-3 order-first lg:order-last'>
+                    <HashLink scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })} to={overview.to} className='grid items-end grid-cols-[auto_27px] gap-3 order-first lg:order-last'>
                         <ToLink className="w-full inline-block order-last text-white/65" />
                         <div className='inline-block fluid-pr font-primary font-semibold max-w-max max-h-max '>{overview.label}</div>
                     </HashLink>
@@ -143,7 +143,7 @@ export default function Home() {
                                         <div className='font-title fluid-sub font-bold max-w-[12em] leading-tight'>{i.title}</div>
                                         <div className='font-primary fluid-pr font'>{i.body}</div>
                                         {/* BUTTON HERE */}
-                                        <HashLink smooth={true} className='text-[18px] uppercase font-primary mt-6 bg-primary rounded-xl p-2 px-4 w-max font-semibold' to={i.to} role='button'>SHOW ME</HashLink>
+                                        <HashLink scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })} className='text-[18px] uppercase font-primary mt-6 bg-primary rounded-xl p-2 px-4 w-max font-semibold' to={i.to} role='button'>SHOW ME</HashLink>
                                     </div>
                                 </Reveal>
                             ))}

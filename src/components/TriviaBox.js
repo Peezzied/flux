@@ -3,9 +3,12 @@ import think from '../assets/svg/thinking.svg'
 import volcano from '../assets/volcano.png'
 import { Hygine } from "./SvgComponents";
 import Reveal, { Reveals } from "./RevealAnimate";
-import { LazyLoadComponent } from "react-lazy-load-image-component";
+import { LazyLoadComponent, LazyLoadImage } from "react-lazy-load-image-component";
+import {trivias} from "../constants/trivias";
 
 export default function Trivia({ isHome = false }) {
+    const data = trivias[Math.floor(Math.random() * trivias.length)];
+    
     return (
         <LazyLoadComponent>
             <DivBox id='trivia' container={`${isHome ? 'py-[3em] container' : 'grid grid-cols-1 lg:grid-cols-2 justify-items-center relative items-start'}`} div={`bg-dark ${isHome ? '' : 'my-3'} `}>
@@ -23,7 +26,7 @@ export default function Trivia({ isHome = false }) {
                                 <div className="fluid-sub font-title font-bold text-white inline-block">Did you know?</div>
                             </Reveal>
                             <Reveal>
-                                <div className="fluid-pr text-darkText font-primary font-semibold">{/* ADD TRIVIA DATA HERE <<< */}The significance of this topic lies in its crucial role in maintaining a stable climate, temperature, and environment on our planet.</div>
+                                <div className="fluid-pr text-darkText font-primary font-semibold min-h-[4.5em]">{/* ADD TRIVIA DATA HERE <<< */}{data.lead}</div>
                             </Reveal>
                         </Reveals>
 
@@ -35,7 +38,7 @@ export default function Trivia({ isHome = false }) {
                     }
                 </div>
                 <div className="h-[100%] w-full relative hidden lg:block">
-                    <img src={volcano} alt="" className="absolute h-full w-full object-cover object-center" />
+                    <LazyLoadImage src={data.img} alt="" className="absolute h-full w-full object-cover object-center" />
                 </div>
             </DivBox>
         </LazyLoadComponent>

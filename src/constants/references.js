@@ -298,6 +298,26 @@ export const references = [
             {
                 img: require('../assets/about.jpg'),
                 to: 'https://pixabay.com/photos/beach-sand-shore-nature-sea-ocean-8268375/'
+            },
+            {
+                img: require('../assets/shape memory.png'),
+                to: 'https://images.app.goo.gl/V4ikjzh5L7Eawi5BA'
+            },
+            {
+                img: require('../assets/wet.png'),
+                to: 'https://images.app.goo.gl/2FpHBR1nCLdzAczo7'
+            },
+            {
+                img: require('../assets/clouds.png'),
+                to: 'https://images.app.goo.gl/myNiKsjbppyipR2q8'
+            },
+            {
+                img: require('../assets/periodic table.png'),
+                to: 'https://images.app.goo.gl/tqEDXUTSPo87Cd5c9'
+            },
+            {
+                img: require('../assets/mpemba.png'),
+                to: 'https://images.app.goo.gl/ACooYkWJf5csbJm27'
             }
 
         ],
@@ -311,6 +331,21 @@ export const references = [
                 title: 'Structure and Properties of Water',
                 description: 'Water molecule consists of two hydrogen atoms with partial positive charges bonded to an oxygen atom partial with negative charges and its overall structure is bent',
                 to: "/water"
+            },
+            {
+                title: '101 random fun facts that will blow your mind',
+                description: 'Our collection of the best interesting trivia covers animals, biology, geography, space and much more.',
+                to: 'https://www.sciencefocus.com/science/fun-facts'
+            },
+            {
+                title: 'Mpemba effect',
+                description: 'The phenomenon, when taken to mean "hot water freezes faster than cold", is difficult to reproduce or confirm because it is ill-defined.[',
+                to: 'https://en.wikipedia.org/wiki/Mpemba_effect'
+            },
+            {
+                title: '35 Weird Science Facts Worth Knowing in 2024',
+                description: 'We all learn the same things in science as we make our way through school. We discover that mixing baking soda and',
+                to: 'https://rehack.com/science/weird-science-facts/'
             }
         ]
     }

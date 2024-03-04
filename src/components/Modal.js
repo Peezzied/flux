@@ -66,11 +66,11 @@ export default function Modals({ children, head, close }) {
                 duration: .3,
                 type: 'tween'
             }} className="inset-0 fixed  z-[50] overflow-y-auto">
-                <div className="max-w-[70em] mx-auto my-12 bg-white rounded-[18px] h-max relative" ref={modalRef}>
-                    <div className="sticky float-end top-3 mr-3 mt-3" onClick={close}>
-                        <LazyLoadImage src={x} alt="" className=" cursor-pointer" />
+                <div className="max-w-[70em] mx-auto sm:my-12 bg-white rounded-[18px] h-max relative" ref={modalRef}>
+                    <div className="sticky top-3 pr-3 pt-3" onClick={close}>
+                        <img src={x} alt="" className=" cursor-pointer ml-auto" />
                     </div>
-                    <div className=" py-[5em] space-y-24">
+                    <div className="py-[2.5em] sm:py-[5em] space-y-16 sm:space-y-24">
                         <div className="space-y-4 lg:mx-[4em]  mx-[2.7em] ">
                             <div className="font-title fluid-pr font-semibold uppercase">Phase Changes</div>
                             <div className="font-semibold font-title fluid-title leading-tight">{head}</div>

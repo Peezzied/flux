@@ -46,7 +46,75 @@ export const TopicHeader = ({ src, data, name, img = false, size = null }) => (
     </Heading>
 )
 
-export default function PhaseChanges() {
+function Phases() {
+    const [modalHead, setModalHead] = useState([])
+    const [modalData, setModalData] = useState([])
+    const [isOpen, setIsOpen] = useState(false)
+    const closeModal = () => {
+        setIsOpen(false)
+    }
+    const openModal = (i, h) => {
+        console.log('modal data', i)
+        setModalHead(h)
+        setModalData(i)
+        setIsOpen(true)
+    }
+    return (
+        <DivBox container='max-w-full 2xl:container' div='sm:bg-gradient-to-b bg-gradient-to-t from-white to-[#5A97BF] from-[27%] to-[300%] sm:to-[200%]  py-24 pb-52 sm:pb-24' id='phases'>
+            <div className="grid sm:px-7 xl:px-20  grid-rows-[auto_1fr] lg:grid-cols-2 gap-x-10 lg:gap-y-28">
+                <div className=" mx-5 col-span-3 lg:col-span-1 h-max">
+                    <div className="text-primary font-label font-bold fluid-pr uppercase">{properties[0].label}</div>
+                    <div className="font-title fluid-title font-bold">{properties[0].title}</div>
+                    <Reveal variants={{
+                        start: { y: 100, opacity: 0 },
+                        visible: { y: 0, opacity: 1 }
+                    }} >
+                        <div className="font-primary font-medium fluid-pr mt-4">{properties[0].body}</div>
+                    </Reveal>
+                </div>
+                <div className="mx-5 sm:mx-0 grid justify-items-end items-end col-span-3 lg:col-span-1 mt-20">
+                    <Reveal variants={{
+                        start: { y: 100, opacity: 0 },
+                        visible: { y: 0, opacity: 1 }
+                    }}>
+                        <div className="grid grid-cols-[1fr_auto] bg-[#f4f7f8] drop-shadow-sm sm:rounded-[35px] rounded-br-none rounded-3xl overflow-hidden sm:rounded-br-none h-max">
+                            <div className=" max-w-full h-full cursor-pointer" onClick={() => { openModal(properties[1].video.modal, properties[1].video.title) }}><img loading="lazy" className="h-full w-full object-cover" src={videoPhoto} alt="" /></div>
+                            <div className="p-5 sm:p-10 max-w-max grid items-center">
+                                <div className="max-w-max h-max">
+                                    <div className="fluid-pr font-primary font-bold max-w-max">{properties[1].title}</div>
+                                    <div className="fluid-pr font-primary max-w-[11em] leading-tight">{properties[1].description}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </Reveal>
+                </div>
+                <div className=" grid lg:grid-cols-4 grid-cols-2 grid-rows-[150px_150px_150px_150px_150px_150px_150px] lg:grid-rows-[150px_100px_150px_150px_150px_150px] gap-1 lg:col-span-2 col-span-3 mt-10 lg:mt-0">
+                    {properties[2].map((i, index) => (
+                        <Reveal variants={{
+                            start: { y: 100, opacity: 0 },
+                            visible: { y: 0, opacity: 1 }
+                        }} style={`fluid-pr font-primary overflow-hidden after:z-[-10] z-10 text-white relative after:phaseCard sm:rounded-[30px] after:bgOverlay px-5 sm:px-8 py-6 sm:py-7 xl:p-7 xl:px-10 ${i.style}`}>
+                            <LazyLoadImage src={i.img} className="absolute object-cover object-center top-0 right-0 w-full h-full -z-10" />
+                            <div className="uppercase font-semibold">{i.title}</div>
+                            <div className="leading-tight mt-3">{i.description}</div>
+                            <div className="text-[#e8e8e8] mt-7 cursor-pointer" onClick={() => { i.modal && openModal(i.modal, i.head) }}>Show me</div>
+
+                        </Reveal>
+                    ))}
+                </div>
+            </div>
+            <AnimatePresence mode="wait">
+
+                {isOpen && <Modals head={modalHead} close={closeModal}>
+                    {modalData.map((i) =>
+                        (<Modal img={i.img} video={i.video} label={i.label} icon={i.icon}>{i.lead}</Modal>)
+                    )}
+                </Modals>}
+            </AnimatePresence>
+        </DivBox>
+    )
+}
+function Stages() {
     let [ref, { width }] = useMeasure()
     const xTranslation = useMotionValue(0)
     useEffect(() => {
@@ -66,19 +134,33 @@ export default function PhaseChanges() {
 
 
     const isXl = useMediaQuery(`(min-width: ${sizes.xl})`)
+    return (
+        <DivBox div="bg-dark overflow-hidden" container='xl:container'>
+            <motion.div className="xl:flex  text-white p-10 px-0 md:justify-between space-x-[80px] w-max xl:w-full" ref={ref} style={{ x: isXl ? '0' : xTranslation }}>
+                <Reveals increment={0.15} variants={{
+                    start: { y: 75, opacity: 0 },
+                    visible: { y: 0, opacity: 1 }
+                }}>
+                    {!isXl && [...phaseDarkSection, ...phaseDarkSection].map((i) => (
+                        <Reveal style='w-max inline-block'>
+                            <HeadingBottom label={i.label} svg={React.cloneElement(i.icon, { className: 'h-9 fill-labelBlue' })} >{i.title}</HeadingBottom>
+                        </Reveal>
+                    ))}
+                    {isXl && phaseDarkSection.map((i) => (
+                        <Reveal style='w-max inline-block'>
+                            <HeadingBottom label={i.label} svg={React.cloneElement(i.icon, { className: 'h-9 fill-labelBlue' })} >{i.title}</HeadingBottom>
+                        </Reveal>
+                    ))}
+                </Reveals>
+            </motion.div>
+        </DivBox>
+    )
+}
 
-    const [modalHead, setModalHead] = useState([])
-    const [modalData, setModalData] = useState([])
-    const { isOpen, setIsOpen } = useSharedVals()
-    const closeModal = useCallback(() => {
-        setIsOpen(false)
-    })
-    const openModal = useCallback((i, h) => {
-        console.log('modal data', i)
-        setModalHead(h)
-        setModalData(i)
-        setIsOpen(true)
-    })
+export default function PhaseChanges() {
+
+
+
     // useEffect(()=>{
     //     properties[2].map((i)=>{
     //         {i.modal && i.modal.map((ci)=>{
@@ -90,59 +172,9 @@ export default function PhaseChanges() {
     return (
         <>
             <TopicHeader src={phase} data={headerData} name='phase' size="fluid-title-xl" />
-            <DivBox container='max-w-full 2xl:container' div='sm:bg-gradient-to-b bg-gradient-to-t from-white to-[#5A97BF] from-[27%] to-[300%] sm:to-[200%]  py-24 pb-52 sm:pb-24' id='phases'>
-                <div className="grid sm:px-7 xl:px-20  grid-rows-[auto_1fr] lg:grid-cols-2 gap-x-10 lg:gap-y-28">
-                    <div className=" mx-5 col-span-3 lg:col-span-1 h-max">
-                        <div className="text-primary font-label font-bold fluid-pr uppercase">{properties[0].label}</div>
-                        <div className="font-title fluid-title font-bold">{properties[0].title}</div>
-                        <Reveal variants={{
-                            start: { y: 100, opacity: 0 },
-                            visible: { y: 0, opacity: 1 }
-                        }} >
-                            <div className="font-primary font-medium fluid-pr mt-4">{properties[0].body}</div>
-                        </Reveal>
-                    </div>
-                    <div className="mx-5 sm:mx-0 grid justify-items-end items-end col-span-3 lg:col-span-1 mt-20">
-                        <Reveal variants={{
-                            start: { y: 100, opacity: 0 },
-                            visible: { y: 0, opacity: 1 }
-                        }}>
-                            <div className="grid grid-cols-[1fr_auto] bg-[#f4f7f8] drop-shadow-sm sm:rounded-[35px] rounded-br-none rounded-3xl overflow-hidden sm:rounded-br-none h-max">
-                                <div className=" max-w-full h-full cursor-pointer" onClick={() => { openModal(properties[1].video.modal, properties[1].video.title) }}><img loading="lazy" className="h-full w-full object-cover" src={videoPhoto} alt="" /></div>
-                                <div className="p-5 sm:p-10 max-w-max grid items-center">
-                                    <div className="max-w-max h-max">
-                                        <div className="fluid-pr font-primary font-bold max-w-max">{properties[1].title}</div>
-                                        <div className="fluid-pr font-primary max-w-[11em] leading-tight">{properties[1].description}</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </Reveal>
-                    </div>
-                    <div className=" grid lg:grid-cols-4 grid-cols-2 grid-rows-[150px_150px_150px_150px_150px_150px_150px] lg:grid-rows-[150px_100px_150px_150px_150px_150px] gap-1 lg:col-span-2 col-span-3 mt-10 lg:mt-0">
-                        {properties[2].map((i, index) => (
-                            <Reveal variants={{
-                                start: { y: 100, opacity: 0 },
-                                visible: { y: 0, opacity: 1 }
-                            }} style={`fluid-pr font-primary overflow-hidden after:z-[-10] z-10 text-white relative after:phaseCard sm:rounded-[30px] after:bgOverlay px-5 sm:px-8 py-6 sm:py-7 xl:p-7 xl:px-10 ${i.style}`}>
-                                <LazyLoadImage src={i.img} className="absolute object-cover object-center top-0 right-0 w-full h-full -z-10"/>
-                                <div className="uppercase font-semibold">{i.title}</div>
-                                <div className="leading-tight mt-3">{i.description}</div>
-                                <div className="text-[#e8e8e8] mt-7 cursor-pointer" onClick={() => { i.modal && openModal(i.modal, i.head) }}>Show me</div>
-
-                            </Reveal>
-                        ))}
-                    </div>
-                </div>
-                <AnimatePresence mode="wait">
-
-                    {isOpen && <Modals head={modalHead} close={closeModal}>
-                        {modalData.map((i) =>
-                            (<Modal img={i.img} video={i.video} label={i.label} icon={i.icon}>{i.lead}</Modal>)
-                        )}
-                    </Modals>}
-                </AnimatePresence>
-            </DivBox>
-            <VideoSection isBoxed={true} data={phaseChange} background={true} id="visualizing"/>
+            <Stages/>
+            <Phases />
+            <VideoSection isBoxed={true} data={phaseChange} background={true} id="visualizing" />
             <Trivia />
             <DivBox container='max-w-6xl mx-auto' div='bg-gradient-to-b from-white to-[#5A97BF] from-[27%] to-[200%]' id='processes'>
                 <div className="space-y-14 sm:space-y-24 py-[6em] lg:py-[10em]   ">
@@ -184,7 +216,8 @@ export default function PhaseChanges() {
                 </div>
             </DivBox>
             <VideoSection isBoxed={true} data={curve} isReversed={true} background={true} id='heating-curve' />
-            <BigBoxSection data={conclusion} background={require('../assets/phase/bigbox.png')} id='conclusion'/>
+            <BigBoxSection data={conclusion} background={require('../assets/phase/bigbox.png')} id='conclusion' />
+
         </>
     )
 }

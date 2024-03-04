@@ -2,7 +2,7 @@ export const front = [
     {
         label: '/fləks/ • noun, verb',
         title: 'We are Flux.',
-        body: 'Flux, an educational initiative, driven by eight passionate Grade 11 students from Our Lady of Fatima University Valenzuela Campus (SY 2024), STEM 11-3 section.'
+        body: 'Flux, an educational initiative, driven by eight passionate Grade 11 students from Our Lady of Fatima University Valenzuela Campus (SY 2024), STEM 11-3 section of Group 4.'
     },
     {
         lead: "Aligned with our Performance Task in General Chemistry 2, we've crafted a platform showcasing comprehensive contents to disseminate the properties of liquids and solids.",
