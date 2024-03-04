@@ -55,6 +55,18 @@ export const references = [
                 to: 'https://images.app.goo.gl/Nr6weZD6zi8vVE5R9'
             },
             {
+                img: require('../assets/home/diagram.png'),
+                to: 'https://images.app.goo.gl/LVwuB55iEPbCxi4B6'
+            },
+            {
+                img: require('../assets/home/states.png'),
+                to: 'https://www.flaticon.com/free-icon/state-of-matter_1534200'
+            },
+            {
+                img: require('../assets/home/ice.png'),
+                to: 'https://www.engadget.com/2018-10-08-major-un-report-climate-change-worse.html'
+            },
+            {
                 img: require('../assets/phase/science and research.png'),
                 to: 'https://www.google.com/imgres?imgurl=https://i.ytimg.com/vi/tCNtKrxlZPs/hqdefault.jpg&tbnid=2XvdCHJmhcvz3M&vet=1&imgrefurl=https://www.youtube.com/playlist?list%3DPLGlvFEwL2wDGAFJFFFyi-LL1zu64BHvxv&docid=N-abBs72u_3Z6M&w=480&h=360&hl=en-US&gl=US&source=sh/x/im/m1/2&kgs=d76b100481717438&shem=trie'
             },
@@ -94,6 +106,18 @@ export const references = [
                 img: 'https://img.youtube.com/vi/zn8MzCiVCCc/hqdefault.jpg',
                 to: 'https://youtu.be/zn8MzCiVCCc'
             },
+            {
+                img: 'https://img.youtube.com/vi/lZTTzAkeSFQ/hqdefault.jpg',
+                to: 'https://youtu.be/lZTTzAkeSFQ'
+            },
+            {
+                img: 'https://img.youtube.com/vi/6pA7WyuJjEg/hqdefault.jpg',
+                to: 'https://youtu.be/6pA7WyuJjEg'
+            },
+            {
+                img: 'https://img.youtube.com/vi/UNxnkW6ZAN4/hqdefault.jpg',
+                to: 'https://youtu.be/UNxnkW6ZAN4'
+            },
         ],
 
         sources: [
@@ -118,29 +142,64 @@ export const references = [
                 to: 'https://www.acs.org/middleschoolchemistry/lessonplans/chapter2/lesson4.html'
             },
             {
-                title: 'Lorem Ipsum',
-                description: 'Lorem Ipsum',
-                to: ''
+                title: 'Phase Changes of Matter - Condensation, Sublimation, Deposition',
+                description: 'A phase is a distinctive form of a substance, and matter can change among the phases. These changes can take place upon adding some external energies, temperature, and pressure. ',
+                to: 'https://www.turito.com/learn/chemistry/phase-changes-of-matter-grade-6'
             },
             {
-                title: 'Lorem Ipsum',
-                description: 'Lorem Ipsum',
-                to: 'https://www.acs.org/middleschoolchemistry/lessonplans/chapter2/lesson4.html'
+                title: 'Phase change',
+                description: 'A phase change is when matter changes to from one state (solid, liquid, gas, plasma) to another. ',
+                to: 'https://energyeducation.ca/encyclopedia/Phase_change'
             },
             {
-                title: 'Lorem Ipsum',
-                description: 'Lorem Ipsum',
-                to: ''
+                title: 'Phases of Matter and the Phase Changes',
+                description: 'Matter can also move from one phase to another when heat or energy is added or subtracted. ',
+                to: 'https://youtu.be/CMUmQRgJAo0?si=bgdIzqHn8VmmUUol'
             },
             {
-                title: 'Lorem Ipsum',
-                description: 'Lorem Ipsum',
-                to: ''
+                title: 'Freezing - More Grades 3-5 Science on the Learning Videos Channel',
+                description: 'Freezing is a phase transition where a liquid turns into a solid when its temperature is lowered below its freezing point. ',
+                to: 'https://youtu.be/zSAcQpIrOSA'
             },
             {
-                title: 'Lorem Ipsum',
-                description: 'Lorem Ipsum',
-                to: ''
+                title: 'Why Does Ice Melt? - Science for Kids',
+                description: 'Discover the science behind why ice melts with Odie! ',
+                to: 'https://youtu.be/uBn5DFyR5-I'
+            },
+            {
+                title: 'What Is Condensation?',
+                description: 'Have you ever noticed droplets of water forming on the inside of your windows?',
+                to: 'https://youtu.be/Y9cASQn_SEw'
+            },
+            {
+                title: 'Understanding Vaporization and Evaporation | Why do clothes dry even at room temperature?',
+                description: 'Embark on a captivating journey into the world of evaporation and discover how heat transforms a liquid into a gas.',
+                to: 'https://youtu.be/G8R5SESF5H4'
+            },
+            {
+                title: 'Heating Curves Temperature Energy Graphs | GCSE Physics',
+                description: 'What happens to a substance when we heat it and it changes state? Find out what happens to temperature in the heating curve of water using a temperature energy graph.',
+                to: 'https://youtu.be/hklSXPv2vrQ'
+            },
+            {
+                title: 'Phase Diagrams',
+                description: 'Learn how to interpret a phase diagram including the triple point and places of sublimation!',
+                to: 'https://youtu.be/zn8MzCiVCCc'
+            },
+            {
+                title: 'Sublimation | Unlocking Secrets of Sublimation: A Comprehensive Guide to Phase Transitions',
+                description: 'Sublimation process',
+                to: 'https://youtu.be/lZTTzAkeSFQ'
+            },
+            {
+                title: 'Sublimation vs Deposition',
+                description: 'Sublimation and Deposition are two types of phase changes. Sublimation is when a solid goes to a liquid and deposition is when a gas goes straight to a solid.',
+                to: 'https://youtu.be/6pA7WyuJjEg'
+            },
+            {
+                title: 'Deposition (phase transition)',
+                description: 'Deposition, also known as desublimation, is a thermodynamic process, a phase transition in which gas transforms into solid. The reverse of deposition is sublimation.',
+                to: 'https://youtu.be/UNxnkW6ZAN4'
             },
         ]
     },
@@ -178,7 +237,7 @@ export const references = [
             {
                 img: 'https://img.youtube.com/vi/pSh8X-R9mxQ/hqdefault.jpg',
                 to: 'https://youtu.be/pSh8X-R9mxQ'
-            },
+            }
         ],
 
         sources: [
@@ -188,10 +247,71 @@ export const references = [
                 to: 'https://chemistrytalk.org/properties-water-physical-chemical/'
             },
             {
-                title: 'Lorem Ipsum',
-                description: 'Lorem Ipsum',
-                to: ''
+                title: 'Structure and Properties of Water',
+                description: 'Water is a valuable natural resource. Water is essential for the survival of all living things. We can’t imagine a world without water. ',
+                to: 'https://www.geeksforgeeks.org/structure-and-properties-of-water/'
             },
+            {
+                title: 'Water - A universal Solvent',
+                description: 'Learn through an activity the property of water to dissolve many substances in it',
+                to: 'https://youtu.be/PXdbwMc4d0M'
+            },
+            {
+                title: 'The Properties of Water',
+                description: 'Water, or H2O, is an unusual compound with amazing properties. Find out what makes water essential for all forms of life on Earth!',
+                to: 'https://youtu.be/0eNSnj4ZfZ8'
+            },
+            {
+                title: 'Why does ice float?',
+                description: 'It is because of density. Density is the measure of mass present per unit volume. Lesser the density, lighter is the object.',
+                to: 'https://youtu.be/pSh8X-R9mxQ'
+            }
+        ]
+    },
+    {
+        title: "Other Resources",
+        images: [
+            {
+                img: require('../assets/waterBg.png'),
+                to: 'https://www.google.com/imgres?imgurl=https://hips.hearstapps.com/hmg-prod/images/blue-lake-water-with-waves-background-royalty-free-image-1701283846.jpg?crop%3D0.66667xw:1xh;center,top%26resize%3D640:*&tbnid=HrygLZGBraeCtM&vet=1&imgrefurl=https://www.popularmechanics.com/science/environment/a45980114/atlantic-equitorial-water/&docid=eslcXef8gMRBrM&w=640&h=640&hl=en-US&gl=US&source=sh/x/im/m1/2&kgs=7674f0d05cebccab&shem=trie'
+            },
+            {
+                img: require('../assets/blue-hero.jpg'),
+                to: 'https://earthobservatory.nasa.gov/images/152424/pace-makes-it-to-space'
+            },
+            {
+                img: require('../assets/about.jpg'),
+                to: 'https://pixabay.com/photos/beach-sand-shore-nature-sea-ocean-8268375/'
+            },
+            {
+                img: require('../assets/library.jpg'),
+                to: 'https://www.resgap.com/about/'
+            },
+            {
+                img: require('../assets/trail.png'),
+                to: 'https://www.wallpaperflare.com/long-exposure-lights-light-trail-taillight-red-yellow-wallpaper-elatf'
+            },
+            {
+                img: require('../assets/about.jpg'),
+                to: 'https://pixabay.com/photos/beach-sand-shore-nature-sea-ocean-8268375/'
+            },
+            {
+                img: require('../assets/about.jpg'),
+                to: 'https://pixabay.com/photos/beach-sand-shore-nature-sea-ocean-8268375/'
+            }
+
+        ],
+        sources: [
+            {
+                title: 'Phase Changes',
+                description: "Stage adjustments happen when issue shifts in between states because of modifications in power or stress.",
+                to: '/phase-changes'
+            },
+            {
+                title: 'Structure and Properties of Water',
+                description: 'Water molecule consists of two hydrogen atoms with partial positive charges bonded to an oxygen atom partial with negative charges and its overall structure is bent',
+                to: "/water"
+            }
         ]
     }
 ]

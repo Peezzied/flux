@@ -1,4 +1,4 @@
-import { LazyMotion, domAnimation, motion, useAnimation, useInView, m } from "framer-motion"
+import { LazyMotion, domAnimation, motion, useAnimation, useInView, m, easeIn, easeOut, easeInOut, cubicBezier } from "framer-motion"
 import React, { useEffect, useRef } from "react"
 
 const viewVars = {
@@ -24,7 +24,7 @@ export default function Reveal({ children, style, delay, variants = viewVars, di
             <m.div {...props} ref={view} className={`${style} ${div}`} style={styleProperty} variants={variants}
                 initial="start"
                 animate={mainControls}
-                transition={{ duration: 0.5, delay: delay }}>
+                transition={{ duration: 0.6, type: 'tween', ease: cubicBezier(0.25, 1, 0.25, 1), delay: delay }}>
 
                 {children}
 

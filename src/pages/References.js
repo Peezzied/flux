@@ -4,7 +4,7 @@ import reference from "../assets/library.jpg"
 import { references } from "../constants/references";
 import DivBox from "../components/DivBox";
 import { ExternalLink } from "../components/SvgComponents";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import { LazyLoadComponent, LazyLoadImage } from "react-lazy-load-image-component";
 import { useRef, useState } from "react";
 
 function Medias({ data }) {
@@ -13,22 +13,22 @@ function Medias({ data }) {
     const [startX, setStartX] = useState(0)
     const [scrollLeft, setScrollLeft] = useState(0)
 
-    const handleMouseDown = (e)=>{
+    const handleMouseDown = (e) => {
         setIsMouseDown(true)
         setStartX(e.pageX - - items.current.offsetLeft)
         setScrollLeft(items.current.scrollLeft)
     }
-    const handleMouseLeave = ()=>{
+    const handleMouseLeave = () => {
         setIsMouseDown(false)
     }
-    const handleMouseUp = ()=>{
+    const handleMouseUp = () => {
         setIsMouseDown(false)
     }
-    const handleMouseMove = (e)=>{
-        if(!isMouseDown) return
+    const handleMouseMove = (e) => {
+        if (!isMouseDown) return
         e.preventDefault()
         const x = e.pageX - items.current.offsetLeft
-        const walk = (x-startX)*2
+        const walk = (x - startX) * 2
         items.current.scrollLeft = scrollLeft - walk
     }
     return (
@@ -67,17 +67,22 @@ function Section({ data }) {
                 <div className="space-y-3 max-w-4xl px-6 mx-auto">
                     <div className="fluid-sub text-[#4B4B4B] font-semibold font-title">Sources</div>
                     <div className=" border-2 border-[#E5E5E5] divide-y-2 divide-[#E5E5E5] rounded-[20px]">
-                        {data.sources.map((i) => (
-                            <div className="flex flex-row gap-6 p-3 px-6">
-                                <a className="flex justify-center" role="button" href={i.to}>
-                                    <ExternalLink className="w-7 fill-primary" />
-                                </a>
-                                <div className="font-primary">
-                                    <div className="font-semibold fluid-pr2 text-[#4B4B4B] line-clamp-1">{i.title}</div>
-                                    <div className="fluid-pr text-[#4B4B4B] line-clamp-1">{i.description}</div>
-                                </div>
-                            </div>
-                        ))}
+                        <LazyLoadComponent>
+                            {data.sources
+                                .slice()
+                                .sort((a, b) => a.title.localeCompare(b.title))
+                                .map((i, index) => (
+                                    <div className="flex flex-row gap-6 p-3 px-6" key={index + 1}>
+                                        <a className="flex justify-center" role="button" href={i.to}>
+                                            <ExternalLink className="w-7 fill-primary" />
+                                        </a>
+                                        <div className="font-primary">
+                                            <div className="font-semibold fluid-pr2 text-[#4B4B4B] line-clamp-1">{i.title}</div>
+                                            <div className="fluid-pr text-[#4B4B4B] line-clamp-1">{i.description}</div>
+                                        </div>
+                                    </div>
+                                ))}
+                        </LazyLoadComponent>
                     </div>
                 </div>
             </div>
@@ -92,6 +97,7 @@ export default function References() {
             <div className="space-y-16">
                 <Section data={references[0]} />
                 <Section data={references[1]} />
+                <Section data={references[2]} />
             </div>
         </>
     )

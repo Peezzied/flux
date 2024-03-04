@@ -26,7 +26,7 @@ export const phase = {
     title: 'Phase Changes',
     card: [
         {
-            lead: 'Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.'
+            lead: 'When matter changes from one state to another. '
         },
         {
             label: 'The Holy Grail',

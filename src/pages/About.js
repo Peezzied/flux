@@ -167,25 +167,28 @@ export default function About() {
                             <div className="fluid-title font-bold font-title text-center text-primary">{members.title}</div>
                             <div className=" divide-y-2 divide-[#E5E5E5] ">
 
-                                {members.list.map((i) => (
-                                    <div className="flex flex-row gap-6 py-6 max-w-xl mx-auto">
-                                        <div className="w-[7em] flex"><LazyLoadImage className="w-full my-auto" src={i.avatar} alt="" /></div>
-                                        <div className="font-primary text-[#4B4B4B]">
-                                            <Reveal variants={{
-                                                start: { y: 100, opacity: 0 },
-                                                visible: { y: 0, opacity: 1 }
-                                            }}>
-                                                <div className="fluid-pr2 font-bold">{i.name}</div>
-                                            </Reveal>
-                                            <Reveal variants={{
-                                                start: { y: 100, opacity: 0 },
-                                                visible: { y: 0, opacity: 1 }
-                                            }}>
-                                                <div className="fluid-pr">{i.description}</div>
-                                            </Reveal>
+                                {members.list
+                                    .slice()
+                                    .sort((a, b) => a.name.localeCompare(b.name))
+                                    .map((i, index) => (
+                                        <div className="flex flex-row gap-6 py-6 max-w-xl mx-auto" key={index}>
+                                            <div className="w-[7em] flex"><LazyLoadImage className="w-full my-auto" src={i.avatar} alt="" /></div>
+                                            <div className="font-primary text-[#4B4B4B]">
+                                                <Reveal variants={{
+                                                    start: { y: 100, opacity: 0 },
+                                                    visible: { y: 0, opacity: 1 }
+                                                }}>
+                                                    <div className="fluid-pr2 font-bold">{i.name}</div>
+                                                </Reveal>
+                                                <Reveal variants={{
+                                                    start: { y: 100, opacity: 0 },
+                                                    visible: { y: 0, opacity: 1 }
+                                                }}>
+                                                    <div className="fluid-pr">{i.description}</div>
+                                                </Reveal>
+                                            </div>
                                         </div>
-                                    </div>
-                                ))}
+                                    ))}
 
                             </div>
                         </div>
@@ -193,17 +196,17 @@ export default function About() {
 
                 </div>
             </DivBox>
-            <DivBox container='container max-w-6xl mx-auto' div='bg-[#fafafa] px-6'>
+            {/* <DivBox container='container max-w-6xl mx-auto' div='bg-[#fafafa] px-6'>
                 <div>
                     <div>
                         <div className="fluid-title text-primary font-title font-bold text-center">{importance.title}</div>
                         <div className="fluid-pr text-[#4B4B4B] font-primary text-center">{importance.body}</div>
                     </div>
                     <div>
-                        {/* SOME KIND OF CARDS */}
+                     
                     </div>
                 </div>
-            </DivBox>
+            </DivBox> */}
         </>
     )
 }

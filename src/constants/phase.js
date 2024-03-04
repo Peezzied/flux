@@ -163,6 +163,15 @@ export const properties = [
             style: 'lg:row-span-2 row-span-2 lg:col-span-2 lg:row-start-1 lg:col-end-5',
             modal: [
                 {
+                    lead: ['Deposition is a process reverse to the sublimation, which means the gaseous phase directly converting or changing into the solid state without entering into the liquid. '],
+                    video: (<LiteYouTubeEmbed id="UNxnkW6ZAN4"/>)
+                },
+                {
+                    label: 'The Intersection.',
+                    lead: ['Sublimation and Deposition are phase changes.', 'Sublimation is an endothermic process and deposition is an exothermic process.'],
+                    video: (<LiteYouTubeEmbed id="6pA7WyuJjEg"/>)
+                },
+                {
                     label: 'Importance.',
                     lead: ['Deposition, the process of adding material gradually to a landform over time, is one of the primary ways that creates and modifies landscape features - it can turn a meander into an oxbow lake for instance!']
                 },
@@ -208,6 +217,15 @@ export const properties = [
             img: require('../assets/phase/dryIce.png'),
             style: 'lg:row-span-2 row-span-2',
             modal: [
+                {
+                    lead: ['Sublimation, in chemistry, conversion of a substance from the solid to the gaseous state without its becoming liquid.'],
+                    video: (<LiteYouTubeEmbed id="lZTTzAkeSFQ"/>)
+                },
+                {
+                    label: 'The Intersection.',
+                    lead: ['Sublimation and Deposition are phase changes.', 'Sublimation is an endothermic process and deposition is an exothermic process.'],
+                    video: (<LiteYouTubeEmbed id="6pA7WyuJjEg"/>)
+                },
                 {
                     label: 'Importance.',
                     lead: ['Sublimation can be important in the recovery of compounds that are suspended or dissolved in a fluid or a solid like dry ice.', 'The compounds can be recovered, at least in crude form, by allowing the suspending matrix to sublimate away.']

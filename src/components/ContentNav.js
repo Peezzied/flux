@@ -147,7 +147,8 @@ export default function ContentNav({ toggleMenu, changeStyle }) {
                                             <ul className="space-y-2 font-light">
                                                 {i.child.map((ci) => {
                                                     return (
-                                                        <li className="rounded-xl px-5 p-3 bg-gradient-to-bl from-slate-950/[0.5] to-slate-900 hover:text-ascent transition-all duration-400"><HashLink scroll={true} to={ci.to}>{ci.title}</HashLink></li>
+                                                        <li className="rounded-xl px-5 p-3 bg-gradient-to-bl from-slate-950/[0.5] to-slate-900 hover:text-ascent transition-all duration-400"><HashLink scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                                                            to={ci.to}>{ci.title}</HashLink></li>
                                                     )
                                                 })}
                                             </ul>

@@ -41,12 +41,12 @@ export const members = {
     list: [
         {
             avatar: require('../assets/avatar/1.png'),
-            name: 'Lorem Ipsum',
-            description: 'Lorem ipsum dolor sit amet consectetur. Vitae integer accumsan.'
+            name: 'Jana Margareth I. Onera',
+            description: '17 years old, female, is a Grade 11 STEM student who is a dreamer to be an aspiring inspiration and someone who can be of help to others.'
         },
         {
             avatar: require('../assets/avatar/1.png'),
-            name: 'Lorem Ipsum',
+            name: 'Lorem Ipsssssssssssssssssssssssssssssssssum',
             description: 'Lorem ipsum dolor sit amet consectetur. Vitae integer accumsan.'
         },
         {

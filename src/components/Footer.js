@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import { footer } from "../constants/footer"
 import DivBox from "./DivBox"
 import logo from '../assets/chemphase.png'
+import { HashLink } from "react-router-hash-link"
 
 function Footer() {
     return (
@@ -15,15 +16,15 @@ function Footer() {
                         ))}
                     </div>
                 </div>
-                <div className="p-12 flex flex-row justify-between flex-wrap">
-                    <div className="space-y-1">
+                <div className="p-12 flex flex-row justify-between flex-wrap gap-y-12 gap-x-6">
+                    <div className="space-y-1 basis-full lg:basis-auto">
                         <img className="w-auto h-[10em]" src={logo} alt="" srcset="" />
                         <div className="font-primary fluid-pr max-w-[15em]">{footer[1].logoDescription}</div>
                     </div>
                     {footer[1].section.map((i)=>(
                         <div className="space-y-5 fluid-pr font-primary w-max">
                             <div className="font-bold">{i.title}</div>
-                            <div className="flex flex-col">{i.links.map((link)=>(<div className="text-secondary"><Link to={link.to}>{link.name}</Link></div>))}</div>
+                            <div className="flex flex-col">{i.links.map((link)=>(<div className="text-secondary"><HashLink scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })} to={link.to}>{link.name}</HashLink></div>))}</div>
                         </div>
                     ))}
                 </div>

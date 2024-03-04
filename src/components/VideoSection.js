@@ -35,7 +35,7 @@ export default function VideoSection({ data, isReversed = false, isBoxed, backgr
                     </div>
 
                 </div>
-                <GetInfo />
+     
             </DivBox>
         </LazyLoadComponent>
     )

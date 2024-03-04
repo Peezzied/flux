@@ -58,7 +58,7 @@ export const contentNavigator = [
             },
             {
                 title: 'What it is?',
-                to: '/water#universal-solvent'
+                to: '/water#about'
             },
             {
                 title: 'Structure',

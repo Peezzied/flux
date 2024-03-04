@@ -33,7 +33,7 @@ export default function Water() {
         <>
             <TopicHeader src={vbg} data={headerData} name='water' size="fluid-title-xl" />
             <DivBox div="bg-dark" container='xl:container' >
-                <div className="flex xl:flex-row divide-y-2 divide-[#373741] flex-col  text-white justify-between">
+                <div className="flex xl:flex-row divide-y-2 xl:divide-y-0 divide-[#373741] flex-col  text-white justify-between">
                     <Reveals increment={0.15} variants={{
                         start: { y: 75, opacity: 0 },
                         visible: { y: 0, opacity: 1 }
@@ -51,7 +51,7 @@ export default function Water() {
                 </div>
             </DivBox>
 
-            <DivBox div='h-[100dvh] bg-no-repeat bg-center bg-cover relative after:earthGradientTop sm:after:earthGradient after:bgOverlay' container='container relative z-10' style={{ backgroundImage: `url(${imgBg[0]})` }}>
+            <DivBox id='universal-solvent' div='h-[100dvh] bg-no-repeat bg-center bg-cover relative after:earthGradientTop sm:after:earthGradient after:bgOverlay' container='container relative z-10' style={{ backgroundImage: `url(${imgBg[0]})` }}>
                 <Reveal variants={{
                     start: { y: 100, opacity: 0 },
                     visible: { y: 0, opacity: 1 }
@@ -60,7 +60,7 @@ export default function Water() {
                 </Reveal>
             </DivBox>
 
-            <VideoSection isBoxed={true} data={water} id='universal-solvent'/>
+            <VideoSection isBoxed={true} data={water} />
 
             <DivBox container='container' id="structure-properties">
                 <div className="py-28 px-6">

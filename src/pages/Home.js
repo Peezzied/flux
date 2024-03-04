@@ -103,14 +103,14 @@ export default function Home() {
                             visible: { y: 0, opacity: 1 }
                         }}>
                             <Reveal >
-                                <div className='border-subtle font-semibold font-primary fluid-title bg-gradient-to-br rounded-xl sm:rounded-3xl from-white to-[#B49781] from-[50%] to-[145%] p-10 sm:p-14 flex'><div className="xl:max-w-[419px] max-w-[350px] mt-auto leading-tight">{phase.card[0].lead}</div></div>
+                                <div className='border-subtle font-semibold font-primary fluid-title bg-gradient-to-br rounded-xl sm:rounded-3xl from-white to-[#B49781] from-[50%] to-[145%] p-10 sm:p-14 flex h-full'><div className="xl:max-w-[419px] max-w-[350px] mt-auto leading-tight">{phase.card[0].lead}</div></div>
                             </Reveal>
                             <Reveal style='h-full'>
                                 <div className='border-subtle font-semibold font-primary fluid-modal bg-gradient-to-br rounded-xl sm:rounded-3xl from-white to-[#B49781] from-[50%] to-[145%] p-10 sm:py-10 sm:px-16 h-full'>
                                     <div className='text-[#E36305] max-w-[17em]'>{phase.card[1].label}</div>
                                     <div className='max-w-[17em]'>{phase.card[1].body}</div>
                                     <img className='mx-auto w-[10em] mt-7' src={phase.card[1].img} alt="" />
-                                    {/* AN IMAGE HERE */}
+                    
                                 </div>
                             </Reveal>
                         </Reveals>
