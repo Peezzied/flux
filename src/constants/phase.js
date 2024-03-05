@@ -1,4 +1,4 @@
-import { Gas, Hygine, Ice, IceCream, Snow, Temp } from "../components/SvgComponents";
+noimport { Gas, Hygine, Ice, IceCream, Snow, Temp } from "../components/SvgComponents";
 import LiteYouTubeEmbed from 'react-lite-youtube-embed'
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css'
 
@@ -19,7 +19,7 @@ export const phaseDarkSection = [
         label: 'Vaporization'
     },
     {
-        icon: (<Gas />),
+        icon: (<Frozen />),
         title: 'Gas to Liquid',
         label: 'Condensation'
     },
