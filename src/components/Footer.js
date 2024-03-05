@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { footer } from "../constants/footer"
 import DivBox from "./DivBox"
-import logo from '../assets/chemphase.png'
+import logo from '../assets/flux.png'
 import { HashLink } from "react-router-hash-link"
 
 function Footer() {
