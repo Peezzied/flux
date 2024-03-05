@@ -20,7 +20,7 @@ export default function Trivia({ isHome = false }) {
                             visible: { y: 0, opacity: 1 }
                         }}>
                             <Reveal>
-                                <Hygine className='h-9 fill-primary' />
+                                <Idea className='h-9 fill-primary' />
                             </Reveal>
                             <Reveal>
                                 <div className="fluid-sub font-title font-bold text-white inline-block">Did you know?</div>
