@@ -66,7 +66,7 @@ export const explore = {
             label: 'water',
             title: 'The Science behind Water',
             body: 'Taking a closer look on what makes water a water.',
-            to: '/water#structure',
+            to: '/water#structure-properties',
             img: require('../assets/home/fall.png')
         }
     ]

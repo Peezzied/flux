@@ -89,13 +89,13 @@
         @apply aspect-video w-full overflow-hidden
     }
     .sectionOverlayRight {
-        @apply bg-gradient-to-r to-[#17171B]/0 from-[#17171B]/[97%] to-[190%] from-[30%]
+        @apply bg-gradient-to-l to-[#17171B]/0 from-[#17171B]/[97%] to-[190%] from-[30%]
     }
     .sectionOverlayTop {
-        @apply bg-gradient-to-t to-[#17171B]/0 from-[#17171B]/[97%] to-[190%] from-[30%]
+        @apply bg-gradient-to-b to-[#17171B]/0 from-[#17171B]/[97%] to-[190%] from-[30%]
     }
     .sectionOverlayLeft {
-        @apply bg-gradient-to-l to-[#17171B]/0 from-[#17171B]/[97%] to-[190%] from-[30%]
+        @apply bg-gradient-to-r to-[#17171B]/0 from-[#17171B]/[97%] to-[190%] from-[30%]
     }
     .fluid-modal {
         font-size: clamp(1.125rem, 0.9076rem + 1.087vi, 1.75rem) !important;
