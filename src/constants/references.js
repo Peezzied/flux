@@ -31,8 +31,8 @@ export const references = [
                 to: 'https://www.google.com/imgres?imgurl=https://images.nationalgeographic.org/image/upload/t_edhub_resource_related_resources/v1638889642/EducationHub/photos/water-condenses-on-an-aluminium-can.jpg&tbnid=qqUqx3FXwKcxkM&vet=1&imgrefurl=https://education.nationalgeographic.org/resource/dew&docid=BdCUlJ1feB50BM&w=800&h=700&hl=en-US&gl=US&source=sh/x/im/m1/2&kgs=a9899154cda94d6a&shem=trie'
             },
             {
-                img: require('../assets/phase/cooking.png'),
-                to: 'https://www.google.com/imgres?imgurl=https://miro.medium.com/v2/resize:fit:584/1*Sgjhc_5ZdVhhxT4wWFOIMw.jpeg&tbnid=2WDWaxf-Lzo3zM&vet=1&imgrefurl=https://medium.com/@anjalishopping.mdu/can-different-oils-affect-the-taste-of-your-dish-39f0af80a963&docid=WKom-sGkcZHOZM&w=292&h=173&hl=en-US&gl=US&source=sh/x/im/m1/2&kgs=2ee7987548f2753d&shem=trie'
+                img: require('../assets/phase/metalworking.png'),
+                to: 'https://www.google.com/imgres?imgurl=https://www.therobotreport.com/wp-content/uploads/2019/08/robosuit-slider-1-1573x685-1024x653.png&tbnid=QWNfxm0RVnwlyM&vet=1&imgrefurl=https://www.therobotreport.com/materials-rugged-robot-design-building/&docid=qqkRaelub6c9CM&w=1024&h=653&hl=en-US&gl=US&source=sh/x/im/m1/2&kgs=77b5e4864f92c606&shem=trie'
             },
             {
                 img: require('../assets/phase/bigbox.png'),

@@ -10,7 +10,7 @@ export const footer = [
         ]
     },
     {
-        logoDescription: 'An educational initiative, driven by eight passionate Grade 11 students from Our Lady of Fatima University (SY 2024).',
+        logoDescription: 'An educational initiative, driven by eight passionate Grade 11 STEM students from Our Lady of Fatima University (SY 2024).',
         section: [
             {
                 title: 'Phase Changes',

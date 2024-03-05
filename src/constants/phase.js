@@ -105,9 +105,9 @@ export const properties = [
                     video: (<LiteYouTubeEmbed id="uBn5DFyR5-I"/>) 
                 },
                 {
-                    label: 'Cooking.',
+                    label: 'Metalworking.',
                     lead: ['Casting:', 'Molten metal is poured into molds to create desired shapes, such as engine blocks, car parts, and sculptures.'],
-                    img: require('../assets/phase/cooking.png')
+                    img: require('../assets/phase/metalworking.png')
                 },
                 {
                     label: 'Plastic Manufacturing',
@@ -242,7 +242,7 @@ export const properties = [
 export const phaseChange = {
     label: 'Discover',
     title: 'Visualizing Phase Change',
-    body: "Phase Diagram is a graphical representation of a substance's equilibrium phases as a function of pressure and temperature. It often consists of sections representing various phases (such as solid, liquid, and gas) as well as the borders between them, which are known as phase boundaries or equilibrium lines. ",
+    body: "Phase Diagram is a graphical representation of a substance's equilibrium phases as a function of pressure and temperature. Phase diagrams are useful for predicting the transitions between different phases of a material. It is essential to comprehend how materials behave in various temperature and pressure environments.",
     video: (<LiteYouTubeEmbed id="zn8MzCiVCCc"/>),
     img: require('../assets/trail.png')
 }
@@ -253,11 +253,11 @@ export const diagram = {
     cards: [
         {
             title: 'Triple Point',
-            description: 'the factor on a stage diagram at which the 3 states of issue: gas, fluid, and also strong coexist.'
+            description: 'The factor on a stage diagram at which the 3 states of issue: gas, fluid, and also strong coexist.'
         },
         {
             title: 'Critical Point',
-            description: 'the factor on a stage representation at which the compound is the same in between fluid as well as gaseous states.'
+            description: 'The substance is indistinguishable between liquid and gaseous states. At this stage, solids cannot exits.'
         },
     ],
     img: require('../assets/home/diagram.png')

@@ -9,6 +9,7 @@ import dost from "../assets/dost.svg"
 import Reveal, { RevealImage, Reveals } from "../components/RevealAnimate";
 import { HashLink } from "react-router-hash-link";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Helmet } from "react-helmet";
 
 const variants = {
     start: { y: 100, opacity: 0 },
@@ -84,7 +85,7 @@ export default function About() {
                             <Reveal>
                                 <div className="max-w-[20em] divide-y-2 divide-solid divide-[#C0C0C0] justify-self-center h-max">
                                     {front[1].link.map((i) => (
-                                        <HashLink scroll to={i.to} className="grid grid-cols-[1fr_auto]">
+                                        <HashLink scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })} to={i.to} className="grid grid-cols-[1fr_auto]">
                                             <div className="space-y-2 py-7">
                                                 <div className="text-white text-[24px] font-semibold leading-tight ">{i.title}</div>
                                                 <div className="text-[#C0C0C0] fluid-pr font-semibold">{i.body}</div>

@@ -10,7 +10,7 @@ import { headerData } from "../constants/data"
 import { AnimatePresence, animate, motion, useMotionValue } from "framer-motion"
 import useMeasure from "react-use-measure"
 import { useEffect } from "react"
-
+import { Helmet } from "react-helmet";
 import { sizes, useMediaQuery } from "../constants/utility"
 import Modals, { Modal } from "../components/Modal"
 import { Sparkles } from "../components/SvgComponents"
@@ -204,7 +204,7 @@ export default function PhaseChanges() {
                             }}>
                                 {diagram.cards.map((i, index) => (
                                     <Reveal>
-                                        <div className="rounded-2xl bg-[#f2f6f8] lg:p-10 lg:px-14 p-5 sm:p-7 px-7 sm:px-10 space-y-2 border-2 border-[#eaeff1]">
+                                        <div className="rounded-2xl bg-[#f2f6f8] lg:p-10 lg:px-14 p-5 sm:p-7 px-7 sm:px-10 space-y-2 border-2 border-[#eaeff1] h-full">
                                             <div className={`font-primary font-bold fluid-modal ${index === 0 ? 'text-[#0A7D86]' : 'text-[#E36305]'}`}>{i.title}</div>
                                             <div className="fluid-pr font-primary">{i.description}</div>
                                         </div>

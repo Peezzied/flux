@@ -12,6 +12,7 @@ import QuizCTA from "../components/QuizCTA";
 import BigBoxSection from "../components/BigBoxSection";
 import { TextFocus } from "../components/TextFocus";
 import Trivia from "../components/TriviaBox";
+import { Helmet } from "react-helmet";
 
 export function HeadingBottom({ children, label, svg, ...props }) {
     return (
@@ -34,9 +35,9 @@ export default function Water() {
             <Helmet>
                 <meta
                     name="description"
-                    content="Learn about what makes water a water."
+                    content="Sailing through the scientific odyssey of Phase Changes from the interaction between energy and matter while unraveling the Structure and Properties of water along the voyage."
                 />
-                <title>Flux - Structure and Properties of Water</title>
+                <title>Flux - Phase Changes, Structure and Properties of Water</title>
             </Helmet>
             <TopicHeader src={vbg} data={headerData} name='water' size="fluid-title-xl" />
             <DivBox div="bg-dark" container='xl:container' >
@@ -73,7 +74,7 @@ export default function Water() {
                 <div className="py-28 px-6">
                     <div className="text-start lg:text-center">
                         <div className="fluid-pr font-label font-bold text-primary uppercase">{properties.label}</div>
-                        <div className="fluid-title font-title font-bold">{properties.title}</div>
+                        <div className="fluid-title font-title font-bold leading-tight">{properties.title}</div>
                     </div>
                     <Reveal variants={{
                         start: { y: 75, opacity: 0 },
