@@ -46,9 +46,9 @@ export default function Home() {
             <Helmet>
                 <meta
                     name="description"
-                    content="Learn about what makes water a water."
+                    content="Sailing through the scientific odyssey of Phase Changes from the interaction between energy and matter while unraveling the Structure and Properties of water along the voyage."
                 />
-                <title>Flux - </title>
+                <title>Flux - Phase Changes, Structure and Properties of Water</title>
             </Helmet>
             <div>
                 <Header />

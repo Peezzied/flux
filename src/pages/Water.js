@@ -35,9 +35,9 @@ export default function Water() {
             <Helmet>
                 <meta
                     name="description"
-                    content="Sailing through the scientific odyssey of Phase Changes from the interaction between energy and matter while unraveling the Structure and Properties of water along the voyage."
+                    content="Learn about the science behind water."
                 />
-                <title>Flux - Phase Changes, Structure and Properties of Water</title>
+                <title>Flux - Water</title>
             </Helmet>
             <TopicHeader src={vbg} data={headerData} name='water' size="fluid-title-xl" />
             <DivBox div="bg-dark" container='xl:container' >
