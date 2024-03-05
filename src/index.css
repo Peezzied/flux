@@ -91,6 +91,9 @@
     .sectionOverlayRight {
         @apply bg-gradient-to-r to-[#17171B]/0 from-[#17171B]/[97%] to-[190%] from-[30%]
     }
+    .sectionOverlayTop {
+        @apply bg-gradient-to-t to-[#17171B]/0 from-[#17171B]/[97%] to-[190%] from-[30%]
+    }
     .sectionOverlayLeft {
         @apply bg-gradient-to-l to-[#17171B]/0 from-[#17171B]/[97%] to-[190%] from-[30%]
     }
