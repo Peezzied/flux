@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom'
 import { BlueBlob, OrangeBlob, ToLink } from '../components/SvgComponents'
 import Reveal, { Reveals } from '../components/RevealAnimate'
 import { HashLink } from 'react-router-hash-link'
+import { Helmet } from "react-helmet";
 
 
 const Hexa = ({ ...props }) => (
