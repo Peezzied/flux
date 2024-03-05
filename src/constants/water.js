@@ -51,7 +51,7 @@ export const properties = {
         'with',
         'partial positive charges bonded to an',
         'oxygen atom',
-        'partial with negative charges and its',
+        'with partial negative charges and its',
         'overall structure is bent']
     ]
 }
@@ -68,7 +68,7 @@ export const conclusion = [
     {
         icon: (<Hygine/>),
         title: 'Importance',
-        body: 'The significance of this topic lies in its crucial role in maintaining a stable climate, temperature, and environment on our planet.'
+        body: 'The significance of this topic lies in its crucial role in maintaining a stable climate, temperature, and environment on our planet. Additionally, water is a basic human necessity in order to live.'
     },
     {
         icon: (<Temp />),
