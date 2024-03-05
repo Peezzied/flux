@@ -63,7 +63,7 @@ export const members = {
         {
             avatar: require('../assets/avatar/1.png'),
             name: 'Dela Cruz, Karol John S.',
-            description: '16-year-old, male, is a Grade 11 STEM Student computer enthusiast who belives that life is imperfect without mistakes.'
+            description: '16-year-old, male, is a Grade 11 STEM Student computer enthusiast who belives that life is incomplete without mistakes.'
         },
         {
             avatar: require('../assets/avatar/6.png'),
@@ -78,7 +78,7 @@ export const members = {
         {
             avatar: require('../assets/avatar/8.png'),
             name: 'Campos, Lance Elvis Ace R.',
-            description: '17 yeas old, male, is a Grade 11 STEM student the only limits are the ones you set for yourself.'
+            description: '17 yeas old, male, is a Grade 11 STEM student who believes the only limits are the ones you set for yourself.'
         },
     ]
 }
