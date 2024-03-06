@@ -1,4 +1,4 @@
-noimport { Gas, Hygine, Ice, IceCream, Snow, Temp } from "../components/SvgComponents";
+import { Gas, Hygine, Ice, IceCream, Snow, Temp, Frozen } from "../components/SvgComponents";
 import LiteYouTubeEmbed from 'react-lite-youtube-embed'
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css'
 

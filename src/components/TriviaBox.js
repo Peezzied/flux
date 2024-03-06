@@ -1,10 +1,11 @@
 import DivBox from "./DivBox";
 import think from '../assets/svg/thinking.svg'
 import volcano from '../assets/volcano.png'
-import { Hygine } from "./SvgComponents";
+import { Idea } from "./SvgComponents";
 import Reveal, { Reveals } from "./RevealAnimate";
 import { LazyLoadComponent, LazyLoadImage } from "react-lazy-load-image-component";
 import {trivias} from "../constants/trivias";
+
 
 export default function Trivia({ isHome = false }) {
     const data = trivias[Math.floor(Math.random() * trivias.length)];
