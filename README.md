@@ -1,6 +1,6 @@
 # Flux
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) developed by Karol John. 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) developed by Karol John.\
 The developer published the project's source code to help aspiring students in their web development journey. It's worth noting that a self-taught web developer student developed this project, whereas the project lacked optimization (such as code splitting or poor routing) and could benefit from further performance enhancements.
 
 ## Available Scripts
