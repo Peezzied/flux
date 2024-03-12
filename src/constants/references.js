@@ -318,6 +318,18 @@ export const references = [
             {
                 img: require('../assets/mpemba.png'),
                 to: 'https://images.app.goo.gl/ACooYkWJf5csbJm27'
+            },
+            {
+                img: require('../assets/home-bg.png'),
+                to: 'https://youtu.be/uRJQJcy3f8w?si=jGuXORwdOpIEelwL'
+            },
+            {
+                img: require('../assets/water-bg.jpg'),
+                to: 'https://pixabay.com/videos/sea-ocean-wave-beach-blue-nature-24216/'
+            },
+            {
+                img: require('../assets/phase-bg.jpg'),
+                to: 'https://pixabay.com/videos/atoms-electrons-energy-orbitals-8579/'
             }
 
         ],
