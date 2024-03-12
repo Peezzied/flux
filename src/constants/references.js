@@ -320,7 +320,7 @@ export const references = [
                 to: 'https://images.app.goo.gl/ACooYkWJf5csbJm27'
             },
             {
-                img: require('../assets/home-bg.png'),
+                img: require('../assets/home-bg.jpg'),
                 to: 'https://youtu.be/uRJQJcy3f8w?si=jGuXORwdOpIEelwL'
             },
             {
