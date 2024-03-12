@@ -13,7 +13,7 @@ function Footer() {
                     <div className="fluid-sub font-title font-bold">{footer[0].title}</div>
                     <div className="flex flex-row flex-wrap gap-3">
                         {footer[0].tags.map((i)=>(
-                            <div className="cursor-pointer p-1.5 px-5 w-max bg-[#303034] rounded-full fluid-pr font-primary"><HashLink scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })} to={i.to}>{i.name}</HashLink></div>
+                            <div className="cursor-pointer p-1.5 px-5 w-max bg-[#303034] rounded-full fluid-pr font-primary line-clamp-1"><HashLink scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })} to={i.to}>{i.name}</HashLink></div>
                         ))}
                     </div>
                 </div>
