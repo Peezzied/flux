@@ -26,7 +26,7 @@ export default function VideoSection({ data, isReversed = false, isBoxed, backgr
                             <div className={`font-title font-bold ${isBig ? 'fluid-title' : 'fluid-sub'}`}>{data.title}</div>
                         </Reveal>
                         <Reveal>
-                            <div className={`fluid-pr font-primary mt-3  ${background ? 'text-[#4B4B4B]' : 'text-secondary'}`}>{data.body}</div>
+                            <div className={`fluid-pr font-primary mt-3  ${background ? 'text-secondary' : 'text-[#4B4B4B]'}`}>{data.body}</div>
                         </Reveal>
                     </Reveals>
                 </div>
