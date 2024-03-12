@@ -24,5 +24,5 @@ You may also see any lint errors in the console.
 
 # Acknowledgements
 
-Special thanks to Andrade, Campos, Cheong, Clemente, Onera, Requiero, and Sevadera for writing the website's content and guiding the project. Additionally, sincere appreciation goes to Ma'am Santiago, our dedicated subject instructor.
+Special thanks to Andrade, Campos, Cheong, Clemente, Onera, Requiero, and Sevadera for writing the website's content and guiding the project. Additionally, sincere appreciation goes to Ma'am Santiago, our dearest subject instructor.
 
