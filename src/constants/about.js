@@ -83,11 +83,8 @@ export const members = {
     ]
 }
 
-export const importance = {
-    title: 'Why it Matters?',
-    body: 'Lorem ipsum dolor sit amet consectetur. Cursus accumsan lectus aenean sit blandit dignissim pretium semper. Augue nulla ut tortor vel.',
-    cards: [
-        {},
-        {}
-    ]
+export const info = {
+    title: 'Website Information.',
+    body: 'This website was built with passion and zeal using Create React App. The source code of this website is available publicly in Github for educational purposes. For more information, check the source code.',
+    to: 'https://github.com/Peezzied/flux'
 }

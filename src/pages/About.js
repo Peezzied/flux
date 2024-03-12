@@ -2,7 +2,7 @@ import { headerData } from "../constants/data";
 import { TopicHeader } from "./PhaseChanges";
 import about from "../assets/about.jpg"
 import DivBox from "../components/DivBox";
-import { front, importance, members, visionMission } from "../constants/about";
+import { front, info, members, visionMission } from "../constants/about";
 import { Arrow, Atom, ExternalLink, ToLink } from "../components/SvgComponents";
 import logo from "../assets/flux.png"
 import dost from "../assets/dost.svg"
@@ -20,7 +20,7 @@ function Section({ isReversed, data }) {
     return (
         <div className={`flex ${isReversed ? 'lg:flex-row-reverse ' : 'lg:flex-row'} flex-col items-center sm:items-start sm:justify-around gap-y-6`}>
             <div className="w-[17em]"><RevealImage variants={variants} className="w-full" src={data.img} alt="" /></div>
-            <div className="max-w-[30em] flex flex-col justify-center">
+            <div className="max-w-[30em] flex flex-col justify-center space-y-3">
                 <Reveals variants={{
                     start: { y: 100, opacity: 0 },
                     visible: { y: 0, opacity: 1 }
@@ -83,7 +83,7 @@ export default function About() {
                                 <div className="text-[#C0C0C0] fluid-pr flex text-justify lg:text-start h-max max-w-[34em] lg:max-w-[27em]" >{front[1].lead}</div>
                             </Reveal>
                             <Reveal>
-                                <div className="max-w-[20em] divide-y-2 divide-solid divide-[#C0C0C0] justify-self-center h-max">
+                                <div className="max-w-[20em] divide-y-2 divide-solid divide-[#343434] justify-self-center h-max">
                                     {front[1].link.map((i) => (
                                         <HashLink scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })} to={i.to} className="grid grid-cols-[1fr_auto]">
                                             <div className="space-y-2 py-7">
@@ -180,8 +180,8 @@ export default function About() {
                                     .sort((a, b) => a.name.localeCompare(b.name))
                                     .map((i, index) => (
                                         <div className="flex flex-row gap-6 py-6 max-w-xl mx-auto" key={index}>
-                                            <div className="min-w-[4.7em] flex"><LazyLoadImage className="w-full my-auto" src={i.avatar} alt="" /></div>
-                                            <div className="font-primary max-w-full text-[#4B4B4B]">
+                                            <div className="min-w-[4.7em] flex"><LazyLoadImage className="w-full mb-auto" src={i.avatar} alt="" /></div>
+                                            <div className="font-primary max-w-full text-[#4B4B4B] space-y-1">
                                                 <Reveal variants={{
                                                     start: { y: 100, opacity: 0 },
                                                     visible: { y: 0, opacity: 1 }
@@ -204,17 +204,17 @@ export default function About() {
 
                 </div>
             </DivBox>
-            {/* <DivBox container='container max-w-6xl mx-auto' div='bg-[#fafafa] px-6'>
-                <div>
-                    <div>
-                        <div className="fluid-title text-primary font-title font-bold text-center">{importance.title}</div>
-                        <div className="fluid-pr text-[#4B4B4B] font-primary text-center">{importance.body}</div>
+            <DivBox container='container max-w-2xl mx-auto' div='bg-[#fafafa] px-6'>
+                <div className="flex justify-center flex-col my-20">
+                    <div className="space-y-6">
+                        <div className="fluid-title text-primary font-title font-bold text-center leading-tight">{info.title}</div>
+                        <div className="fluid-pr text-[#4B4B4B] font-primary text-center max-w-xl mx-auto">{info.body}</div>
                     </div>
-                    <div>
-                     
-                    </div>
+
+                    <a href={info.to} className=' mx-auto text-[16px] uppercase font-primary mt-12 bg-primary rounded-xl p-2 px-4 w-max font-semibold text-white' role='button'>SOURCE CODE</a>
+
                 </div>
-            </DivBox> */}
+            </DivBox>
         </>
     )
 }
