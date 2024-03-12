@@ -2,11 +2,22 @@ export const footer = [
     {
         title: 'Related Topics', 
         tags: [
-            'Types of Solids',
-            'Kinetic molecular model',
-            'Properties of liquid',
-            'Properties of solids',
-            'Crystals'
+            {
+                name: 'Types of Solids'
+            },
+            {
+                name: 'Kinetic molecular model'
+            },
+            {
+                name: 'Properties of liquid',
+                to: 'https://thelostpurveyorofmagic.my.canva.site/properties-of-liquid#references'
+            },
+            {
+                name: 'Properties of solids'
+            },
+            {
+                name: 'Crystals'
+            }
         ]
     },
     {

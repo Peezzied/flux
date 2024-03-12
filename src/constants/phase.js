@@ -56,9 +56,9 @@ export const properties = [
     [
         {
             title: 'freezing',
-            description: 'Leaving a ice in low temperature.',
+            description: 'Leaving an ice in low temperature.',
             to: '',
-            head: 'Freezing. Leaving a ice in low temperature.',
+            head: 'Freezing. From liquid to solid.',
             img: require('../assets/home/ice.png'),
             style: 'row-span-3 lg:row-span-5 lg:col-start-1 lg:h-[612px] lg:my-auto',
             modal: [
@@ -97,7 +97,7 @@ export const properties = [
             description: 'An ice cream on a hot summer day.',
             to: '',
             img: require('../assets/phase/iceCream.png'),
-            head: 'Melting. Leaving a water in high temperature.',
+            head: 'Melting. From solid to liquid.',
             style: 'lg:row-span-3 lg:mt-auto lg:h-[312px]  row-span-2',
             modal: [
                 {
@@ -158,7 +158,7 @@ export const properties = [
             title: 'DEPOSITION',
             description: 'Water vapor turns directly to solid, like frost',
             to: '',
-            head: 'Deposition. Leaving a ice in low temperature.',
+            head: 'Deposition. From gas to solid.',
             img: require('../assets/phase/frost.png'),
             style: 'lg:row-span-2 row-span-2 lg:col-span-2 lg:row-start-1 lg:col-end-5',
             modal: [
@@ -183,10 +183,10 @@ export const properties = [
         },
         {
             title: 'VAPORIZATION',
-            description: 'When boiling a hot water.',
+            description: 'Like when boiling a hot water.',
             to: '',
             img: require('../assets/phase/boil.png'),
-            head: 'Vaporization. High temperature of liquid.',
+            head: 'Vaporization. From liquid to gas.',
             style: 'lg:row-span-4 row-span-3 lg:col-start-3 lg:row-start-3',
             modal: [
                 {
@@ -213,7 +213,7 @@ export const properties = [
             title: 'SUBLIMATION',
             description: 'A solid dry ice turning to gas.',
             to: '',
-            head: 'Freezing. Leaving a ice in low temperature.',
+            head: 'Sublimation. From solid to gas.',
             img: require('../assets/phase/dryIce.png'),
             style: 'lg:row-span-2 row-span-2',
             modal: [
