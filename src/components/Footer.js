@@ -20,7 +20,7 @@ function Footer() {
                 <div className="p-12 flex flex-row justify-between flex-wrap gap-y-12 gap-x-6">
                     <div className="space-y-6 basis-full lg:basis-auto">
                         <img className="w-auto h-[5em]" src={logo} alt="" srcset="" />
-                        <div className="font-primary fluid-pr max-w-[15em]">{footer[1].logoDescription}</div>
+                        <div className="font-primary fluid-pr max-w-[15em] text-secondary">{footer[1].logoDescription}</div>
                     </div>
                     {footer[1].section.map((i)=>(
                         <div className="space-y-5 fluid-pr font-primary w-max ">
